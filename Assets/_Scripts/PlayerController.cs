@@ -4,39 +4,42 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed;
-    
-    private bool isMoving;
-    private Vector2 input;
 
+    public float moveSpeed;
+    public LayerMask solidObjectsLayer;
     public Animator animator;
+    
+    private bool _isMoving;
+    private Vector2 _input;
+
 
     private void Update()
     {
-        if (!isMoving)
+        if (!_isMoving)
         {
-            input.x = Input.GetAxisRaw("Horizontal");
-            input.y = Input.GetAxisRaw("Vertical");
+            _input.x = Input.GetAxisRaw("Horizontal");
+            _input.y = Input.GetAxisRaw("Vertical");
             //for remove diag movement
             //if (input.x != 0) input.y = 0;
 
-            if(input != Vector2.zero)
+            if(_input != Vector2.zero)
             {
-                animator.SetFloat("moveX", input.x);
-                animator.SetFloat("moveY", input.y);
+                animator.SetFloat("moveX", _input.x);
+                animator.SetFloat("moveY", _input.y);
 
                 var targetPos = transform.position;
-                targetPos.x += input.x;
-                targetPos.y += input.y;
-                StartCoroutine(Move(targetPos));
+                targetPos.x += _input.x;
+                targetPos.y += _input.y;
+                if(IsWalkable(targetPos))
+                    StartCoroutine(Move(targetPos));
             }
         }
-            animator.SetBool("isMoving", isMoving);
+            animator.SetBool("isMoving", _isMoving);
     }
 
     IEnumerator Move(Vector3 targetPos)
     {
-        isMoving = true;
+        _isMoving = true;
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
@@ -44,7 +47,15 @@ public class PlayerController : MonoBehaviour
         }
         transform.position = targetPos;
 
-        isMoving = false;
+        _isMoving = false;
     }
 
+    private bool IsWalkable(Vector3 targetPos)
+    {
+        if(Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer) != null)
+        {
+            return false;
+        }
+        return true;
+    }
 }
