@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed;
     public LayerMask solidObjectsLayer;
+    public LayerMask grassLayer;
     public Animator animator;
     
     private bool _isMoving;
@@ -48,6 +49,8 @@ public class PlayerController : MonoBehaviour
         transform.position = targetPos;
 
         _isMoving = false;
+
+        CheckForEncouters();
     }
 
     private bool IsWalkable(Vector3 targetPos)
@@ -58,4 +61,16 @@ public class PlayerController : MonoBehaviour
         }
         return true;
     }
+
+    private void CheckForEncouters()
+    {
+        if(Physics2D.OverlapCircle(transform.position, 0.2f, grassLayer) != null)
+        {
+            if(Random.Range(1,101) <= 10)
+            {
+                Debug.Log("POKEMON");
+            }
+        }
+    }
+
 }
