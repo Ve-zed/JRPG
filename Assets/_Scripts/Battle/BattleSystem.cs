@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,9 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleHud _playerHud;
     [SerializeField] BattleHud _ennemyHud;
     [SerializeField] BattleDialogBox _dialogBox;
+
+
+    public event Action<bool> OnBattleOver;
 
     BattleState _state;
 
@@ -63,6 +67,11 @@ public class BattleSystem : MonoBehaviour
         var move = _playerUnit.Monster.Moves[_currentMove];
         yield return _dialogBox.TypeDialog($"{_playerUnit.Monster.Base.Name} used {move.Base.Name}");
 
+        _playerUnit.PlayAttackAnimation();
+        yield return new WaitForSeconds(1f);
+
+        _ennemyUnit.PlayHitAnimation();
+        //yield return new WaitForSeconds(1f);
 
         var damageDetails = _ennemyUnit.Monster.TakeDamage(move, _playerUnit.Monster);
         yield return _ennemyHud.UpdateHP();
@@ -71,6 +80,10 @@ public class BattleSystem : MonoBehaviour
         if (damageDetails.Fainted)
         {
             yield return _dialogBox.TypeDialog($"{_ennemyUnit.Monster.Base.Name} Fainted");
+            _ennemyUnit.PlayFaintAnimation();
+
+            yield return new WaitForSeconds(2f);
+            OnBattleOver(true);
         }
         else
         {
@@ -84,6 +97,13 @@ public class BattleSystem : MonoBehaviour
         var move = _ennemyUnit.Monster.GetRandomMove();
         yield return _dialogBox.TypeDialog($"{_ennemyUnit.Monster.Base.Name} used {move.Base.Name}");
 
+
+        _ennemyUnit.PlayAttackAnimation();
+        yield return new WaitForSeconds(1f);
+
+        _playerUnit.PlayHitAnimation();
+        //yield return new WaitForSeconds(1f);
+
         var damageDetails = _playerUnit.Monster.TakeDamage(move, _playerUnit.Monster);
         yield return _playerHud.UpdateHP();
         yield return ShowDamageDetails(damageDetails);
@@ -91,6 +111,10 @@ public class BattleSystem : MonoBehaviour
         if (damageDetails.Fainted)
         {
             yield return _dialogBox.TypeDialog($"{_playerUnit.Monster.Base.Name} Fainted");
+            _playerUnit.PlayFaintAnimation();
+
+            yield return new WaitForSeconds(2f);
+            OnBattleOver(false);
         }
         else
         {
@@ -113,7 +137,7 @@ public class BattleSystem : MonoBehaviour
 
 
 
-    private void Update()
+    public void HandleUpdate()
     {
         if (_state == BattleState.PlayerAction)
         {

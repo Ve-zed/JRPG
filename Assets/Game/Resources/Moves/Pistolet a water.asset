@@ -15,6 +15,6 @@ MonoBehaviour:
   _name: Water Pistol !
   _description: 
   _type: 3
-  _power: 55
+  _power: 45
   _accuary: 100
   _pp: 20

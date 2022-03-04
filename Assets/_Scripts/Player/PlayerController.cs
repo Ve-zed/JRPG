@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,13 +9,17 @@ public class PlayerController : MonoBehaviour
     public float moveSpeed;
     public LayerMask solidObjectsLayer;
     public LayerMask grassLayer;
+
+    public event Action OnEncountered;
+
+
     public Animator animator;
-    
+
     private bool _isMoving;
     private Vector2 _input;
 
 
-    private void Update()
+    public void HandleUpdate()
     {
         if (!_isMoving)
         {
@@ -23,7 +28,7 @@ public class PlayerController : MonoBehaviour
             //for remove diag movement
             //if (input.x != 0) input.y = 0;
 
-            if(_input != Vector2.zero)
+            if (_input != Vector2.zero)
             {
                 animator.SetFloat("moveX", _input.x);
                 animator.SetFloat("moveY", _input.y);
@@ -31,11 +36,11 @@ public class PlayerController : MonoBehaviour
                 var targetPos = transform.position;
                 targetPos.x += _input.x;
                 targetPos.y += _input.y;
-                if(IsWalkable(targetPos))
+                if (IsWalkable(targetPos))
                     StartCoroutine(Move(targetPos));
             }
         }
-            animator.SetBool("isMoving", _isMoving);
+        animator.SetBool("isMoving", _isMoving);
     }
 
     IEnumerator Move(Vector3 targetPos)
@@ -55,7 +60,7 @@ public class PlayerController : MonoBehaviour
 
     private bool IsWalkable(Vector3 targetPos)
     {
-        if(Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer) != null)
+        if (Physics2D.OverlapCircle(targetPos, 0.2f, solidObjectsLayer) != null)
         {
             return false;
         }
@@ -64,11 +69,12 @@ public class PlayerController : MonoBehaviour
 
     private void CheckForEncouters()
     {
-        if(Physics2D.OverlapCircle(transform.position, 0.2f, grassLayer) != null)
+        if (Physics2D.OverlapCircle(transform.position, 0.2f, grassLayer) != null)
         {
-            if(Random.Range(1,101) <= 10)
+            if (UnityEngine.Random.Range(1, 101) <= 10)
             {
-                Debug.Log("POKEMON");
+                OnEncountered();
+                animator.SetBool("isMoving", false);
             }
         }
     }
