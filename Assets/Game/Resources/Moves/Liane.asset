@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc4911ce85304642951675f99c5f2c9, type: 3}
   m_Name: Liane
   m_EditorClassIdentifier: 
-  _name: 
+  _name: Liane
   _description: 
   _type: 5
   _power: 45
