@@ -2,20 +2,34 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Monster
 {
-    public MonstersBase Base { get; set; }
-    public int Level { get; set; }
+    [SerializeField] MonstersBase _base;
+    [SerializeField] int _level;
+    public MonstersBase Base
+    {
+        get
+        {
+            return _base;
+        }
+    }
+    public int Level
+    {
+        get
+        {
+            return _level;
+
+        }
+    }
 
     public int HP { get; set; }
 
     public List<Move> Moves { get; set; }
 
 
-    public Monster(MonstersBase mBase, int mLevel)
+    public void Init()
     {
-        Base = mBase;
-        Level = mLevel;
         HP = MaxHp;
 
         //Generate moves
@@ -71,10 +85,12 @@ public class Monster
         };
 
 
+        float attack = (move.Base.IsSpecial) ? attacker.SpAttack : attacker.Attack;
+        float defense = (move.Base.IsSpecial) ? SpDefense : Defense;
 
         float modifiers = Random.Range(0.85f, 1f) * type * critical;
         float atk = (2 * attacker.Level + 10) / 250f;
-        float def = atk * move.Base.Power * ((float)attacker.Attack / Defense) + 2;
+        float def = atk * move.Base.Power * ((float)attack / defense) + 2;
         int damage = Mathf.FloorToInt(def * modifiers);
 
         HP -= damage;

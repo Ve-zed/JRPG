@@ -7,9 +7,9 @@ using DG.Tweening;
 public class BattleUnit : MonoBehaviour
 {
 
-    [SerializeField] MonstersBase _base;
+    /*[SerializeField] MonstersBase _base;
     [SerializeField] int _level;
-    [SerializeField] bool isPlayerUnit;
+    */[SerializeField] bool isPlayerUnit;
 
 
     private Image _image;
@@ -26,9 +26,9 @@ public class BattleUnit : MonoBehaviour
     }
 
 
-    public void Setup()
+    public void Setup(Monster monster)
     {
-        Monster = new Monster(_base, _level);
+        Monster = monster;
 
         if (isPlayerUnit)
         {
@@ -38,6 +38,9 @@ public class BattleUnit : MonoBehaviour
         {
             _image.sprite = Monster.Base.FrontSprite;
         }
+
+
+        _image.color = _originalColor;
         PlayEnterAnimation();
 
     }

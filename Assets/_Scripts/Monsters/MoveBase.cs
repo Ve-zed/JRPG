@@ -40,4 +40,21 @@ public class MoveBase : ScriptableObject
     {
         get { return _pp; }
     }
+
+    public bool IsSpecial
+    {
+        get
+        {
+            if (_type == MonsterType.Bug || _type == MonsterType.Dragon || _type == MonsterType.Electric || _type == MonsterType.Fighting ||
+                _type == MonsterType.Fire || _type == MonsterType.Flying || _type == MonsterType.Ghost || _type == MonsterType.Grass || _type == MonsterType.Ground ||
+                _type == MonsterType.Ice || _type == MonsterType.Poison || _type == MonsterType.Psychic || _type == MonsterType.Rock || _type == MonsterType.Water)
+            {
+                return true;
+            }
+            else
+                return false;
+        }
+    }
+
+
 }
