@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState { FreeRoam, Battle, Dialog }
+public enum GameState { FreeRoam, Battle, Dialog, CutScene }
 
 
 public class GameController : MonoBehaviour
@@ -16,11 +16,26 @@ public class GameController : MonoBehaviour
 
     GameState _state;
 
-
+    public static GameController Instance { get; private set; }
+    private void Awake()
+    {
+        Instance = this;
+    }
     private void Start()
     {
         _playerController.OnEncountered += StartBattle;
         _battleSystem.OnBattleOver += EndBattle;
+
+
+        _playerController.OnEnterEnnemisView += (Collider2D ennemiCollider) =>
+        {
+            var ennemi = ennemiCollider.GetComponentInParent<EnnemiController>();
+            if(ennemi != null)
+            {
+                _state = GameState.CutScene;
+                StartCoroutine(ennemi.TriggerEnnemiBattle(_playerController));
+            }
+        };
 
         DialogManager.Instance.OnShowDialog += () =>
         {
@@ -43,12 +58,37 @@ public class GameController : MonoBehaviour
         var playerParty = _playerController.GetComponent<MonsterParty>();
         var wildMonster = FindObjectOfType<MapArea>().GetComponent<MapArea>().GetRandomWildMonster();
 
+        Debug.Log("battle start ");
 
         _battleSystem.StartBattle(playerParty, wildMonster);
 
     }
+    EnnemiController _ennemi;
+    public void StartEnnemiBattle(EnnemiController ennemi)
+    {
+        _state = GameState.Battle;
+        Debug.Log("battle start ennemi");
+        _battleSystem.gameObject.SetActive(true);
+        _worldCamera.gameObject.SetActive(false);
+
+        _ennemi = ennemi;
+        var playerParty = _playerController.GetComponent<MonsterParty>();
+        var ennemiParty = ennemi.GetComponent<MonsterParty>();
+        
+
+        _battleSystem.StartEnnemiBattle(playerParty, ennemiParty);
+
+    }
     private void EndBattle(bool won)
     {
+        if(_ennemi != null && won == true)
+        {
+            _ennemi.BattleLost();
+            _ennemi = null;
+            _battleSystem._isEnnemiBattle = false;
+
+            Debug.Log("battle end");
+        }
         _state = GameState.FreeRoam;
         _battleSystem.gameObject.SetActive(false);
         _worldCamera.gameObject.SetActive(true);

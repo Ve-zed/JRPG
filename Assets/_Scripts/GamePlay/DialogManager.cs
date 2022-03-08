@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    [SerializeField] GameObject _dialogBox;
+    public GameObject _dialogBox;
     [SerializeField] Text _dialogText;
     [SerializeField] int _lettersPerSecond;
 
@@ -26,7 +26,7 @@ public class DialogManager : MonoBehaviour
     }
 
 
-    public IEnumerator ShowDialog(Dialog dialog)
+    public IEnumerator ShowDialog(Dialog dialog, Action onFinished = null)
     {
         yield return new WaitForEndOfFrame();
         OnShowDialog?.Invoke();
@@ -51,7 +51,7 @@ public class DialogManager : MonoBehaviour
                 _dialogBox.SetActive(false);
                 OnCloseDialog?.Invoke();
             }
-                
+
         }
     }
     public IEnumerator TypeDialog(string line)

@@ -5,13 +5,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-
+    [SerializeField] string _name;
+    [SerializeField] Sprite _sprite;
     public float moveSpeed;
     public LayerMask solidObjectsLayer;
     public LayerMask interactableLayer;
     public LayerMask grassLayer;
+    public LayerMask fovLayer;
+
 
     public event Action OnEncountered;
+    public event Action<Collider2D> OnEnterEnnemisView;
 
 
     public Animator animator;
@@ -26,8 +30,6 @@ public class PlayerController : MonoBehaviour
         {
             _input.x = Input.GetAxisRaw("Horizontal");
             _input.y = Input.GetAxisRaw("Vertical");
-            //for remove diag movement
-            //if (input.x != 0) input.y = 0;
 
             if (_input != Vector2.zero)
             {
@@ -38,7 +40,7 @@ public class PlayerController : MonoBehaviour
                 targetPos.x += _input.x;
                 targetPos.y += _input.y;
                 if (IsWalkable(targetPos))
-                    StartCoroutine(Move(targetPos));
+                    StartCoroutine(Move(targetPos, OnMoveOver));
             }
         }
         animator.SetBool("isMoving", _isMoving);
@@ -61,7 +63,7 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    IEnumerator Move(Vector3 targetPos)
+    IEnumerator Move(Vector3 targetPos, Action OnMoveOver = null)
     {
         _isMoving = true;
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
@@ -73,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
         _isMoving = false;
 
-        CheckForEncouters();
+        OnMoveOver?.Invoke();
     }
 
     private bool IsWalkable(Vector3 targetPos)
@@ -84,6 +86,12 @@ public class PlayerController : MonoBehaviour
         }
         return true;
     }
+    private void OnMoveOver()
+    {
+        CheckForEncouters();
+        CheckIfInEnnemisView();
+    }
+
 
     private void CheckForEncouters()
     {
@@ -96,5 +104,21 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    private void CheckIfInEnnemisView()
+    {
+        var collider = Physics2D.OverlapCircle(transform.position, 0.2f, fovLayer);
+        if (collider != null)
+        {
+            animator.SetBool("isMoving", false);
+            OnEnterEnnemisView?.Invoke(collider);
+            animator.SetFloat("moveY", 1);
+            animator.SetFloat("moveX", 0);
+        }
+
+    }
+
+    public Sprite Sprite { get => _sprite; }
+    public string Name { get => _name; }
 
 }

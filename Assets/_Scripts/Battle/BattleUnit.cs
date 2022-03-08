@@ -7,10 +7,14 @@ using DG.Tweening;
 public class BattleUnit : MonoBehaviour
 {
 
-    /*[SerializeField] MonstersBase _base;
-    [SerializeField] int _level;
-    */[SerializeField] bool isPlayerUnit;
+    [SerializeField] bool isPlayerUnit;
+    [SerializeField] BattleHud _hud;
 
+
+
+
+    public bool IsPlayerUnit { get { return isPlayerUnit; } }
+    public BattleHud Hud { get { return _hud; } }
 
     private Image _image;
     Vector3 _originalPos;
@@ -40,12 +44,23 @@ public class BattleUnit : MonoBehaviour
         }
 
 
+        _hud.gameObject.SetActive(false);
+        _hud.SetData(monster);
+
+
         _image.color = _originalColor;
         PlayEnterAnimation();
 
     }
 
-
+    public void Clear()
+    {
+        _hud.gameObject.SetActive(false);
+    }
+    public void Show()
+    {
+        _hud.gameObject.SetActive(true);
+    }
     public void PlayEnterAnimation()
     {
 
