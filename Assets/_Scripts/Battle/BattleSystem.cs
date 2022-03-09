@@ -52,7 +52,6 @@ public class BattleSystem : MonoBehaviour
     }
     public IEnumerator SetupBattle()
     {
-        //Debug.Log("fight");
         _playerUnit.Clear();
         _ennemyUnit.Clear();
         if (!_isEnnemiBattle)
@@ -163,8 +162,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         targetUnit.PlayHitAnimation();
-        //yield return new WaitForSeconds(1f);
-
+     
         var damageDetails = targetUnit.Monster.TakeDamage(move, souceUnit.Monster);
         yield return targetUnit.Hud.UpdateHP();
         yield return ShowDamageDetails(damageDetails);

@@ -28,7 +28,6 @@ public class EnnemiController : MonoBehaviour, Interactable
         {
             StartCoroutine(DialogManager.Instance.ShowDialog(_dialog));
             StartCoroutine(StartBattle());
-            //Debug.Log("interact with pinj");
         }
         else
         {
@@ -64,7 +63,6 @@ public class EnnemiController : MonoBehaviour, Interactable
         transform.position = pos;
         _ennemi.enabled = true;
 
-        //StartCoroutine(DialogManager.Instance.ShowDialog(_dialog));
         
 
         StartCoroutine(StartBattle());

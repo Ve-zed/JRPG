@@ -67,7 +67,6 @@ public class GameController : MonoBehaviour
     public void StartEnnemiBattle(EnnemiController ennemi)
     {
         _state = GameState.Battle;
-        Debug.Log("battle start ennemi");
         _battleSystem.gameObject.SetActive(true);
         _worldCamera.gameObject.SetActive(false);
 

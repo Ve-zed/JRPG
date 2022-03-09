@@ -11,6 +11,5 @@ public class PINJController : MonoBehaviour, Interactable
     {
 
         StartCoroutine(DialogManager.Instance.ShowDialog(_dialog));
-        //Debug.Log("interact with pinj");
     }
 }

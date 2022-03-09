@@ -12,7 +12,7 @@ public class BattleDialogBox : MonoBehaviour
 
 
     [SerializeField] Text _dialogText;
-    
+
     [SerializeField] GameObject _actionSelector;
     [SerializeField] GameObject _moveSelector;
     [SerializeField] GameObject _moveDetails;
@@ -101,27 +101,4 @@ public class BattleDialogBox : MonoBehaviour
 
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
