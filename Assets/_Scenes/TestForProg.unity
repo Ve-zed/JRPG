@@ -308,6 +308,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 145402031}
     m_Modifications:
+    - target: {fileID: 1374298476643591616, guid: b929ecd34c713e84d8718f260899fa05, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1374298476643591616, guid: b929ecd34c713e84d8718f260899fa05, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 527523955
+      objectReference: {fileID: 0}
     - target: {fileID: 1374298476643591617, guid: b929ecd34c713e84d8718f260899fa05, type: 3}
       propertyPath: m_Name
       value: PINJ (1)
@@ -1843,6 +1851,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 191610511}
     m_Modifications:
+    - target: {fileID: 8429885589739097536, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
+      propertyPath: m_SortingLayer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429885589739097536, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 527523955
+      objectReference: {fileID: 0}
     - target: {fileID: 8429885589739097547, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: m_Icon
       value: 
@@ -3612,7 +3628,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: -1975638207
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_TargetDisplay: 0
 --- !u!224 &1202160352
 RectTransform:
@@ -13029,6 +13045,14 @@ PrefabInstance:
     - target: {fileID: 4472211314815570440, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472211314815570440, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: m_SortingLayer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472211314815570440, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: m_SortingLayerID
+      value: -1975638207
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 756939855, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
