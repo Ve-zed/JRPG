@@ -11,6 +11,8 @@ public enum BattleState { Start, ActionSelection, MoveSelection, PerformMove, Bu
 public class BattleSystem : MonoBehaviour
 {
     [SerializeField] BattleUnit _playerUnit;
+    [SerializeField] BattleUnit _playerUnit2;
+    [SerializeField] BattleUnit _playerUnit3;
     [SerializeField] BattleUnit _ennemyUnit;
     [SerializeField] BattleDialogBox _dialogBox;
     [SerializeField] PartyScreen _partyScreen;
@@ -24,7 +26,7 @@ public class BattleSystem : MonoBehaviour
 
     private int _currentAction;
     private int _currentMove;
-    private int _currentMember;
+    private int _currentMember = 0;
 
     MonsterParty _playerParty;
     MonsterParty _ennemiParty;
@@ -53,14 +55,21 @@ public class BattleSystem : MonoBehaviour
     public IEnumerator SetupBattle()
     {
         _playerUnit.Clear();
+        _playerUnit2.Clear();
+        _playerUnit3.Clear();
         _ennemyUnit.Clear();
         if (!_isEnnemiBattle)
         {
             //Wild ennemi
-            _playerUnit.Setup(_playerParty.GetHealthyMonster());
+            _playerUnit.Setup(_playerParty.Monsters[_currentMember]);
+            _playerUnit2.Setup2(_playerParty.Monsters[_currentMember + 1]);
+            _playerUnit3.Setup2(_playerParty.Monsters[_currentMember + 2]);
             _ennemyUnit.Setup(_wildMonster);
             _dialogBox.SetMoveNames(_playerUnit.Monster.Moves);
+            //_dialogBox.SetMoveNames(_playerUnit2.Monster.Moves);
             _playerUnit.Show();
+            _playerUnit2.Show();
+            _playerUnit3.Show();
             _ennemyUnit.Show();
             yield return _dialogBox.TypeDialog($@"A wild {_ennemyUnit.Monster.Base.Name} appeared.");
 
@@ -132,22 +141,95 @@ public class BattleSystem : MonoBehaviour
 
         if (_state == BattleState.PerformMove)
         {
+            if (_playerUnit2.Monster.HP > 0)
+                StartCoroutine(PlayerMove2());
+            else if (_playerUnit3.Monster.HP > 0)
+                StartCoroutine(PlayerMove3());
+            else
+                StartCoroutine(EnemyMove());
+        }
+
+    }
+    IEnumerator PlayerMove2()
+    {
+        _state = BattleState.PerformMove;
+        if (_playerUnit2.Monster.HP > 0)
+        {
+            var move = _playerUnit2.Monster.GetRandomMove();
+            yield return RunMove(_playerUnit2, _ennemyUnit, move);
+        }
+        if (_state == BattleState.PerformMove)
+        {
+            if (_playerUnit3.Monster.HP > 0)
+                StartCoroutine(PlayerMove3());
+            else
+                StartCoroutine(EnemyMove());
+
+        }
+
+    }
+    IEnumerator PlayerMove3()
+    {
+        _state = BattleState.PerformMove;
+        if (_playerUnit3.Monster.HP > 0)
+        {
+            var move = _playerUnit3.Monster.GetRandomMove();
+            yield return RunMove(_playerUnit3, _ennemyUnit, move);
+        }
+        if (_state == BattleState.PerformMove)
+        {
             StartCoroutine(EnemyMove());
 
         }
 
     }
+    BattleUnit target;
     IEnumerator EnemyMove()
     {
         _state = BattleState.PerformMove;
-
+        target = _playerUnit;
         var move = _ennemyUnit.Monster.GetRandomMove();
+        int random = _ennemyUnit.Monster.GetRandomEnnemi();
+        Debug.Log("Random "+random);
+        if (random == 0)
+        {
+            if (_playerUnit.Monster.HP > 0)
+                target = _playerUnit;
+            else if (_playerUnit2.Monster.HP > 0)
+                target = _playerUnit2;
+            else
+                target = _playerUnit3;
+        }
 
-        yield return RunMove(_ennemyUnit, _playerUnit, move);
+        else if (random == 1)
+        {
+            if (_playerUnit2.Monster.HP > 0)
+                target = _playerUnit2;
+            else if (_playerUnit3.Monster.HP > 0)
+                target = _playerUnit3;
+            else
+                target = _playerUnit;
+
+        }
+        else if (random == 2)
+        {
+            if (_playerUnit3.Monster.HP > 0)
+                target = _playerUnit3;
+            else if (_playerUnit2.Monster.HP > 0)
+                target = _playerUnit2;
+            else
+                target = _playerUnit;
+
+        }
+        yield return RunMove(_ennemyUnit, target, move);
 
         if (_state == BattleState.PerformMove)
         {
-            ActionSelection();
+            if (_playerUnit.Monster.HP > 0)
+                ActionSelection();
+            else
+                StartCoroutine(PlayerMove2());
+
 
         }
 
@@ -162,7 +244,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         targetUnit.PlayHitAnimation();
-     
+
         var damageDetails = targetUnit.Monster.TakeDamage(move, souceUnit.Monster);
         yield return targetUnit.Hud.UpdateHP();
         yield return ShowDamageDetails(damageDetails);
@@ -171,6 +253,7 @@ public class BattleSystem : MonoBehaviour
         {
             yield return _dialogBox.TypeDialog($"{targetUnit.Monster.Base.Name} Fainted");
             targetUnit.PlayFaintAnimation();
+            targetUnit.Clear();
             yield return new WaitForSeconds(2f);
 
             CheckForBattleOver(targetUnit);
@@ -181,10 +264,15 @@ public class BattleSystem : MonoBehaviour
         if (faintedUnit.IsPlayerUnit)
         {
             var nextMonster = _playerParty.GetHealthyMonster();
-            if (nextMonster != null)
+            /*if (nextMonster != null)
                 OpenPartyScreen();
             else
                 BattleOver(false);
+        */
+            if (nextMonster == null)
+                BattleOver(false);
+
+
         }
         else
         {
@@ -412,7 +500,7 @@ public class BattleSystem : MonoBehaviour
             _state = BattleState.ActionSelection;
             yield break;
         }
-        else 
+        else
         {
             if (UnityEngine.Random.Range(1, 101) <= 50)
             {

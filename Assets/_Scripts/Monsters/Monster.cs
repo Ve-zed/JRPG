@@ -110,6 +110,12 @@ public class Monster
         int r = Random.Range(0, Moves.Count);
         return Moves[r];
     }
+
+    public int GetRandomEnnemi()
+    {
+        int r = Random.Range(0, 3);
+        return r;
+    }
 }
 
 

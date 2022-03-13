@@ -43,10 +43,26 @@ public class BattleUnit : MonoBehaviour
             _image.sprite = Monster.Base.FrontSprite;
         }
 
+        Monster.HP = Monster.MaxHp;
 
-        _hud.gameObject.SetActive(false);
         _hud.SetData(monster);
 
+
+        _image.color = _originalColor;
+        PlayEnterAnimation();
+
+    }    
+    public void Setup2(Monster monster)
+    {
+        Monster = monster;
+
+        Monster.HP = Monster.MaxHp;
+       
+            _image.sprite = Monster.Base.BackSprite;
+     
+
+
+        _hud.SetData(monster);
 
         _image.color = _originalColor;
         PlayEnterAnimation();
