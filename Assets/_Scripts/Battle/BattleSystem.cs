@@ -66,7 +66,6 @@ public class BattleSystem : MonoBehaviour
             _playerUnit3.Setup2(_playerParty.Monsters[_currentMember + 2]);
             _ennemyUnit.Setup(_wildMonster);
             _dialogBox.SetMoveNames(_playerUnit.Monster.Moves);
-            //_dialogBox.SetMoveNames(_playerUnit2.Monster.Moves);
             _playerUnit.Show();
             _playerUnit2.Show();
             _playerUnit3.Show();
@@ -77,27 +76,33 @@ public class BattleSystem : MonoBehaviour
         else
         {
             //ennemi
-            _playerUnit.gameObject.SetActive(false);
-            _ennemyUnit.gameObject.SetActive(false);
-            _playerImage.gameObject.SetActive(true);
-            _ennemiImage.gameObject.SetActive(true);
-            _playerImage.sprite = _player.Sprite;
-            _ennemiImage.sprite = _ennemi.Sprite;
-            yield return _dialogBox.TypeDialog($"{_ennemi.Name} want battle");
+            //_playerUnit.gameObject.SetActive(false);
+            //_ennemyUnit.gameObject.SetActive(false);
+            //_playerImage.gameObject.SetActive(true);
+            //_ennemiImage.gameObject.SetActive(true);
+            //_playerImage.sprite = _player.Sprite;
+            //_ennemiImage.sprite = _ennemi.Sprite;
+            //yield return _dialogBox.TypeDialog($"{_ennemi.Name} want battle");
 
-            _ennemiImage.gameObject.SetActive(false);
-            _ennemyUnit.gameObject.SetActive(true);
+            //_ennemiImage.gameObject.SetActive(false);
+            //_ennemyUnit.gameObject.SetActive(true);
             var ennemiMonster = _ennemiParty.GetHealthyMonster();
             _ennemyUnit.Setup(ennemiMonster);
-            yield return _dialogBox.TypeDialog($@"{_ennemi.Name} sand out {ennemiMonster.Base.Name}.");
+            //yield return _dialogBox.TypeDialog($@"{_ennemi.Name} sand out {ennemiMonster.Base.Name}.");
 
-            _playerImage.gameObject.SetActive(false);
-            _playerUnit.gameObject.SetActive(true);
-            var playerMonster = _playerParty.GetHealthyMonster();
+            //_playerImage.gameObject.SetActive(false);
+            //_playerUnit.gameObject.SetActive(true);
+            /*var playerMonster = _playerParty.GetHealthyMonster();
             _playerUnit.Setup(playerMonster);
-            yield return _dialogBox.TypeDialog($@"Go {playerMonster.Base.Name}.");
+            */
+            _playerUnit.Setup(_playerParty.Monsters[_currentMember]);
+            _playerUnit2.Setup2(_playerParty.Monsters[_currentMember + 1]);
+            _playerUnit3.Setup2(_playerParty.Monsters[_currentMember + 2]); 
+            //yield return _dialogBox.TypeDialog($@"Go {playerMonster.Base.Name}.");
 
             _playerUnit.Show();
+            _playerUnit2.Show();
+            _playerUnit3.Show();
             _ennemyUnit.Show();
             _dialogBox.SetMoveNames(_playerUnit.Monster.Moves);
 
@@ -190,7 +195,6 @@ public class BattleSystem : MonoBehaviour
         target = _playerUnit;
         var move = _ennemyUnit.Monster.GetRandomMove();
         int random = _ennemyUnit.Monster.GetRandomEnnemi();
-        Debug.Log("Random "+random);
         if (random == 0)
         {
             if (_playerUnit.Monster.HP > 0)

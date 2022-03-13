@@ -11,6 +11,8 @@ public class DialogManager : MonoBehaviour
     [SerializeField] int _lettersPerSecond;
 
     Dialog _dialog;
+    Action _onDialogueFinished;
+
     int _currentLine = 0;
 
     bool _isTyping;
@@ -33,6 +35,8 @@ public class DialogManager : MonoBehaviour
 
         _dialog = dialog;
 
+        _onDialogueFinished = onFinished;
+
         _dialogBox.SetActive(true);
         StartCoroutine(TypeDialog(dialog.Lines[0]));
     }
@@ -49,6 +53,7 @@ public class DialogManager : MonoBehaviour
             {
                 _currentLine = 0;
                 _dialogBox.SetActive(false);
+                _onDialogueFinished?.Invoke();
                 OnCloseDialog?.Invoke();
             }
 

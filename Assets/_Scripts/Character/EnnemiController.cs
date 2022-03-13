@@ -26,19 +26,22 @@ public class EnnemiController : MonoBehaviour, Interactable
     {
         if (!_battleLost)
         {
-            StartCoroutine(DialogManager.Instance.ShowDialog(_dialog));
-            StartCoroutine(StartBattle());
+            StartCoroutine(DialogManager.Instance.ShowDialog(_dialog, () =>
+
+            StartCoroutine(StartBattle())
+
+            ));
         }
         else
         {
-            StartCoroutine(DialogManager.Instance.ShowDialog(_dialogAfterBattle));
+            StartCoroutine(DialogManager.Instance.ShowDialog(_dialogAfterBattle)); ;
 
         }
     }
 
     IEnumerator StartBattle()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0f);
         _dialogManager._dialogBox.SetActive(false);
         GameController.Instance.StartEnnemiBattle(this);
 
@@ -63,15 +66,14 @@ public class EnnemiController : MonoBehaviour, Interactable
         transform.position = pos;
         _ennemi.enabled = true;
 
-        
 
-        StartCoroutine(StartBattle());
+
         /*     ça marchait mais ça marche plus
-             StartCoroutine(DialogManager.Instance.ShowDialog(_dialog, ()=>
+             */
+        StartCoroutine(DialogManager.Instance.ShowDialog(_dialog, () =>
               {
-                  Debug.Log("FIGHT");
-
-              }));*/
+                  StartCoroutine(StartBattle());
+              }));
 
     }
 

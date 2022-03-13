@@ -11,9 +11,6 @@ public class GameController : MonoBehaviour
     [SerializeField] BattleSystem _battleSystem;
     [SerializeField] Camera _worldCamera;
 
-
-
-
     GameState _state;
 
     public static GameController Instance { get; private set; }
@@ -25,7 +22,6 @@ public class GameController : MonoBehaviour
     {
         _playerController.OnEncountered += StartBattle;
         _battleSystem.OnBattleOver += EndBattle;
-
 
         _playerController.OnEnterEnnemisView += (Collider2D ennemiCollider) =>
         {
@@ -58,7 +54,6 @@ public class GameController : MonoBehaviour
         var playerParty = _playerController.GetComponent<MonsterParty>();
         var wildMonster = FindObjectOfType<MapArea>().GetComponent<MapArea>().GetRandomWildMonster();
 
-        Debug.Log("battle start ");
 
         _battleSystem.StartBattle(playerParty, wildMonster);
 
@@ -86,7 +81,6 @@ public class GameController : MonoBehaviour
             _ennemi = null;
             _battleSystem._isEnnemiBattle = false;
 
-            Debug.Log("battle end");
         }
         _state = GameState.FreeRoam;
         _battleSystem.gameObject.SetActive(false);

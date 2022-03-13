@@ -113,8 +113,8 @@ public class Monster
 
     public int GetRandomEnnemi()
     {
-        int r = Random.Range(0, 3);
-        return r;
+        int random = Random.Range(0, 3);
+        return random;
     }
 }
 
