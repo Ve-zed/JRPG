@@ -241,6 +241,7 @@ MonoBehaviour:
   _exclamation: {fileID: 8429885588920985569}
   _fov: {fileID: 8429885590372178703}
   _dialogManager: {fileID: 0}
+  collider2D: {fileID: 8429885589739097550}
 --- !u!114 &2046994057
 MonoBehaviour:
   m_ObjectHideFlags: 0

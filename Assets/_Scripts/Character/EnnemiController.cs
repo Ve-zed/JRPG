@@ -14,6 +14,8 @@ public class EnnemiController : MonoBehaviour, Interactable
     [SerializeField] GameObject _fov;
     [SerializeField] DialogManager _dialogManager;
 
+    public BoxCollider2D collider2D;
+
     bool _battleLost = false;
 
     public void Interact()
@@ -41,6 +43,7 @@ public class EnnemiController : MonoBehaviour, Interactable
     {
         _battleLost = true;
         _fov.SetActive(false);
+        collider2D.enabled = true;
     }
 
     public IEnumerator TriggerEnnemiBattle(PlayerController player)
