@@ -8,20 +8,14 @@ public class EnnemiController : MonoBehaviour, Interactable
     [SerializeField] string _name;
     [SerializeField] Sprite _sprite;
     [SerializeField] SpriteRenderer _ennemi;
-
     [SerializeField] Dialog _dialog;
     [SerializeField] Dialog _dialogAfterBattle;
     [SerializeField] GameObject _exclamation;
     [SerializeField] GameObject _fov;
-
     [SerializeField] DialogManager _dialogManager;
 
     bool _battleLost = false;
 
-    private void Awake()
-    {
-
-    }
     public void Interact()
     {
         if (!_battleLost)
@@ -33,24 +27,19 @@ public class EnnemiController : MonoBehaviour, Interactable
             ));
         }
         else
-        {
             StartCoroutine(DialogManager.Instance.ShowDialog(_dialogAfterBattle)); ;
-
-        }
     }
 
     IEnumerator StartBattle()
     {
         yield return new WaitForSeconds(0f);
-        _dialogManager._dialogBox.SetActive(false);
+        _dialogManager.dialogBox.SetActive(false);
         GameController.Instance.StartEnnemiBattle(this);
-
     }
 
     public void BattleLost()
     {
         _battleLost = true;
-
         _fov.SetActive(false);
     }
 
@@ -60,21 +49,15 @@ public class EnnemiController : MonoBehaviour, Interactable
         yield return new WaitForSeconds(0.5f);
         _exclamation.SetActive(false);
 
-
         var pos = player.transform.position;
         pos.y = player.transform.position.y + 1;
         transform.position = pos;
         _ennemi.enabled = true;
 
-
-
-        /*     ça marchait mais ça marche plus
-             */
         StartCoroutine(DialogManager.Instance.ShowDialog(_dialog, () =>
               {
                   StartCoroutine(StartBattle());
               }));
-
     }
 
     public Sprite Sprite { get => _sprite; }

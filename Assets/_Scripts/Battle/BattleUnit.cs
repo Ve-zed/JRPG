@@ -11,15 +11,12 @@ public class BattleUnit : MonoBehaviour
     [SerializeField] BattleHud _hud;
 
 
-
-
-    public bool IsPlayerUnit { get { return isPlayerUnit; } }
-    public BattleHud Hud { get { return _hud; } }
-
     private Image _image;
     Vector3 _originalPos;
     [SerializeField] Color _originalColor;
 
+    public bool IsPlayerUnit { get { return isPlayerUnit; } }
+    public BattleHud Hud { get { return _hud; } }
 
     public Monster Monster { get; set; }
 

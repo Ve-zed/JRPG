@@ -9,17 +9,13 @@ public class BattleDialogBox : MonoBehaviour
     [SerializeField] int _lettersPerSecond;
     [SerializeField] Color _highlightedColor;
 
-
-
     [SerializeField] Text _dialogText;
-
     [SerializeField] GameObject _actionSelector;
     [SerializeField] GameObject _moveSelector;
     [SerializeField] GameObject _moveDetails;
 
     [SerializeField] List<Text> _actionTexts;
     [SerializeField] List<Text> _moveTexts;
-
 
     [SerializeField] Text _ppText;
     [SerializeField] Text _typeText;

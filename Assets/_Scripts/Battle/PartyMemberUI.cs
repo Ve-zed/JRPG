@@ -12,7 +12,7 @@ public class PartyMemberUI : MonoBehaviour
 
     [SerializeField] Color _highlightedColor;
 
-    Monster _monster;
+    private Monster _monster;
 
     public void SetData(Monster monster)
     {

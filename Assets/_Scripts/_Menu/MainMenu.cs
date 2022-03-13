@@ -5,17 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    public GameObject Accueil;
-    public GameObject Parameter;
-    public GameObject Controls;
-    public GameObject Credits;
+    public GameObject accueil;
+    public GameObject parameter;
+    public GameObject controls;
+    public GameObject credits;
 
     private void Awake()
     {
-        Accueil.SetActive(true);
-        Parameter.SetActive(false);
-        Controls.SetActive(false);
-        Credits.SetActive(false);
+        accueil.SetActive(true);
+        parameter.SetActive(false);
+        controls.SetActive(false);
+        credits.SetActive(false);
     }
     public void OnClickPlay()
     {
@@ -23,31 +23,31 @@ public class MainMenu : MonoBehaviour
     }
     public void OnClickParameter()
     {
-        Accueil.SetActive(false);
-        Parameter.SetActive(true);
+        accueil.SetActive(false);
+        parameter.SetActive(true);
     }
     public void OnClickCredits()
     {
-        Accueil.SetActive(false);
-        Credits.SetActive(true);
+        accueil.SetActive(false);
+        credits.SetActive(true);
     }
     public void OnClickControls()
     {
-        Controls.SetActive(true);
-        Parameter.SetActive(false);
+        controls.SetActive(true);
+        parameter.SetActive(false);
     }
     public void OnClickReturn()
     {
-        if (Controls.activeInHierarchy == true)
+        if (controls.activeInHierarchy == true)
         {
-            Controls.SetActive(!Controls);
-            Parameter.SetActive(true);
+            controls.SetActive(!controls);
+            parameter.SetActive(true);
         }
         else
         {
-            Accueil.SetActive(true);
-            Credits.SetActive(false);
-            Parameter.SetActive(false);
+            accueil.SetActive(true);
+            credits.SetActive(false);
+            parameter.SetActive(false);
         }
     }
     public void OnClickLeave()

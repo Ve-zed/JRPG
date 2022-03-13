@@ -12,8 +12,8 @@ public class MonstersBase : ScriptableObject
     public Sprite BackSprite;
 
 
-    public MonsterType Type1;
-    public MonsterType Type2;
+    public MonsterType type1;
+    public MonsterType type2;
 
 
     //Base stats

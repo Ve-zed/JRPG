@@ -7,22 +7,18 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] string _name;
     [SerializeField] Sprite _sprite;
+    
     public float moveSpeed;
     public LayerMask solidObjectsLayer;
     public LayerMask interactableLayer;
     public LayerMask grassLayer;
     public LayerMask fovLayer;
-
-
-    public event Action OnEncountered;
-    public event Action<Collider2D> OnEnterEnnemisView;
-
-
+    public event Action onEncountered;
+    public event Action<Collider2D> onEnterEnnemisView;
     public Animator animator;
 
     private bool _isMoving;
     private Vector2 _input;
-
 
     public void HandleUpdate()
     {
@@ -99,7 +95,7 @@ public class PlayerController : MonoBehaviour
         {
             if (UnityEngine.Random.Range(1, 101) <= 10)
             {
-                OnEncountered();
+                onEncountered();
                 animator.SetBool("isMoving", false);
             }
         }
@@ -111,7 +107,7 @@ public class PlayerController : MonoBehaviour
         if (collider != null)
         {
             animator.SetBool("isMoving", false);
-            OnEnterEnnemisView?.Invoke(collider);
+            onEnterEnnemisView?.Invoke(collider);
             animator.SetFloat("moveY", 1);
             animator.SetFloat("moveX", 0);
         }

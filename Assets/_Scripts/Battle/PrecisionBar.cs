@@ -3,26 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class test : MonoBehaviour
+public class PrecisionBar : MonoBehaviour
 {
+    public enum fillAmount { Zero, Uno, Default }
+    
     private const int _rapportDistMove = 10;
     private const float _bottomOfTheScreen = 4.2f;
-    [SerializeField] private float _moveSpeed;
+    [SerializeField] float _moveSpeed;
 
-    public Image Progress;
-    public SpriteRenderer Barre;
+    public Image progress;
+    public SpriteRenderer barre;
 
-
-    public enum fillAmount { Zero, Uno, Default }
     private fillAmount _state;
     private Vector2 _targetPos;
     private Vector2 _input;
 
     private void Start()
     {
-        Progress.fillAmount = 0;
+        progress.fillAmount = 0;
         Uno();
-        _targetPos = Barre.transform.position;
+        _targetPos = barre.transform.position;
     }
     void Update()
     {
@@ -54,9 +54,9 @@ public class test : MonoBehaviour
     public void Zero()
     {
         _state = fillAmount.Zero;
-        Progress.fillAmount -= Time.deltaTime * _moveSpeed;
-        Barre.transform.position = Progress.transform.position;
-        if (Progress.fillAmount <= 0)
+        progress.fillAmount -= Time.deltaTime * _moveSpeed;
+        barre.transform.position = progress.transform.position;
+        if (progress.fillAmount <= 0)
         {
             Uno();
         }
@@ -65,8 +65,8 @@ public class test : MonoBehaviour
     public void Uno()
     {
         _state = fillAmount.Uno;
-        Progress.fillAmount += Time.deltaTime * _moveSpeed;
-        if (Progress.fillAmount >= 1)
+        progress.fillAmount += Time.deltaTime * _moveSpeed;
+        if (progress.fillAmount >= 1)
         {
             Zero();
         }
@@ -83,10 +83,10 @@ public class test : MonoBehaviour
     IEnumerator Move(Vector3 targetPos)
     {
 
-        Barre.transform.position = Vector3.MoveTowards(Barre.transform.position, targetPos, _moveSpeed * Time.deltaTime);
+        barre.transform.position = Vector3.MoveTowards(barre.transform.position, targetPos, _moveSpeed * Time.deltaTime);
         yield return null;
 
-        Barre.transform.position = targetPos;
+        barre.transform.position = targetPos;
     }
 
 
@@ -94,20 +94,20 @@ public class test : MonoBehaviour
     public void OnClick()
     {
         _state = fillAmount.Default;
-        Debug.Log(Progress.fillAmount);
-        if (Progress.fillAmount <= 0.2f || Progress.fillAmount >= 0.8f)
+        Debug.Log(progress.fillAmount);
+        if (progress.fillAmount <= 0.2f || progress.fillAmount >= 0.8f)
         {
-            Barre.color = Color.red;
+            barre.color = Color.red;
             Debug.Log("entre 0 et 0.2 ou entre 0.8 et 1");
         }
-        else if (Progress.fillAmount > 0.2f && Progress.fillAmount <= 0.45f || Progress.fillAmount > 0.55f && Progress.fillAmount <= 0.8f)
+        else if (progress.fillAmount > 0.2f && progress.fillAmount <= 0.45f || progress.fillAmount > 0.55f && progress.fillAmount <= 0.8f)
         {
-            Barre.color = Color.yellow;
+            barre.color = Color.yellow;
             Debug.Log("entre 0.2 et 0.45 ou entre 0.55 et 0.8");
         }
-        else if (Progress.fillAmount > 0.45f && Progress.fillAmount <= 0.55f)
+        else if (progress.fillAmount > 0.45f && progress.fillAmount <= 0.55f)
         {
-            Barre.color = Color.green;
+            barre.color = Color.green;
             Debug.Log("entre 0.45 et 0.55");
         }
     }

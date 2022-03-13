@@ -11,7 +11,7 @@ public class GameController : MonoBehaviour
     [SerializeField] BattleSystem _battleSystem;
     [SerializeField] Camera _worldCamera;
 
-    GameState _state;
+    private GameState _state;
 
     public static GameController Instance { get; private set; }
     private void Awake()
@@ -20,10 +20,10 @@ public class GameController : MonoBehaviour
     }
     private void Start()
     {
-        _playerController.OnEncountered += StartBattle;
-        _battleSystem.OnBattleOver += EndBattle;
+        _playerController.onEncountered += StartBattle;
+        _battleSystem.onBattleOver += EndBattle;
 
-        _playerController.OnEnterEnnemisView += (Collider2D ennemiCollider) =>
+        _playerController.onEnterEnnemisView += (Collider2D ennemiCollider) =>
         {
             var ennemi = ennemiCollider.GetComponentInParent<EnnemiController>();
             if(ennemi != null)
@@ -33,11 +33,11 @@ public class GameController : MonoBehaviour
             }
         };
 
-        DialogManager.Instance.OnShowDialog += () =>
+        DialogManager.Instance.onShowDialog += () =>
         {
             _state = GameState.Dialog;
         };
-        DialogManager.Instance.OnCloseDialog += () =>
+        DialogManager.Instance.onCloseDialog += () =>
         {
             if (_state == GameState.Dialog)
                 _state = GameState.FreeRoam;
@@ -79,7 +79,7 @@ public class GameController : MonoBehaviour
         {
             _ennemi.BattleLost();
             _ennemi = null;
-            _battleSystem._isEnnemiBattle = false;
+            _battleSystem.isEnnemiBattle = false;
 
         }
         _state = GameState.FreeRoam;

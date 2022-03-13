@@ -20,7 +20,7 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] Image _ennemiImage;
 
 
-    public event Action<bool> OnBattleOver;
+    public event Action<bool> onBattleOver;
 
     private BattleState _state;
 
@@ -28,14 +28,14 @@ public class BattleSystem : MonoBehaviour
     private int _currentMove;
     private int _currentMember = 0;
 
-    MonsterParty _playerParty;
-    MonsterParty _ennemiParty;
-    Monster _wildMonster;
+    private MonsterParty _playerParty;
+    private MonsterParty _ennemiParty;
+    private Monster _wildMonster;
 
-    public bool _isEnnemiBattle = false;
+    public bool isEnnemiBattle = false;
 
-    PlayerController _player;
-    EnnemiController _ennemi;
+    private PlayerController _player;
+    private EnnemiController _ennemi;
     public void StartBattle(MonsterParty playerParty, Monster wildMonster)
     {
         this._playerParty = playerParty;
@@ -47,7 +47,7 @@ public class BattleSystem : MonoBehaviour
         this._playerParty = playerParty;
         this._ennemiParty = ennemiParty;
 
-        _isEnnemiBattle = true;
+        isEnnemiBattle = true;
         _player = playerParty.GetComponent<PlayerController>();
         _ennemi = ennemiParty.GetComponent<EnnemiController>();
         StartCoroutine(SetupBattle());
@@ -58,7 +58,7 @@ public class BattleSystem : MonoBehaviour
         _playerUnit2.Clear();
         _playerUnit3.Clear();
         _ennemyUnit.Clear();
-        if (!_isEnnemiBattle)
+        if (!isEnnemiBattle)
         {
             //Wild ennemi
             _playerUnit.Setup(_playerParty.Monsters[_currentMember]);
@@ -114,7 +114,7 @@ public class BattleSystem : MonoBehaviour
     void BattleOver(bool won)
     {
         _state = BattleState.BattleOver;
-        OnBattleOver(won);
+        onBattleOver(won);
     }
 
     private void ActionSelection()
@@ -280,7 +280,7 @@ public class BattleSystem : MonoBehaviour
         }
         else
         {
-            if (!_isEnnemiBattle)
+            if (!isEnnemiBattle)
             {
                 BattleOver(true);
             }
@@ -498,7 +498,7 @@ public class BattleSystem : MonoBehaviour
     {
         _state = BattleState.Busy;
 
-        if (_isEnnemiBattle)
+        if (isEnnemiBattle)
         {
             yield return _dialogBox.TypeDialog("You can run from ennemi battle");
             _state = BattleState.ActionSelection;

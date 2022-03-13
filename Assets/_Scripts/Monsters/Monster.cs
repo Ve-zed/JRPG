@@ -75,7 +75,7 @@ public class Monster
         if (Random.value * 100f <= 6.25f)
             critical = 2f;
 
-        float type = TypeChart.GetEffectiveness(move.Base.Type, this.Base.Type1) * TypeChart.GetEffectiveness(move.Base.Type, this.Base.Type2);
+        float type = TypeChart.GetEffectiveness(move.Base.Type, this.Base.type1) * TypeChart.GetEffectiveness(move.Base.Type, this.Base.type2);
 
         var damageDetails = new DamageDetails()
         {

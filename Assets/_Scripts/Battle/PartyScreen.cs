@@ -7,9 +7,9 @@ public class PartyScreen : MonoBehaviour
 {
     [SerializeField] Text _messageText;
 
-    PartyMemberUI[] _memberSlots;
+    private PartyMemberUI[] _memberSlots;
+    private List<Monster> _monsters;
 
-    List<Monster> _monsters;
     public void Init()
     {
         _memberSlots = GetComponentsInChildren<PartyMemberUI>(true);

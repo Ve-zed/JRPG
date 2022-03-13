@@ -6,21 +6,19 @@ using UnityEngine.UI;
 
 public class DialogManager : MonoBehaviour
 {
-    public GameObject _dialogBox;
+    public GameObject dialogBox;
+    public event Action onShowDialog;
+    public event Action onCloseDialog;
+
     [SerializeField] Text _dialogText;
     [SerializeField] int _lettersPerSecond;
 
-    Dialog _dialog;
-    Action _onDialogueFinished;
-
-    int _currentLine = 0;
-
-    bool _isTyping;
-    public event Action OnShowDialog;
-    public event Action OnCloseDialog;
+    private Dialog _dialog;
+    private Action _onDialogueFinished;
+    private int _currentLine = 0;
+    private bool _isTyping;
 
     public static DialogManager Instance { get; private set; }
-
 
     private void Awake()
     {
@@ -31,13 +29,13 @@ public class DialogManager : MonoBehaviour
     public IEnumerator ShowDialog(Dialog dialog, Action onFinished = null)
     {
         yield return new WaitForEndOfFrame();
-        OnShowDialog?.Invoke();
+        onShowDialog?.Invoke();
 
         _dialog = dialog;
 
         _onDialogueFinished = onFinished;
 
-        _dialogBox.SetActive(true);
+        dialogBox.SetActive(true);
         StartCoroutine(TypeDialog(dialog.Lines[0]));
     }
     public void HandleUpdate()
@@ -52,9 +50,9 @@ public class DialogManager : MonoBehaviour
             else
             {
                 _currentLine = 0;
-                _dialogBox.SetActive(false);
+                dialogBox.SetActive(false);
                 _onDialogueFinished?.Invoke();
-                OnCloseDialog?.Invoke();
+                onCloseDialog?.Invoke();
             }
 
         }
