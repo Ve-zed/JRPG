@@ -7,13 +7,13 @@ using DG.Tweening;
 public class BattleUnit : MonoBehaviour
 {
 
-    [SerializeField] bool isPlayerUnit;
+    public bool isPlayerUnit;
     [SerializeField] BattleHud _hud;
 
 
-    private Image _image;
+    public Image _image;
     Vector3 _originalPos;
-    [SerializeField] Color _originalColor;
+    public Color originalColor;
 
     public bool IsPlayerUnit { get { return isPlayerUnit; } }
     public BattleHud Hud { get { return _hud; } }
@@ -45,23 +45,38 @@ public class BattleUnit : MonoBehaviour
         _hud.SetData(monster);
 
 
-        _image.color = _originalColor;
+        _image.color = originalColor;
         PlayEnterAnimation();
 
-    }    
+    }
     public void Setup2(Monster monster)
     {
         Monster = monster;
 
         Monster.HP = Monster.MaxHp;
-       
-            _image.sprite = Monster.Base.BackSprite;
-     
+
+        _image.sprite = Monster.Base.BackSprite;
+
 
 
         _hud.SetData(monster);
 
-        _image.color = _originalColor;
+        _image.color = originalColor;
+        PlayEnterAnimation();
+
+    }
+    public void Setup3(Monster monster)
+    {
+        Monster = monster;
+
+
+        _image.sprite = Monster.Base.FrontSprite;
+
+
+
+        _hud.SetData(monster);
+
+        _image.color = originalColor;
         PlayEnterAnimation();
 
     }
@@ -105,7 +120,7 @@ public class BattleUnit : MonoBehaviour
         var sequance = DOTween.Sequence();
 
         sequance.Append(_image.DOColor(Color.red, 0.1f));
-        sequance.Append(_image.DOColor(_originalColor, 0.1f));
+        sequance.Append(_image.DOColor(originalColor, 0.1f));
     }
     public void PlayFaintAnimation()
     {
