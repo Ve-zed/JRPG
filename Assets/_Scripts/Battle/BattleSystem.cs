@@ -216,7 +216,6 @@ public class BattleSystem : MonoBehaviour
                 target = _playerUnits[Random.Range(0, _playerParty.Monsters.Count)];
                 if (target.Monster.HP <= 0 && _playerParty.GetHealthyMonster() != null)
                 {
-
                     for (int y = _playerParty.Monsters.Count - 1; y >= 0; y--)
                     {
                         if (_playerUnits[y].Monster.HP > 0)
@@ -226,21 +225,8 @@ public class BattleSystem : MonoBehaviour
                         }
                     }
                 }
-
                 yield return RunMove(_ennemyUnits[i], target, move);
             }
-            /*else
-            {
-                for (int y = 0; y < _ennemiParty.Monsters.Count - 1; y++)
-                {
-                    if (_ennemyUnits[y].Monster.HP <= 0)
-                        _currentPlayer++;
-                    else break;
-                }
-                MoveSelection();
-            }*/
-
-
         }
 
         var playerParty = _playerParty.GetHealthyMonster();
@@ -254,9 +240,6 @@ public class BattleSystem : MonoBehaviour
                 MoveSelection();
             }
         }
-
-
-
     }
 
     IEnumerator RunMove(BattleUnit souceUnit, BattleUnit targetUnit, Move move)
@@ -593,5 +576,4 @@ public class BattleSystem : MonoBehaviour
             }
         }
     }
-
 }
