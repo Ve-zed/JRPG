@@ -143,9 +143,11 @@ public class BattleSystem : MonoBehaviour
         _state = BattleState.MoveSelection;
         //StartCoroutine(_dialogBox.TypeDialog($@"It's {_playerUnits[_currentPlayer].Monster.Base.Name} turn"));
         _dialogBox.SetMoveNames(_playerUnits[_currentPlayer].Monster.Moves);
+        _dialogBox.EnableMoveSelector(true);
         _dialogBox.EnableActionSelector(false);
         _dialogBox.EnableDialogText(false);
-        _dialogBox.EnableMoveSelector(true);
+
+
     }
 
 
@@ -157,30 +159,52 @@ public class BattleSystem : MonoBehaviour
         var move = _playerUnits[_currentPlayer].Monster.Moves[_currentMove];
 
         target = _ennemyUnits[Random.Range(0, _ennemiParty.Monsters.Count)];
+        Debug.Log(target);
         if (target.Monster.HP <= 0 && _ennemiParty.GetHealthyMonster() != null)
         {
-            for (int i = 0; i < _ennemyUnits.Count; i++)
+            
+            for (int i = _ennemiParty.Monsters.Count - 1; i >= 0; i--)
             {
                 if (_ennemyUnits[i].Monster.HP > 0)
+                {
+                    Debug.Log(i);
                     target = _ennemyUnits[i];
+                    break;
+                }
             }
         }
+        Debug.Log(target);
         //HandleEnnemySelection();
         yield return RunMove(_playerUnits[_currentPlayer], target, move);
 
         if (_state == BattleState.PerformMove)
         {
-            if (_currentPlayer + 1 < _playerParty.Monsters.Count)
+            if (_currentPlayer + 1 < _playerParty.Monsters.Count && _playerUnits[_currentPlayer + 1].Monster.HP > 0)
             {
-                if (_playerUnits[_currentPlayer + 1].Monster.HP > 0)
-                {
-                    _currentPlayer++;
-                    MoveSelection();
-                }
+                _currentPlayer++;
+                MoveSelection();
+            }
+            else if (_currentPlayer + 2 < _playerParty.Monsters.Count && _playerUnits[_currentPlayer + 2].Monster.HP > 0)
+            {
+                _currentPlayer += 2;
+                MoveSelection();
             }
             else
                 StartCoroutine(EnemyMove());
         }
+        //{
+        //    if (_currentPlayer + 1 < _playerParty.Monsters.Count && _playerUnits[_currentPlayer + 1].Monster.HP > 0)
+        //    {
+        //        _currentPlayer++;
+        //        MoveSelection();
+        //    }
+        //    else if (_currentPlayer + 2 < _playerParty.Monsters.Count && _playerUnits[_currentPlayer + 2].Monster.HP > 0)
+        //    {
+        //        _currentPlayer += 2;
+        //        MoveSelection();
+        //    }
+        //    
+        //}
 
     }
     BattleUnit target;
@@ -190,36 +214,45 @@ public class BattleSystem : MonoBehaviour
         var move = _ennemyUnits[0].Monster.GetRandomMove();
         target = _playerUnits[Random.Range(0, _playerParty.Monsters.Count)];
 
-        if (target == _playerUnits[0])
+        /*if (target.Monster.HP <= 0 && _playerParty.GetHealthyMonster() != null)
         {
-            if (_playerUnits[0].Monster.HP > 0)
-                target = _playerUnits[0];
-            else if (_playerUnits[1].Monster.HP > 0)
-                target = _playerUnits[1];
-            else
-                target = _playerUnits[2];
-        }
+            for (int i = 0; i < _playerUnits.Count; i++)
+            {
+                if (_playerUnits[i].Monster.HP > 0)
+                    target = _playerUnits[i];
+            }
+        }*/
 
-        else if (target == _playerUnits[1])
-        {
-            if (_playerUnits[1].Monster.HP > 0)
-                target = _playerUnits[1];
-            else if (_playerUnits[2].Monster.HP > 0)
-                target = _playerUnits[2];
-            else
-                target = _playerUnits[0];
+        //if (target == _playerUnits[0])
+        //{
+        //    if (_playerUnits[0].Monster.HP > 0)
+        //        target = _playerUnits[0];
+        //    else if (_playerUnits[1].Monster.HP > 0)
+        //        target = _playerUnits[1];
+        //    else
+        //        target = _playerUnits[2];
+        //}
 
-        }
-        else if (target == _playerUnits[2])
-        {
-            if (_playerUnits[2].Monster.HP > 0)
-                target = _playerUnits[2];
-            else if (_playerUnits[1].Monster.HP > 0)
-                target = _playerUnits[1];
-            else
-                target = _playerUnits[0];
+        //else if (target == _playerUnits[1])
+        //{
+        //    if (_playerUnits[1].Monster.HP > 0)
+        //        target = _playerUnits[1];
+        //    else if (_playerUnits[2].Monster.HP > 0)
+        //        target = _playerUnits[2];
+        //    else
+        //        target = _playerUnits[0];
 
-        }
+        //}
+        //else if (target == _playerUnits[2])
+        //{
+        //    if (_playerUnits[2].Monster.HP > 0)
+        //        target = _playerUnits[2];
+        //    else if (_playerUnits[1].Monster.HP > 0)
+        //        target = _playerUnits[1];
+        //    else
+        //        target = _playerUnits[0];
+
+        //}
         yield return RunMove(_ennemyUnits[0], target, move);
 
         if (_state == BattleState.PerformMove)

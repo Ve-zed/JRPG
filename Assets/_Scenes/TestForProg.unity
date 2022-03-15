@@ -20971,6 +20971,30 @@ PrefabInstance:
       propertyPath: _dialogManager
       value: 
       objectReference: {fileID: 197559271}
+    - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: _monsters.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: _monsters.Array.data[1]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: efd40bbdf0b301741b34a0e2270d95a4, type: 2}
+    - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: _monsters.Array.data[2]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: b298e610f4bc01b4a90f879acf69dc5e, type: 2}
+    - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: _monsters.Array.data[0]._level
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: _monsters.Array.data[1]._level
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: _monsters.Array.data[2]._level
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
 --- !u!1 &1971034006

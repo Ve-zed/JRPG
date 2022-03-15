@@ -26,6 +26,8 @@ public class MonsterParty : MonoBehaviour
     public Monster GetHealthyMonster()
     {
         return _monsters.Where(x => x.HP > 0).FirstOrDefault();
+        //return _monsters.Where(x => x.HP > 0).LastOrDefault();
+        
 
     }
 
