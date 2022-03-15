@@ -2823,6 +2823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
   _hud: {fileID: 950603277}
+  _hpBar: {fileID: 0}
   _image: {fileID: 656085238}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &301676360
@@ -3564,6 +3565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
   _hud: {fileID: 765390443}
+  _hpBar: {fileID: 67128331}
   _image: {fileID: 97076853}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &434031980
@@ -3773,6 +3775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 1
   _hud: {fileID: 137613382}
+  _hpBar: {fileID: 2013338600}
   _image: {fileID: 1656328524}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &475469431
@@ -3979,6 +3982,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
   _hud: {fileID: 542156681}
+  _hpBar: {fileID: 909117166}
   _image: {fileID: 804385353}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &495629032
@@ -5648,6 +5652,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
   _hud: {fileID: 1490251167}
+  _hpBar: {fileID: 850117280}
   _image: {fileID: 722938513}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &698633518
@@ -6975,6 +6980,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
   _hud: {fileID: 162410215}
+  _hpBar: {fileID: 329535116}
   _image: {fileID: 434031982}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &925322107
@@ -9838,6 +9844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 1
   _hud: {fileID: 818049218}
+  _hpBar: {fileID: 1118414628}
   _image: {fileID: 1100886826}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1183157649
@@ -9856,7 +9863,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1183157650
 Transform:
   m_ObjectHideFlags: 0
@@ -10092,6 +10099,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
   _hud: {fileID: 1168108372}
+  _hpBar: {fileID: 92984442}
   _image: {fileID: 481783723}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1223824384
@@ -10185,6 +10193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 1
   _hud: {fileID: 1154538930}
+  _hpBar: {fileID: 0}
   _image: {fileID: 1736894793}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1225409145
@@ -10507,6 +10516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
   _hud: {fileID: 242020862}
+  _hpBar: {fileID: 0}
   _image: {fileID: 945666019}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1289321644
@@ -11805,6 +11815,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
   _hud: {fileID: 165741456}
+  _hpBar: {fileID: 0}
   _image: {fileID: 1715331970}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1591643094
@@ -12131,6 +12142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 1
   _hud: {fileID: 1534929456}
+  _hpBar: {fileID: 1088832430}
   _image: {fileID: 265735910}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1648098048
@@ -21052,6 +21064,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
   _hud: {fileID: 188622775}
+  _hpBar: {fileID: 0}
   _image: {fileID: 1074745347}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1989195872
@@ -21145,6 +21158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
   _hud: {fileID: 171395642}
+  _hpBar: {fileID: 0}
   _image: {fileID: 2002794598}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1990441154
@@ -22464,20 +22478,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 46720ed31e26ee24dbf7a1ec2974c1b3, type: 2}
     - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: _monsters.Array.data[0]._level
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
       propertyPath: _monsters.Array.data[1]._level
-      value: 2
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
       propertyPath: _monsters.Array.data[2]._level
-      value: 6
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
       propertyPath: _monsters.Array.data[3]._level
-      value: 8
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
       propertyPath: _monsters.Array.data[4]._level
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 756939855, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}

@@ -9,6 +9,8 @@ public class BattleUnit : MonoBehaviour
 
     public bool isPlayerUnit;
     [SerializeField] BattleHud _hud;
+    [SerializeField] HPBar _hpBar;
+
 
 
     public Image _image;
@@ -41,45 +43,18 @@ public class BattleUnit : MonoBehaviour
         }
 
         Monster.HP = Monster.MaxHp;
+        
+        //Hud.UpdateHP();
+        _hpBar.SetHP((float)Monster.HP / Monster.MaxHp);
 
-        _hud.SetData(monster);
+        _hud.SetData(Monster);
 
 
         _image.color = originalColor;
         PlayEnterAnimation();
 
     }
-    public void Setup2(Monster monster)
-    {
-        Monster = monster;
 
-        Monster.HP = Monster.MaxHp;
-
-        _image.sprite = Monster.Base.BackSprite;
-
-
-
-        _hud.SetData(monster);
-
-        _image.color = originalColor;
-        PlayEnterAnimation();
-
-    }
-    public void Setup3(Monster monster)
-    {
-        Monster = monster;
-
-
-        _image.sprite = Monster.Base.FrontSprite;
-
-
-
-        _hud.SetData(monster);
-
-        _image.color = originalColor;
-        PlayEnterAnimation();
-
-    }
 
     public void Clear()
     {
