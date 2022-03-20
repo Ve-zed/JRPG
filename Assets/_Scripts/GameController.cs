@@ -94,11 +94,6 @@ public class GameController : MonoBehaviour
         {
             _playerController.HandleUpdate();
         }
-        else if (_state == GameState.Battle)
-        {
-            _battleSystem.HandleUpdate();
-
-        }
         else if (_state == GameState.Dialog)
         {
             DialogManager.Instance.HandleUpdate();

@@ -11,7 +11,15 @@ public class BattleUnit : MonoBehaviour
     [SerializeField] BattleHud _hud;
     [SerializeField] HPBar _hpBar;
 
+    [SerializeField] SeeOrNot _seeOrNot;
+    [SerializeField] BattleSystem _battleSystem;
 
+    [SerializeField] BattleDialogBox _dialogBox;
+
+
+    //[SerializeField] BattleUnit player;
+
+    public bool isAttacking;
 
     public Image _image;
     Vector3 _originalPos;
@@ -43,7 +51,7 @@ public class BattleUnit : MonoBehaviour
         }
 
         Monster.HP = Monster.MaxHp;
-        
+
         //Hud.UpdateHP();
         _hpBar.SetHP((float)Monster.HP / Monster.MaxHp);
 
@@ -103,5 +111,25 @@ public class BattleUnit : MonoBehaviour
         sequance.Append(_image.transform.DOLocalMoveY(_originalPos.y - 150f, 0.5f));
         sequance.Join(_image.DOFade(0f, 0.5f));
     }
+
+    public void OnMouseOver()
+    {
+        if (!isAttacking)
+        {
+            _battleSystem._playerUnit = this;
+            //            _seeOrNot.transform.position = _battleSystem._playerUnit.transform.position;
+            var pos = _battleSystem._playerUnit.transform.position;
+            pos.x += 4.5f;
+            _seeOrNot.transform.position = pos;
+            _battleSystem.MoveSelection();
+            _dialogBox.EnableMoveSelector(true);
+        }
+    }
+    public void OnMouseExit()
+    {
+        StartCoroutine(_seeOrNot.enableOrDisableObject());
+    }
+
+
 
 }
