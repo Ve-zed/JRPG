@@ -2901,7 +2901,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1183157650
 Transform:
   m_ObjectHideFlags: 0
@@ -2934,8 +2934,6 @@ MonoBehaviour:
   - {fileID: 1177021269}
   - {fileID: 542518849}
   - {fileID: 1762517164}
-  _playerUnitsDead: []
-  _playerUnit: {fileID: 0}
   _ennemyUnits:
   - {fileID: 486709407}
   - {fileID: 1367584536}
@@ -2943,6 +2941,7 @@ MonoBehaviour:
   - {fileID: 1977564358}
   - {fileID: 918139906}
   _dialogBox: {fileID: 680742815}
+  _playerUnit: {fileID: 0}
   isEnnemiBattle: 0
 --- !u!1 &1202160348
 GameObject:
@@ -10563,7 +10562,37 @@ CompositeCollider2D:
   m_ColliderPaths:
   - m_Collider: {fileID: 1849217423}
     m_ColliderPaths:
-    - - X: 71250000
+    - - X: 86250000
+        Y: 12500000
+      - X: 86875000
+        Y: 20000000
+      - X: 89375000
+        Y: 27500000
+      - X: 89375000
+        Y: 36875000
+      - X: 88125000
+        Y: 40000000
+      - X: 87500000
+        Y: 40000000
+      - X: 88750000
+        Y: 46875000
+      - X: 88750000
+        Y: 48125000
+      - X: 86875000
+        Y: 50000000
+      - X: 86250000
+        Y: 50000000
+      - X: 86250000
+        Y: 50625000
+      - X: 84375000
+        Y: 53125000
+      - X: 81250000
+        Y: 54375000
+      - X: 80000000
+        Y: 54375000
+      - X: 80000000
+        Y: 55000000
+      - X: 71250000
         Y: 59375000
       - X: 70000000
         Y: 59375000
@@ -10625,36 +10654,6 @@ CompositeCollider2D:
         Y: 10625000
       - X: 85000000
         Y: 10625000
-      - X: 86250000
-        Y: 12500000
-      - X: 86875000
-        Y: 20000000
-      - X: 89375000
-        Y: 27500000
-      - X: 89375000
-        Y: 36875000
-      - X: 88125000
-        Y: 40000000
-      - X: 87500000
-        Y: 40000000
-      - X: 88750000
-        Y: 46875000
-      - X: 88750000
-        Y: 48125000
-      - X: 86875000
-        Y: 50000000
-      - X: 86250000
-        Y: 50000000
-      - X: 86250000
-        Y: 50625000
-      - X: 84375000
-        Y: 53125000
-      - X: 81250000
-        Y: 54375000
-      - X: 80000000
-        Y: 54375000
-      - X: 80000000
-        Y: 55000000
   m_CompositePaths:
     m_Paths:
     - - {x: 8.499986, y: 1.0625}
@@ -11101,6 +11100,28 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: c8256d12bd0c3d14692010eb11e43831, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 10aaee3595e1e99498372ed6fd98f50a, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: -5472138256812182249, guid: cb3a56e86b2bb9c4991509ad74cde6ad, type: 3}
@@ -11152,6 +11173,28 @@ Tilemap:
     m_Data: {fileID: 3745290752181560014, guid: cb3a56e86b2bb9c4991509ad74cde6ad, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1829778442542560619, guid: cb3a56e86b2bb9c4991509ad74cde6ad, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
   - m_RefCount: 25
     m_Data:
@@ -11177,8 +11220,8 @@ Tilemap:
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: 0, y: 0, z: 0}
-  m_Size: {x: 9, y: 6, z: 1}
+  m_Origin: {x: -16, y: -4, z: 0}
+  m_Size: {x: 29, y: 11, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:

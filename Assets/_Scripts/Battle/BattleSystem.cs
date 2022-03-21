@@ -11,12 +11,13 @@ public enum BattleState { Start, ActionSelection, MoveSelection, PerformMove, Bu
 public class BattleSystem : MonoBehaviour
 {
     [SerializeField] List<BattleUnit> _playerUnits;
-    [SerializeField] List<BattleUnit> _playerUnitsDead;
-    public BattleUnit _playerUnit;
+    private List<BattleUnit> _playerUnitsDead;
 
     [SerializeField] List<BattleUnit> _ennemyUnits;
 
     [SerializeField] BattleDialogBox _dialogBox;
+
+    public BattleUnit _playerUnit;
 
     public event Action<bool> onBattleOver;
 
@@ -24,7 +25,6 @@ public class BattleSystem : MonoBehaviour
 
     private int _currentPlayer = 0;
     private int _currentEnnemy = 0;
-
     private int _currentAction;
     private int _currentMove;
     private int _currentMember = 0;
