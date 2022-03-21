@@ -5,21 +5,28 @@ using UnityEngine;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
-public enum BattleState { Start, ActionSelection, MoveSelection, PerformMove, Busy, PartyScreen, BattleOver }
+public enum BattleState { Start, ActionSelection, MoveSelection, PerformMove, EnnemiSelection, Busy, PartyScreen, BattleOver }
 
 
 public class BattleSystem : MonoBehaviour
 {
     [SerializeField] List<BattleUnit> _playerUnits;
-    private List<BattleUnit> _playerUnitsDead;
+    public List<BattleUnit> _playerUnitsDead;
+
+    public bool isEnnemiBattle = false;
 
     [SerializeField] List<BattleUnit> _ennemyUnits;
 
     [SerializeField] BattleDialogBox _dialogBox;
 
-    public BattleUnit _playerUnit;
+    public BattleUnit _playerSeletedUnit;
+    public BattleUnit _targetSeletedUnit;
 
     public event Action<bool> onBattleOver;
+
+    public bool canSelected = true;
+    public bool canSelectedEnnemi = false;
+    public bool EnnemiSelected = false;
 
     private BattleState _state;
 
@@ -34,10 +41,12 @@ public class BattleSystem : MonoBehaviour
     private MonsterParty _ennemiParty;
     private Monster _wildMonster;
 
-    public bool isEnnemiBattle = false;
 
     private PlayerController _player;
     private EnnemiController _ennemi;
+
+    BattleUnit target;
+
     public void StartBattle(MonsterParty playerParty, Monster wildMonster)
     {
         this._playerParty = playerParty;
@@ -54,6 +63,17 @@ public class BattleSystem : MonoBehaviour
         _ennemi = ennemiParty.GetComponent<EnnemiController>();
         StartCoroutine(SetupBattle());
     }
+
+    private void ResetBattleState()
+    {
+            canSelected = true;
+            canSelectedEnnemi = false;
+            EnnemiSelected = false;
+            _playerSeletedUnit = null;
+            _targetSeletedUnit = null;
+            _playerUnitsDead.RemoveRange(0, _playerUnitsDead.Count);
+    }
+
     public IEnumerator SetupBattle()
     {
         foreach (var _playerUnit in _playerUnits)
@@ -73,6 +93,8 @@ public class BattleSystem : MonoBehaviour
         }
         else
         {
+            ResetBattleState();
+
             for (int i = 0; i < _playerUnits.Count; i++)
             {
                 _playerUnits[i].Setup(_playerParty.Monsters[_currentMember + i]);
@@ -119,17 +141,57 @@ public class BattleSystem : MonoBehaviour
     public void MoveSelection()
     {
         _state = BattleState.MoveSelection;
-        _dialogBox.SetMoveNames(_playerUnit.Monster.Moves);
+        _dialogBox.SetMoveNames(_playerSeletedUnit.Monster.Moves);
+        Debug.Log(_state);
+    }
+    public void EnnemiSelection()
+    {
+        _state = BattleState.EnnemiSelection;
+        foreach (var item in _playerUnits)
+        {
+            if (item.isSelected)
+            {
+                canSelected = false;
+                break;
+            }
+            else
+                canSelected = true;
+        }
+        canSelectedEnnemi = true;
+        Debug.Log(canSelected);
+        Debug.Log(_state);
+        //if(EnnemiSelected && _targetSeletedUnit.Monster.HP > 0)
+        //    StartCoroutine(PlayerMove());
+
     }
 
+    /*public void PlayerMoveSelection()
+    {
 
-    IEnumerator PlayerMove()
+        _state = BattleState.PerformMove;
+
+    }*/
+
+    public IEnumerator PlayerMove()
     {
         _state = BattleState.PerformMove;
 
-        var move = _playerUnit.Monster.Moves[_currentMove];
+        foreach (var item in _playerUnits)
+        {
+            if (item.isSelected)
+            {
+                canSelected = false;
+                break;
+            }
+            else
+                canSelected = true;
+        }
 
-        target = _ennemyUnits[Random.Range(0, _ennemiParty.Monsters.Count)];
+
+        //if (_targetSeletedUnit.Monster.HP <= 0 && _ennemiParty.GetHealthyMonster() != null)
+
+
+        /*target = _ennemyUnits[Random.Range(0, _ennemiParty.Monsters.Count)];
         if (target.Monster.HP <= 0 && _ennemiParty.GetHealthyMonster() != null)
         {
 
@@ -141,9 +203,20 @@ public class BattleSystem : MonoBehaviour
                     break;
                 }
             }
-        }
-        yield return RunMove(_playerUnit, target, move);
+        }*/
+        var move = _playerSeletedUnit.Monster.Moves[_currentMove];
 
+        yield return RunMove(_playerSeletedUnit, _targetSeletedUnit, move);
+
+        foreach (var item in _playerUnits)
+        {
+            if (item.isSelected)
+            {
+                item.isSelected = false;
+                canSelected = true;
+                break;
+            }
+        }
         int playerCount = 0;
         for (int i = 0; i < _playerUnits.Count; i++)
         {
@@ -154,9 +227,11 @@ public class BattleSystem : MonoBehaviour
                 StartCoroutine(EnemyMove());
                 break;
             }
+            else
+                EnnemiSelected = false;
+
         }
     }
-    BattleUnit target;
     IEnumerator EnemyMove()
     {
         _state = BattleState.PerformMove;
@@ -185,7 +260,7 @@ public class BattleSystem : MonoBehaviour
         var playerParty = _playerParty.GetHealthyMonster();
         if (playerParty != null)
         {
-            
+
             for (int i = 0; i < _playerUnits.Count; i++)
             {
                 _playerUnits[i].isAttacking = false;
@@ -210,7 +285,7 @@ public class BattleSystem : MonoBehaviour
         if (damageDetails.Fainted)
         {
             if (targetUnit.isPlayerUnit)
-                _playerUnitsDead.Add(_playerUnit);
+                _playerUnitsDead.Add(_playerSeletedUnit);
 
             yield return _dialogBox.TypeDialog($"{targetUnit.Monster.Base.Name} Fainted");
             targetUnit.PlayFaintAnimation();
@@ -296,10 +371,11 @@ public class BattleSystem : MonoBehaviour
     }
     public void onClickMove(int move)
     {
-        _playerUnit.isAttacking = true;
+        _playerSeletedUnit.isAttacking = true;
         _dialogBox.EnableMoveSelector(false);
         _currentMove = move;
-        StartCoroutine(PlayerMove());
+        EnnemiSelection();
+        //StartCoroutine(PlayerMove());
     }
 
 }

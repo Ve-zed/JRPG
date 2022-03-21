@@ -10,7 +10,7 @@ public class SeeOrNot : MonoBehaviour
 
     public IEnumerator enableOrDisableObject()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.1f);
         if (!seeTrigger)
             enableOrDisablegameObject.SetActive(false);
     }

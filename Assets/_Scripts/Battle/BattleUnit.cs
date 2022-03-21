@@ -11,15 +11,17 @@ public class BattleUnit : MonoBehaviour
     [SerializeField] BattleHud _hud;
     [SerializeField] HPBar _hpBar;
 
+    private BattleState _state;
+
     [SerializeField] SeeOrNot _seeOrNot;
     [SerializeField] BattleSystem _battleSystem;
 
     [SerializeField] BattleDialogBox _dialogBox;
 
 
-    //[SerializeField] BattleUnit player;
 
     public bool isAttacking;
+    public bool isSelected;
 
     public Image _image;
     Vector3 _originalPos;
@@ -114,20 +116,42 @@ public class BattleUnit : MonoBehaviour
 
     public void OnMouseOver()
     {
-        if (!isAttacking)
+    }
+    public void OnMouseExit()
+    {
+        if (isPlayerUnit)
+            StartCoroutine(_seeOrNot.enableOrDisableObject());
+
+    }
+
+
+    private void OnMouseDown()
+    {
+        //if (_state == BattleState.Start | _state == BattleState.MoveSelection)
+        //{
+        //}
+        Debug.Log(_state);
+        //if (_state == BattleState.EnnemiSelection)
+        if (_battleSystem.canSelectedEnnemi&& !_battleSystem.EnnemiSelected && !isPlayerUnit)
         {
-            _battleSystem._playerUnit = this;
-            //            _seeOrNot.transform.position = _battleSystem._playerUnit.transform.position;
-            var pos = _battleSystem._playerUnit.transform.position;
+            _battleSystem._targetSeletedUnit = this;
+            _battleSystem.canSelectedEnnemi = false;
+            _battleSystem.EnnemiSelected= true;
+            if (_battleSystem._targetSeletedUnit.Monster.HP > 0)
+                StartCoroutine(_battleSystem.PlayerMove());
+        }
+        else if (!isAttacking && _battleSystem.canSelected && isPlayerUnit)
+        {
+            isSelected = true;
+            _battleSystem._playerSeletedUnit = this;
+            var pos = _battleSystem._playerSeletedUnit.transform.position;
             pos.x += 4.5f;
             _seeOrNot.transform.position = pos;
             _battleSystem.MoveSelection();
             _dialogBox.EnableMoveSelector(true);
+            Debug.Log(_state);
         }
-    }
-    public void OnMouseExit()
-    {
-        StartCoroutine(_seeOrNot.enableOrDisableObject());
+
     }
 
 
