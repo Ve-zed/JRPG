@@ -213,7 +213,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &11100526
 Transform:
   m_ObjectHideFlags: 0
@@ -1504,7 +1504,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 316111093}
   _levelText: {fileID: 532314634}
   _hpBar: {fileID: 2013338600}
   _image: {fileID: 1656328524}
@@ -1767,7 +1766,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 1996529570}
   _levelText: {fileID: 1493721325}
   _hpBar: {fileID: 329535116}
   _image: {fileID: 434031982}
@@ -1864,7 +1862,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 315065386}
   _levelText: {fileID: 11765768}
   _hpBar: {fileID: 390193474}
   _image: {fileID: 1715331970}
@@ -1938,7 +1935,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 543411957}
   _levelText: {fileID: 1048060407}
   _hpBar: {fileID: 1715780077}
   _image: {fileID: 2002794598}
@@ -2357,7 +2353,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 1144010370}
   _levelText: {fileID: 503100834}
   _hpBar: {fileID: 1994958387}
   _image: {fileID: 1074745347}
@@ -3222,7 +3217,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 62597317}
   _levelText: {fileID: 738117680}
   _hpBar: {fileID: 646480260}
   _image: {fileID: 945666019}
@@ -3745,6 +3739,10 @@ MonoBehaviour:
   isPlayerUnit: 0
   _hud: {fileID: 950603277}
   _hpBar: {fileID: 0}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 656085238}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &299721095
@@ -4979,6 +4977,10 @@ MonoBehaviour:
   isPlayerUnit: 0
   _hud: {fileID: 765390443}
   _hpBar: {fileID: 67128331}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 97076853}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &434031980
@@ -5189,6 +5191,10 @@ MonoBehaviour:
   isPlayerUnit: 1
   _hud: {fileID: 137613382}
   _hpBar: {fileID: 2013338600}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 1656328524}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &475469431
@@ -5516,6 +5522,10 @@ MonoBehaviour:
   isPlayerUnit: 0
   _hud: {fileID: 542156681}
   _hpBar: {fileID: 909117166}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 804385353}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &495629032
@@ -6271,7 +6281,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 1690320334}
   _levelText: {fileID: 1156744504}
   _hpBar: {fileID: 909117166}
   _image: {fileID: 804385353}
@@ -8324,6 +8333,10 @@ MonoBehaviour:
   isPlayerUnit: 0
   _hud: {fileID: 1490251167}
   _hpBar: {fileID: 850117280}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 722938513}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &698633518
@@ -9014,7 +9027,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 890918814}
   _levelText: {fileID: 2075300553}
   _hpBar: {fileID: 67128331}
   _image: {fileID: 97076853}
@@ -9512,7 +9524,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 1065893346}
   _levelText: {fileID: 1125241638}
   _hpBar: {fileID: 1118414628}
   _image: {fileID: 1100886826}
@@ -10459,6 +10470,10 @@ MonoBehaviour:
   isPlayerUnit: 0
   _hud: {fileID: 162410215}
   _hpBar: {fileID: 329535116}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 434031982}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &925322107
@@ -11103,7 +11118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 1684327539}
   _levelText: {fileID: 1817643443}
   _hpBar: {fileID: 1614704386}
   _image: {fileID: 656085238}
@@ -11620,10 +11634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -14192,7 +14206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 174629329}
   _levelText: {fileID: 1921075611}
   _hpBar: {fileID: 867699205}
   _image: {fileID: 1736894793}
@@ -14447,7 +14460,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 587217219}
   _levelText: {fileID: 1289321646}
   _hpBar: {fileID: 92984442}
   _image: {fileID: 481783723}
@@ -14582,6 +14594,10 @@ MonoBehaviour:
   isPlayerUnit: 1
   _hud: {fileID: 818049218}
   _hpBar: {fileID: 1118414628}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 1100886826}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1183157649
@@ -14633,6 +14649,8 @@ MonoBehaviour:
   - {fileID: 1177021269}
   - {fileID: 1635635165}
   - {fileID: 475469430}
+  _playerUnitsDead: []
+  _playerUnit: {fileID: 0}
   _ennemyUnits:
   - {fileID: 486709407}
   - {fileID: 686730884}
@@ -14640,10 +14658,6 @@ MonoBehaviour:
   - {fileID: 910324267}
   - {fileID: 1207711119}
   _dialogBox: {fileID: 680742815}
-  _partyEnnemiScreen: {fileID: 2039371268}
-  _partyPlayerScreen: {fileID: 0}
-  _playerImage: {fileID: 0}
-  _ennemiImage: {fileID: 0}
   isEnnemiBattle: 0
 --- !u!1 &1202160348
 GameObject:
@@ -14838,6 +14852,10 @@ MonoBehaviour:
   isPlayerUnit: 0
   _hud: {fileID: 1168108372}
   _hpBar: {fileID: 92984442}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 481783723}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1210563929
@@ -15066,6 +15084,10 @@ MonoBehaviour:
   isPlayerUnit: 1
   _hud: {fileID: 1154538930}
   _hpBar: {fileID: 0}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 1736894793}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1225409145
@@ -15672,6 +15694,10 @@ MonoBehaviour:
   isPlayerUnit: 0
   _hud: {fileID: 242020862}
   _hpBar: {fileID: 0}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 945666019}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1272936074
@@ -17636,7 +17662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 522763439}
   _levelText: {fileID: 1103111943}
   _hpBar: {fileID: 850117280}
   _image: {fileID: 722938513}
@@ -17976,7 +18001,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e11753607b66554ea28d0f06d69181c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nameText: {fileID: 2017307398}
   _levelText: {fileID: 1739107105}
   _hpBar: {fileID: 1088832430}
   _image: {fileID: 265735910}
@@ -18111,6 +18135,10 @@ MonoBehaviour:
   isPlayerUnit: 0
   _hud: {fileID: 165741456}
   _hpBar: {fileID: 0}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 1715331970}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1591643094
@@ -18438,6 +18466,10 @@ MonoBehaviour:
   isPlayerUnit: 1
   _hud: {fileID: 1534929456}
   _hpBar: {fileID: 1088832430}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 265735910}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1636555959
@@ -28521,6 +28553,10 @@ MonoBehaviour:
   isPlayerUnit: 0
   _hud: {fileID: 188622775}
   _hpBar: {fileID: 0}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 1074745347}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1981527391
@@ -28748,6 +28784,10 @@ MonoBehaviour:
   isPlayerUnit: 0
   _hud: {fileID: 171395642}
   _hpBar: {fileID: 0}
+  _seeOrNot: {fileID: 0}
+  _battleSystem: {fileID: 0}
+  _dialogBox: {fileID: 0}
+  isAttacking: 0
   _image: {fileID: 2002794598}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &1990441154
