@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static MoveBase;
 using Random = UnityEngine.Random;
 
 public enum BattleState { Start, ActionSelection, MoveSelection, PerformMove, EnnemiSelection, Busy, PartyScreen, BattleOver }
@@ -66,12 +67,12 @@ public class BattleSystem : MonoBehaviour
 
     private void ResetBattleState()
     {
-            canSelected = true;
-            canSelectedEnnemi = false;
-            EnnemiSelected = false;
-            _playerSeletedUnit = null;
-            _targetSeletedUnit = null;
-            _playerUnitsDead.RemoveRange(0, _playerUnitsDead.Count);
+        canSelected = true;
+        canSelectedEnnemi = false;
+        EnnemiSelected = false;
+        _playerSeletedUnit = null;
+        _targetSeletedUnit = null;
+        _playerUnitsDead.RemoveRange(0, _playerUnitsDead.Count);
     }
 
     public IEnumerator SetupBattle()
@@ -123,6 +124,7 @@ public class BattleSystem : MonoBehaviour
     void BattleOver(bool won)
     {
         _state = BattleState.BattleOver;
+        _playerParty.Monsters.ForEach(p => p.OnBattleOver());
         onBattleOver(won);
     }
 
@@ -268,21 +270,31 @@ public class BattleSystem : MonoBehaviour
         }
     }
 
-    IEnumerator RunMove(BattleUnit souceUnit, BattleUnit targetUnit, Move move)
+    IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
     {
         move.PP--;
-        yield return _dialogBox.TypeDialog($"{souceUnit.Monster.Base.Name} used {move.Base.Name}");
+        yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} used {move.Base.Name}");
 
-        souceUnit.PlayAttackAnimation();
+        sourceUnit.PlayAttackAnimation();
         yield return new WaitForSeconds(1f);
 
         targetUnit.PlayHitAnimation();
 
-        var damageDetails = targetUnit.Monster.TakeDamage(move, souceUnit.Monster);
-        yield return targetUnit.Hud.UpdateHP();
-        yield return ShowDamageDetails(damageDetails);
+        if (move.Base.Category == MoveCategory.Status)
+        {
+            yield return RunMoveEffects(move, sourceUnit.Monster, targetUnit.Monster);
+        }
+        else
+        {
 
-        if (damageDetails.Fainted)
+            var damageDetails = targetUnit.Monster.TakeDamage(move, sourceUnit.Monster);
+            yield return targetUnit.Hud.UpdateHP();
+            yield return ShowDamageDetails(damageDetails);
+        }
+
+
+
+        if (targetUnit.Monster.HP <= 0)
         {
             if (targetUnit.isPlayerUnit)
                 _playerUnitsDead.Add(_playerSeletedUnit);
@@ -296,7 +308,48 @@ public class BattleSystem : MonoBehaviour
 
             CheckForBattleOver(targetUnit);
         }
+        sourceUnit.Monster.OnAfterTurn();
+        yield return sourceUnit.Hud.UpdateHP();
+        if (sourceUnit.Monster.HP <= 0)
+        {
+            if (sourceUnit.isPlayerUnit)
+                _playerUnitsDead.Add(_playerSeletedUnit);
+
+            yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} Fainted");
+            sourceUnit.PlayFaintAnimation();
+
+            var _hudTarget = sourceUnit.GetComponentInChildren<BattleHud>(true);
+            _hudTarget.gameObject.SetActive(false);
+            yield return new WaitForSeconds(2f);
+
+            CheckForBattleOver(sourceUnit);
+        }
     }
+
+    IEnumerator RunMoveEffects(Move move, Monster source, Monster target)
+    {
+        var effects = move.Base.Effects;
+
+        //Boost
+        if (effects.Boosts != null)
+        {
+            if (move.Base.Target == MoveTarget.Self)
+                source.ApplyBoosts(effects.Boosts);
+            else
+                target.ApplyBoosts(effects.Boosts);
+        }
+        //Status
+        if (effects.Status != ConditionID.none)
+        {
+            target.SetStatus(effects.Status);
+        }
+
+
+        yield return new WaitForSeconds(0.1f);
+    }
+
+
+
     void CheckForBattleOver(BattleUnit faintedUnit)
     {
         if (faintedUnit.IsPlayerUnit)

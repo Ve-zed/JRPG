@@ -14,7 +14,11 @@ public class MoveBase : ScriptableObject
     [SerializeField] MonsterType _type;
     [SerializeField] int _power;
     [SerializeField] int _accuary;
-    [SerializeField] int _pp; //number of times a move can be performed
+    [SerializeField] int _pp; 
+    [SerializeField] MoveCategory _category; 
+    [SerializeField] MoveEffects _effects; 
+    [SerializeField] MoveTarget _target; 
+
 
     public string Name
     {
@@ -40,21 +44,40 @@ public class MoveBase : ScriptableObject
     {
         get { return _pp; }
     }
+    public MoveCategory Category { get { return _category; } }
+    public MoveEffects Effects { get { return _effects; } }
+    public MoveTarget Target{ get { return _target; } }
 
-    public bool IsSpecial
+    
+    //chantier
+    [System.Serializable]
+    public class MoveEffects
     {
-        get
-        {
-            if (_type == MonsterType.Bug || _type == MonsterType.Dragon || _type == MonsterType.Electric || _type == MonsterType.Fighting ||
-                _type == MonsterType.Fire || _type == MonsterType.Flying || _type == MonsterType.Ghost || _type == MonsterType.Grass || _type == MonsterType.Ground ||
-                _type == MonsterType.Ice || _type == MonsterType.Poison || _type == MonsterType.Psychic || _type == MonsterType.Rock || _type == MonsterType.Water)
-            {
-                return true;
-            }
-            else
-                return false;
-        }
+        [SerializeField] List<StatBoost> boosts;
+       [SerializeField] ConditionID _status;
+
+        public List<StatBoost> Boosts { get { return boosts; } }
+
+        public ConditionID Status { get { return _status; } }
+
     }
+
+    [System.Serializable]
+    public class StatBoost
+    {
+        public Stat stat;
+        public int boost;
+    }
+
+    public enum MoveCategory
+    {
+        Physical, Special, Status
+    }
+    public enum MoveTarget
+    {
+        Foe, Self
+    }
+
 
 
 }
