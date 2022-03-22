@@ -8,15 +8,15 @@ public class Monster
 {
     [SerializeField] MonstersBase _base;
     [SerializeField] int _level;
-    public MonstersBase Base{ get {return _base;}}
-    public int Level{get{return _level;}}
+    public MonstersBase Base { get { return _base; } }
+    public int Level { get { return _level; } }
     public int HP { get; set; }
     public List<Move> Moves { get; set; }
     public Dictionary<Stat, int> Stats { get; private set; }
     public Dictionary<Stat, int> StatBoosts { get; private set; }
     public Condition Status { get; private set; }
     public bool HpChanged { get; set; }
-    public int StatusTime{ get; set; }
+    public int StatusTime { get; set; }
 
 
 
@@ -89,7 +89,7 @@ public class Monster
             var stat = statBoost.stat;
             var boost = statBoost.boost;
 
-            StatBoosts[stat] = Mathf.Clamp(StatBoosts[stat]+ boost,-6, 6);
+            StatBoosts[stat] = Mathf.Clamp(StatBoosts[stat] + boost, -6, 6);
 
             Debug.Log($"{stat} has been boosted to {StatBoosts[stat]}");
         }
@@ -143,9 +143,9 @@ public class Monster
         float def = atk * move.Base.Power * ((float)attack / defense) + 2;
         int damage = Mathf.FloorToInt(def * modifiers);
 
-        
+
         UpdateHP(damage);
-        
+
         return damageDetails;
 
 
@@ -166,7 +166,6 @@ public class Monster
         Status?.OnStart?.Invoke(this);
     }
 
-
     public Move GetRandomMove()
     {
         int r = Random.Range(0, Moves.Count);
@@ -178,7 +177,22 @@ public class Monster
         int random = Random.Range(0, 3);
         return random;
     }
-
+    public bool OnBeforeMove()
+    {
+        if (Status?.OnBeforeMove != null)
+        {
+            return Status.OnBeforeMove(this);
+        }
+        return true;
+    }
+    public bool OnFocusTarget()
+    {
+        if (Status?.OnFocusTarget != null)
+        {
+            return Status.OnFocusTarget(this);
+        }
+        return false;
+    }
     public void OnAfterTurn()
     {
         Status?.OnAfterTurn?.Invoke(this);

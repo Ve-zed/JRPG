@@ -18,3 +18,8 @@ MonoBehaviour:
   _power: 0
   _accuary: 0
   _pp: 0
+  _category: 1
+  _effects:
+    boosts: []
+    _status: 0
+  _target: 0

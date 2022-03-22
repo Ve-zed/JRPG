@@ -127,11 +127,7 @@ public class BattleUnit : MonoBehaviour
 
     private void OnMouseDown()
     {
-        //if (_state == BattleState.Start | _state == BattleState.MoveSelection)
-        //{
-        //}
         Debug.Log(_state);
-        //if (_state == BattleState.EnnemiSelection)
         if (_battleSystem.canSelectedEnnemi&& !_battleSystem.EnnemiSelected && !isPlayerUnit)
         {
             _battleSystem._targetSeletedUnit = this;

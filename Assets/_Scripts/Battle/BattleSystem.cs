@@ -199,16 +199,18 @@ public class BattleSystem : MonoBehaviour
 
             for (int i = _ennemiParty.Monsters.Count - 1; i >= 0; i--)
             {
-                if (_ennemyUnits[i].Monster.HP > 0)
-                {
-                    target = _ennemyUnits[i];
-                    break;
-                }
+                yield return RunMove(_playerSeletedUnit, _targetSeletedUnit, move);
+                
             }
         }*/
         var move = _playerSeletedUnit.Monster.Moves[_currentMove];
+        if (move.Base.Target == MoveTarget.AllEnnemi)
+        {
+            yield return RunMoveForAllEnnemis(_playerSeletedUnit, move);
 
-        yield return RunMove(_playerSeletedUnit, _targetSeletedUnit, move);
+        }
+        else
+            yield return RunMove(_playerSeletedUnit, _targetSeletedUnit, move);
 
         foreach (var item in _playerUnits)
         {
@@ -243,15 +245,24 @@ public class BattleSystem : MonoBehaviour
             if (_ennemyUnits[i].Monster.HP > 0)
             {
                 var move = _ennemyUnits[i].Monster.GetRandomMove();
-                target = _playerUnits[Random.Range(0, _playerParty.Monsters.Count)];
-                if (target.Monster.HP <= 0 && _playerParty.GetHealthyMonster() != null)
+                
+                bool provoqued= _ennemyUnits[i].Monster.OnFocusTarget();
+                if (provoqued)
                 {
-                    for (int y = _playerParty.Monsters.Count - 1; y >= 0; y--)
+                    target = _playerUnits[1];
+                }
+                else
+                {
+                    target = _playerUnits[Random.Range(0, _playerParty.Monsters.Count)];
+                    if (target.Monster.HP <= 0 && _playerParty.GetHealthyMonster() != null)
                     {
-                        if (_playerUnits[y].Monster.HP > 0)
+                        for (int y = _playerParty.Monsters.Count - 1; y >= 0; y--)
                         {
-                            target = _playerUnits[y];
-                            break;
+                            if (_playerUnits[y].Monster.HP > 0)
+                            {
+                                target = _playerUnits[y];
+                                break;
+                            }
                         }
                     }
                 }
@@ -269,9 +280,73 @@ public class BattleSystem : MonoBehaviour
             }
         }
     }
+    IEnumerator RunMoveForAllEnnemis(BattleUnit sourceUnit, Move move)
+    {
+        move.PP--;
+        sourceUnit.PlayAttackAnimation();
+        yield return new WaitForSeconds(1f);
+
+        for (int i = 0; i < _ennemiParty.Monsters.Count; i++)
+        {
+            if (_ennemyUnits[i].Monster.HP >= 0)
+            {
+                _ennemyUnits[i].PlayHitAnimation();
+                if (move.Base.Category == MoveCategory.Status)
+                {
+                    StartCoroutine(RunMoveEffects(move, sourceUnit.Monster, _ennemyUnits[i].Monster));
+                }
+                else
+                {
+                    _ennemyUnits[i].Monster.TakeDamage(move, sourceUnit.Monster);
+                    StartCoroutine(_ennemyUnits[i].Hud.UpdateHP());
+                }
+            }
+        }
+        yield return new WaitForSeconds(1.5f);
+        for (int i = 0; i < _ennemiParty.Monsters.Count; i++)
+        {
+            if (_ennemyUnits[i].Monster.HP <= 0)
+            {
+                _ennemyUnits[i].PlayFaintAnimation();
+                Debug.Log("dedMan");
+
+                var _hudTarget = _ennemyUnits[i].GetComponentInChildren<BattleHud>(true);
+                _hudTarget.gameObject.SetActive(false);
+            }
+
+            if (i == _ennemiParty.Monsters.Count - 1)
+            {
+                yield return new WaitForSeconds(1f);
+                CheckForBattleOver(_ennemyUnits[i]);
+            }
+        }
+
+        sourceUnit.Monster.OnAfterTurn();
+        yield return sourceUnit.Hud.UpdateHP();
+        if (sourceUnit.Monster.HP <= 0)
+        {
+            if (sourceUnit.isPlayerUnit)
+                _playerUnitsDead.Add(_playerSeletedUnit);
+
+            yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} Fainted");
+            sourceUnit.PlayFaintAnimation();
+
+            var _hudTarget = sourceUnit.GetComponentInChildren<BattleHud>(true);
+            _hudTarget.gameObject.SetActive(false);
+            yield return new WaitForSeconds(2f);
+
+            CheckForBattleOver(sourceUnit);
+        }
+    }
 
     IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
     {
+        bool canRunMove = sourceUnit.Monster.OnBeforeMove();
+        if (!canRunMove)
+        {
+            yield break;
+        }
+
         move.PP--;
         yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} used {move.Base.Name}");
 
@@ -286,13 +361,10 @@ public class BattleSystem : MonoBehaviour
         }
         else
         {
-
             var damageDetails = targetUnit.Monster.TakeDamage(move, sourceUnit.Monster);
             yield return targetUnit.Hud.UpdateHP();
             yield return ShowDamageDetails(damageDetails);
         }
-
-
 
         if (targetUnit.Monster.HP <= 0)
         {
@@ -341,7 +413,9 @@ public class BattleSystem : MonoBehaviour
         //Status
         if (effects.Status != ConditionID.none)
         {
+            Debug.Log("Poison");
             target.SetStatus(effects.Status);
+
         }
 
 
