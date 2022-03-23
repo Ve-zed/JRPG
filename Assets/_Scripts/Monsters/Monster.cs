@@ -22,8 +22,6 @@ public class Monster
 
     public void Init()
     {
-
-        //Generate moves
         Moves = new List<Move>();
         foreach (var move in Base.LearnableMoves)
         {
@@ -33,7 +31,6 @@ public class Monster
             if (Moves.Count >= 4)
                 break;
         }
-
         CalculateStats();
 
         HP = MaxHp;
@@ -51,7 +48,6 @@ public class Monster
         Stats.Add(Stat.Speed, Mathf.FloorToInt((Base.Speed * Level) / 100f) + 5);
 
         MaxHp = Mathf.FloorToInt((Base.MaxHp * Level) / 100f) + 10;
-
     }
 
     public void ResetStatBoost()
@@ -64,7 +60,6 @@ public class Monster
             {Stat.SpDefense, 0},
             {Stat.Speed, 0},
         };
-
     }
 
 
@@ -73,7 +68,7 @@ public class Monster
         int statVal = Stats[stat];
 
         int boost = StatBoosts[stat];
-        var boostValues = new float[] { 2.0f, 2.5f,3.0f,3.5f, 4.0f, 10000f, 20000f };
+        var boostValues = new float[] { 2.0f, 2.5f,3.0f,3.5f, 15f, 10000f, 20000f };
 
         if (boost >= 0)
             statVal = Mathf.FloorToInt(statVal * boostValues[boost]);
@@ -90,6 +85,7 @@ public class Monster
             var boost = statBoost.boost;
 
             StatBoosts[stat] = Mathf.Clamp(StatBoosts[stat] + boost, -6, 6);
+
         }
     }
 
@@ -141,12 +137,12 @@ public class Monster
         float def = atk * move.Base.Power * ((float)attack / defense) + 2;
         if (defense > 90000)
             def = 0;
+
         int damage = Mathf.FloorToInt(def * modifiers);
 
         UpdateHP(damage);
-
+        Debug.Log(damage);
         return damageDetails;
-
 
     }
     public void CureStatus()

@@ -289,10 +289,22 @@ public class BattleSystem : MonoBehaviour
                 {
                     StartCoroutine(RunMoveEffects(move, sourceUnit.Monster, _ennemyUnits[i].Monster));
                 }
+
                 else
                 {
-                    _ennemyUnits[i].Monster.TakeDamage(move, sourceUnit.Monster);
-                    StartCoroutine(_ennemyUnits[i].Hud.UpdateHP());
+                    if (_targetSeletedUnit == _ennemyUnits[i])
+                    {
+                        sourceUnit.Monster.ApplyBoosts(move.Base.Effects.Boosts);
+                        _ennemyUnits[i].Monster.TakeDamage(move, sourceUnit.Monster);
+                        StartCoroutine(_ennemyUnits[i].Hud.UpdateHP());
+                        sourceUnit.Monster.ResetStatBoost();
+
+                    }
+                    else
+                    {
+                        _ennemyUnits[i].Monster.TakeDamage(move, sourceUnit.Monster);
+                        StartCoroutine(_ennemyUnits[i].Hud.UpdateHP());
+                    }
                 }
             }
         }
@@ -302,8 +314,6 @@ public class BattleSystem : MonoBehaviour
             if (_ennemyUnits[i].Monster.HP <= 0)
             {
                 _ennemyUnits[i].PlayFaintAnimation();
-                Debug.Log("dedMan");
-
                 var _hudTarget = _ennemyUnits[i].GetComponentInChildren<BattleHud>(true);
                 _hudTarget.gameObject.SetActive(false);
             }

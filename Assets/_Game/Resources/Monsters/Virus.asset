@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8de60f0604624814d84552a9468daa73, type: 3}
-  m_Name: Monster
+  m_Name: Virus
   m_EditorClassIdentifier: 
-  _name: 
+  _name: Virus
   _description: 
   FrontSprite: {fileID: 0}
   BackSprite: {fileID: 0}
-  type1: 0
+  type1: 16
   type2: 0
   _maxHp: 0
   _attack: 0
@@ -24,4 +24,6 @@ MonoBehaviour:
   _spAttack: 0
   _spDefense: 0
   _speed: 0
-  _learnableMoves: []
+  _learnableMoves:
+  - _moveBase: {fileID: 11400000, guid: 23afccbaa011eca4e8b1557e88c2c336, type: 2}
+    _level: 0

@@ -107,7 +107,8 @@ public enum MonsterType
     Bug,
     Rock,
     Ghost,
-    Dragon
+    Dragon,
+    Virus
 }
 
 
@@ -116,22 +117,22 @@ public class TypeChart
     static float[][] chart =
     {
 
-        //                     {NOR, FIR, WAT, ELEC, GRASS, ICE, FIGHT, POIS, GROUND, FLY, PSY, BUG, ROCK, GHOST, DRAG}
-        /*NOR*/   new float[]  {1f,   1f, 1f,   1f ,  1f,    1f,  1f,    1f,   1f,    1f,  1f,  1f,  0.5f,  0f,    1f},
-        /*FIR*/   new float[]  {1f, 0.5f, 0.5f, 1f ,  2f,    2f,  1f,    1f,   1f,    1f,  1f,  2f,  0.5f,  1f,   0.5f},
-        /*WAT*/   new float[]  {1f,   2f, 0.5f, 1f ,  0.5f,  1f,  1f,    1f,   2f,    1f,  1f,  1f,   2f,   1f,   0.5f},
-        /*ELEC*/  new float[]  {1f,   1f,  2f, 0.5f , 0.5f,  1f,  1f,    1f,   0f,    2f,  1f,  1f,   1f,   1f,   0.5f},
-        /*GRASS*/ new float[]  {1f, 0.5f,  2f,  1f ,  0.5f,  1f,  1f,   0.5f,  2f,   0.5f, 1f, 0.5f,  2f,   1f,   0.5f},
-        /*ICE*/   new float[]  {1f, 0.5f, 0.5f,  1f , 2f,   0.5f, 1f,    1f,   2f,    2f,  1f,  1f,   1f,   1f,    2f},
-        /*FIGHT*/ new float[]  {2f,   1f,  1f,  1f ,  1f,    2f,  1f,   0.5f,  1f,   0.5f,0.5f,0.5f,  2f,   0f,    1f},
-        /*POIS*/  new float[]  {1f,   1f,  1f,  1f ,  2f,    1f,  1f,   0.5f, 0.5f,   1f,  1f,  1f,  0.5f, 0.5f,   1f},
-        /*GROUND*/new float[]  {1f,   2f,  1f,  2f ,  0.5f,  1f,  1f,    2f,   1f,    0f,  1f, 0.5f,  2f,   1f,    1f},
-        /*FLY*/   new float[]  {1f, 0.5f,  1f, 0.5f , 2f,    1f,  2f,    1f,   1f,    1f,  1f,  2f,  0.5f,  1f,    1f},
-        /*PSY*/   new float[]  {1f,   1f,  1f,  1f ,  1f,    1f,  2f,    2f,   1f,    1f, 0.5f, 1f,   1f,   1f,    1f},
-        /*BUG*/   new float[]  {1f, 0.5f,  1f,  1f ,  2f,    1f, 0.5f,  0.5f,  1f,   0.5f, 2f,  1f,   1f,  0.5f,   1f},
-        /*ROCK*/  new float[]  {1f,   2f,  1f,  1f ,  1f,    2f, 0.5f,   1f,  0.5f,   2f,  1f,  2f,   1f,   1f,    1f},
-        /*GHOST*/ new float[]  {0f,   1f,  1f,  1f ,  1f,    1f,  1f,    1f,   1f,    1f,  2f,  1f,   1f,   2f,    1f},
-        /*DRAG*/  new float[]  {1f,   1f,  1f,  1f ,  1f,    1f,  1f,    1f,   1f,    1f,  1f,  1f,   1f,   1f,    2f}
+        //                     {NOR, FIR, WAT, ELEC, GRASS, ICE, FIGHT, POIS, GROUND, FLY, PSY, BUG, ROCK, GHOST, DRAG, VIRUS}
+        /*NOR*/   new float[]  {1f,   1f, 1f,   1f ,  1f,    1f,  1f,    1f,   1f,    1f,  1f,  1f,  0.5f,  0f,    1f,    2f},
+        /*FIR*/   new float[]  {1f, 0.5f, 0.5f, 1f ,  2f,    2f,  1f,    1f,   1f,    1f,  1f,  2f,  0.5f,  1f,   0.5f,   2f},
+        /*WAT*/   new float[]  {1f,   2f, 0.5f, 1f ,  0.5f,  1f,  1f,    1f,   2f,    1f,  1f,  1f,   2f,   1f,   0.5f,   2f},
+        /*ELEC*/  new float[]  {1f,   1f,  2f, 0.5f , 0.5f,  1f,  1f,    1f,   0f,    2f,  1f,  1f,   1f,   1f,   0.5f,   2f},
+        /*GRASS*/ new float[]  {1f, 0.5f,  2f,  1f ,  0.5f,  1f,  1f,   0.5f,  2f,   0.5f, 1f, 0.5f,  2f,   1f,   0.5f,   2f},
+        /*ICE*/   new float[]  {1f, 0.5f, 0.5f,  1f , 2f,   0.5f, 1f,    1f,   2f,    2f,  1f,  1f,   1f,   1f,    2f,    2f},
+        /*FIGHT*/ new float[]  {2f,   1f,  1f,  1f ,  1f,    2f,  1f,   0.5f,  1f,   0.5f,0.5f,0.5f,  2f,   0f,    1f,    2f},
+        /*POIS*/  new float[]  {1f,   1f,  1f,  1f ,  2f,    1f,  1f,   0.5f, 0.5f,   1f,  1f,  1f,  0.5f, 0.5f,   1f,    2f},
+        /*GROUND*/new float[]  {1f,   2f,  1f,  2f ,  0.5f,  1f,  1f,    2f,   1f,    0f,  1f, 0.5f,  2f,   1f,    1f,    2f},
+        /*FLY*/   new float[]  {1f, 0.5f,  1f, 0.5f , 2f,    1f,  2f,    1f,   1f,    1f,  1f,  2f,  0.5f,  1f,    1f,    2f},
+        /*PSY*/   new float[]  {1f,   1f,  1f,  1f ,  1f,    1f,  2f,    2f,   1f,    1f, 0.5f, 1f,   1f,   1f,    1f,    2f},
+        /*BUG*/   new float[]  {1f, 0.5f,  1f,  1f ,  2f,    1f, 0.5f,  0.5f,  1f,   0.5f, 2f,  1f,   1f,  0.5f,   1f,    2f},
+        /*ROCK*/  new float[]  {1f,   2f,  1f,  1f ,  1f,    2f, 0.5f,   1f,  0.5f,   2f,  1f,  2f,   1f,   1f,    1f,    2f},
+        /*GHOST*/ new float[]  {0f,   1f,  1f,  1f ,  1f,    1f,  1f,    1f,   1f,    1f,  2f,  1f,   1f,   2f,    1f,    2f},
+        /*DRAG*/  new float[]  {1f,   1f,  1f,  1f ,  1f,    1f,  1f,    1f,   1f,    1f,  1f,  1f,   1f,   1f,    2f,    2f}
     };
 
     public static float GetEffectiveness(MonsterType attackType, MonsterType defenseType)
