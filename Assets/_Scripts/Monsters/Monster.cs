@@ -54,7 +54,7 @@ public class Monster
 
     }
 
-    void ResetStatBoost()
+    public void ResetStatBoost()
     {
         StatBoosts = new Dictionary<Stat, int>()
         {
@@ -73,7 +73,7 @@ public class Monster
         int statVal = Stats[stat];
 
         int boost = StatBoosts[stat];
-        var boostValues = new float[] { 1f, 1.5f, 2f, 2.5f, 3f, 3.5f, 4f };
+        var boostValues = new float[] { 2.0f, 2.5f,3.0f,3.5f, 4.0f, 10000f, 20000f };
 
         if (boost >= 0)
             statVal = Mathf.FloorToInt(statVal * boostValues[boost]);
@@ -90,8 +90,6 @@ public class Monster
             var boost = statBoost.boost;
 
             StatBoosts[stat] = Mathf.Clamp(StatBoosts[stat] + boost, -6, 6);
-
-            Debug.Log($"{stat} has been boosted to {StatBoosts[stat]}");
         }
     }
 
@@ -141,8 +139,9 @@ public class Monster
         float modifiers = Random.Range(0.85f, 1f) * type * critical;
         float atk = (2 * attacker.Level + 10) / 250f;
         float def = atk * move.Base.Power * ((float)attack / defense) + 2;
+        if (defense > 90000)
+            def = 0;
         int damage = Mathf.FloorToInt(def * modifiers);
-
 
         UpdateHP(damage);
 

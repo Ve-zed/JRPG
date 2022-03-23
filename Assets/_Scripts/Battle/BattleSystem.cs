@@ -87,38 +87,32 @@ public class BattleSystem : MonoBehaviour
             _ennemyUnit.Clear();
         }
 
-        if (!isEnnemiBattle)
-        {
-            //Wild ennemi
-            yield return _dialogBox.TypeDialog($@"A wild {_ennemyUnits[0].Monster.Base.Name} appeared.");
-        }
-        else
-        {
-            ResetBattleState();
 
-            for (int i = 0; i < _playerUnits.Count; i++)
-            {
-                _playerUnits[i].Setup(_playerParty.Monsters[_currentMember + i]);
-            }
-            for (int i = 0; i < _ennemyUnits.Count; i++)
-            {
-                if (i < _ennemiParty.Monsters.Count)
-                {
-                    _ennemyUnits[i].Setup(_ennemiParty.Monsters[_currentMember + i]);
-                    _ennemyUnits[i].gameObject.SetActive(true);
-                }
-                else
-                    _ennemyUnits[i].gameObject.SetActive(false);
-            }
-            foreach (var _playerUnit in _playerUnits)
-            {
-                _playerUnit.Show();
-            }
-            foreach (var _ennemyUnit in _ennemyUnits)
-            {
-                _ennemyUnit.Show();
-            }
+        ResetBattleState();
+
+        for (int i = 0; i < _playerUnits.Count; i++)
+        {
+            _playerUnits[i].Setup(_playerParty.Monsters[_currentMember + i]);
         }
+        for (int i = 0; i < _ennemyUnits.Count; i++)
+        {
+            if (i < _ennemiParty.Monsters.Count)
+            {
+                _ennemyUnits[i].Setup(_ennemiParty.Monsters[_currentMember + i]);
+                _ennemyUnits[i].gameObject.SetActive(true);
+            }
+            else
+                _ennemyUnits[i].gameObject.SetActive(false);
+        }
+        foreach (var _playerUnit in _playerUnits)
+        {
+            _playerUnit.Show();
+        }
+        foreach (var _ennemyUnit in _ennemyUnits)
+        {
+            _ennemyUnit.Show();
+        }
+        yield return new WaitForSeconds(0.5f);
     }
 
     void BattleOver(bool won)
@@ -245,8 +239,8 @@ public class BattleSystem : MonoBehaviour
             if (_ennemyUnits[i].Monster.HP > 0)
             {
                 var move = _ennemyUnits[i].Monster.GetRandomMove();
-                
-                bool provoqued= _ennemyUnits[i].Monster.OnFocusTarget();
+
+                bool provoqued = _ennemyUnits[i].Monster.OnFocusTarget();
                 if (provoqued)
                 {
                     target = _playerUnits[1];
@@ -402,6 +396,7 @@ public class BattleSystem : MonoBehaviour
     {
         var effects = move.Base.Effects;
 
+
         //Boost
         if (effects.Boosts != null)
         {
@@ -413,8 +408,10 @@ public class BattleSystem : MonoBehaviour
         //Status
         if (effects.Status != ConditionID.none)
         {
-            Debug.Log("Poison");
-            target.SetStatus(effects.Status);
+            if (move.Base.Target == MoveTarget.Self)
+                source.SetStatus(effects.Status);
+            else
+                target.SetStatus(effects.Status);
 
         }
 

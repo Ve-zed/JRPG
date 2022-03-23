@@ -21,7 +21,9 @@ MonoBehaviour:
   _category: 2
   _effects:
     boosts:
+    - stat: 1
+      boost: 0
     - stat: 0
-      boost: -1
+      boost: 0
     _status: 0
   _target: 0

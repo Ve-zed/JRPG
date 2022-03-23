@@ -25,10 +25,10 @@ MonoBehaviour:
   _spDefense: 65
   _speed: 45
   _learnableMoves:
-  - _moveBase: {fileID: 11400000, guid: 23afccbaa011eca4e8b1557e88c2c336, type: 2}
+  - _moveBase: {fileID: 11400000, guid: 27900b0795a6b2f4a896b21ed6f471d0, type: 2}
     _level: 1
   - _moveBase: {fileID: 11400000, guid: 4d90d3b6d41155e4eb7980c48f2dbce4, type: 2}
-    _level: 4
+    _level: 1
   - _moveBase: {fileID: 11400000, guid: 2f6a220411a28e04fa9a589945b4225d, type: 2}
     _level: 7
   - _moveBase: {fileID: 11400000, guid: 0ea19bfc0b3d40c4d80b4be4d0a00d5a, type: 2}

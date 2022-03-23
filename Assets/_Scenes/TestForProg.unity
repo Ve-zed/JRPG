@@ -2385,7 +2385,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1148069053
 Transform:
   m_ObjectHideFlags: 0
@@ -2687,109 +2687,7 @@ CompositeCollider2D:
   m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths:
-  - m_Collider: {fileID: 1148069058}
-    m_ColliderPaths:
-    - - X: 10000000
-        Y: -59375000
-      - X: 10625000
-        Y: -60000000
-      - X: 20000000
-        Y: -60000000
-      - X: 20000000
-        Y: -59375000
-      - X: 20625000
-        Y: -60000000
-      - X: 30000000
-        Y: -60000000
-      - X: 30000000
-        Y: -59375000
-      - X: 30625000
-        Y: -60000000
-      - X: 40000000
-        Y: -60000000
-      - X: 40000000
-        Y: -59375000
-      - X: 40625000
-        Y: -60000000
-      - X: 50000000
-        Y: -60000000
-      - X: 50000000
-        Y: -59375000
-      - X: 50625000
-        Y: -60000000
-      - X: 60000000
-        Y: -60000000
-      - X: 60000000
-        Y: -59375000
-      - X: 60625000
-        Y: -60000000
-      - X: 70000000
-        Y: -60000000
-      - X: 70000000
-        Y: -59375000
-      - X: 70625000
-        Y: -60000000
-      - X: 80000000
-        Y: -60000000
-      - X: 80000000
-        Y: -40000000
-      - X: 0
-        Y: -40000000
-      - X: 0
-        Y: -49375000
-      - X: 625000
-        Y: -50000000
-      - X: 0
-        Y: -50000000
-      - X: 0
-        Y: -59375000
-      - X: 625000
-        Y: -60000000
-      - X: 10000000
-        Y: -60000000
-    - - X: 10000000
-        Y: -50000000
-      - X: 10000000
-        Y: -49375000
-      - X: 10625000
-        Y: -50000000
-    - - X: 20000000
-        Y: -50000000
-      - X: 20000000
-        Y: -49375000
-      - X: 20625000
-        Y: -50000000
-    - - X: 30000000
-        Y: -50000000
-      - X: 30000000
-        Y: -49375000
-      - X: 30625000
-        Y: -50000000
-    - - X: 40000000
-        Y: -50000000
-      - X: 40000000
-        Y: -49375000
-      - X: 40625000
-        Y: -50000000
-    - - X: 50000000
-        Y: -50000000
-      - X: 50000000
-        Y: -49375000
-      - X: 50625000
-        Y: -50000000
-    - - X: 60000000
-        Y: -50000000
-      - X: 60000000
-        Y: -49375000
-      - X: 60625000
-        Y: -50000000
-    - - X: 70000000
-        Y: -50000000
-      - X: 70000000
-        Y: -49375000
-      - X: 70625000
-        Y: -50000000
+  m_ColliderPaths: []
   m_CompositePaths:
     m_Paths:
     - - {x: 0.99997073, y: -6}
@@ -3424,11 +3322,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _monsters:
   - _base: {fileID: 11400000, guid: 46720ed31e26ee24dbf7a1ec2974c1b3, type: 2}
-    _level: 300
+    _level: 1
+  - _base: {fileID: 11400000, guid: 46720ed31e26ee24dbf7a1ec2974c1b3, type: 2}
+    _level: 1
   - _base: {fileID: 11400000, guid: b298e610f4bc01b4a90f879acf69dc5e, type: 2}
-    _level: 500
-  - _base: {fileID: 11400000, guid: efd40bbdf0b301741b34a0e2270d95a4, type: 2}
-    _level: 3
+    _level: 1
 --- !u!50 &1294185979
 Rigidbody2D:
   serializedVersion: 4
@@ -10557,7 +10455,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1849217419}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1591643096}
@@ -11972,8 +11870,12 @@ PrefabInstance:
       objectReference: {fileID: 197559271}
     - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
       propertyPath: _monsters.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: _monsters.Array.data[0]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: efd40bbdf0b301741b34a0e2270d95a4, type: 2}
     - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
       propertyPath: _monsters.Array.data[1]._base
       value: 
@@ -12332,17 +12234,21 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: _monsters.Array.data[0]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: efd40bbdf0b301741b34a0e2270d95a4, type: 2}
+    - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
       propertyPath: _monsters.Array.data[1]._base
       value: 
       objectReference: {fileID: 11400000, guid: efd40bbdf0b301741b34a0e2270d95a4, type: 2}
     - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
       propertyPath: _monsters.Array.data[2]._base
       value: 
-      objectReference: {fileID: 11400000, guid: 46720ed31e26ee24dbf7a1ec2974c1b3, type: 2}
+      objectReference: {fileID: 11400000, guid: efd40bbdf0b301741b34a0e2270d95a4, type: 2}
     - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
       propertyPath: _monsters.Array.data[3]._base
       value: 
-      objectReference: {fileID: 11400000, guid: b298e610f4bc01b4a90f879acf69dc5e, type: 2}
+      objectReference: {fileID: 11400000, guid: efd40bbdf0b301741b34a0e2270d95a4, type: 2}
     - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
       propertyPath: _monsters.Array.data[4]._base
       value: 

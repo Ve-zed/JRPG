@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Poison
   _description: all ennemi are poisoned
-  _type: 8
+  _type: 0
   _power: 0
   _accuary: 100
   _pp: 10

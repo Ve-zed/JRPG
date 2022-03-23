@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Water Pistol !
   _description: 
-  _type: 3
+  _type: 0
   _power: 45
   _accuary: 100
   _pp: 20
-  _category: 1
+  _category: 0
   _effects:
     boosts: []
     _status: 0

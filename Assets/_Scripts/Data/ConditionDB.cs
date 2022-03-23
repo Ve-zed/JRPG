@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum ConditionID
 {
-    none, Psn, Confus, Provocation
+    none, Psn, Confus, Provocation, BuffDebuff, ArmureTotal
 }
 public class ConditionDB
 {
@@ -76,6 +76,46 @@ public class ConditionDB
                     monster.StatusTime--;
                     return false;
                 },
+            }
+        },
+        {
+            ConditionID.BuffDebuff,
+            new Condition()
+            {
+                Name = "Buff",
+                StartMessage = "has been buffed",
+                OnStart = (Monster monster) =>
+                {
+                    monster.StatusTime = 1;
+                },
+                OnAfterTurn = (Monster monster) =>
+                {
+                    if (monster.StatusTime <= 0)
+                    {
+                        monster.ResetStatBoost();
+                    }
+                    monster.StatusTime--;
+                }
+            }
+        },
+        {
+            ConditionID.ArmureTotal,
+            new Condition()
+            {
+                Name = "ArmureTotal",
+                StartMessage = "has been ArmureTotaled",
+                OnStart = (Monster monster) =>
+                {
+                    monster.StatusTime = 1;
+                },
+                OnAfterTurn = (Monster monster) =>
+                {
+                    if (monster.StatusTime <= 0)
+                    {
+                        monster.ResetStatBoost();
+                    }
+                    monster.StatusTime--;
+                }
             }
         }
     };

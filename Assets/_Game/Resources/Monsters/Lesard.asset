@@ -27,8 +27,8 @@ MonoBehaviour:
   _learnableMoves:
   - _moveBase: {fileID: 11400000, guid: 23afccbaa011eca4e8b1557e88c2c336, type: 2}
     _level: 1
-  - _moveBase: {fileID: 11400000, guid: a2ea2d53a14b1eb41aa8a5b540e20abb, type: 2}
-    _level: 4
+  - _moveBase: {fileID: 11400000, guid: 834d0dde7bb0d29429d801e703747a63, type: 2}
+    _level: 1
   - _moveBase: {fileID: 11400000, guid: b805ddb86b1854843b181ab23ffd75a4, type: 2}
     _level: 45
   - _moveBase: {fileID: 11400000, guid: 43cc7aa8ecea3b64a8c4f80424214b42, type: 2}
