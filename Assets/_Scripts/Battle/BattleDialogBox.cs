@@ -21,7 +21,6 @@ public class BattleDialogBox : MonoBehaviour
     [SerializeField] Text _typeText;
 
 
-
     public void SetDialog(string dialog)
     {
         _dialogText.text = dialog;
@@ -39,53 +38,11 @@ public class BattleDialogBox : MonoBehaviour
         yield return new WaitForSeconds(1f);
     }
 
-    public void EnableDialogText(bool enabled)
-    {
-        _dialogText.enabled = enabled;
-    }
-    public void EnableActionSelector(bool enabled)
-    {
-        _actionSelector.SetActive(enabled);
-    }
     public void EnableMoveSelector(bool enabled)
     {
         _moveSelector.SetActive(enabled);
-        //_moveDetails.SetActive(enabled);
     }
-
-    public void UpdateActionSelection(int selectedAction)
-    {
-        for (int i = 0; i < _actionTexts.Count; i++)
-        {
-            if (i == selectedAction)
-            {
-                _actionTexts[i].color = _highlightedColor;
-            }
-            else
-            {
-                _actionTexts[i].color = Color.black;
-            }
-        }
-    }
-    public void UpdateMoveSelection(int selectedMove, Move move)
-    {
-        for (int i = 0; i < _moveTexts.Count; i++)
-        {
-            if (i == selectedMove)
-            {
-                _moveTexts[i].color = _highlightedColor;
-            }
-            else
-            {
-                _moveTexts[i].color = Color.black;
-            }
-        }
-
-        _ppText.text = $"PP {move.PP}/{move.Base.PP}";
-        _typeText.text = move.Base.Type.ToString();
-
-    }
-
+   
     public void SetMoveNames(List<Move> moves)
     {
         for (int i = 0; i < _moveTexts.Count; i++)

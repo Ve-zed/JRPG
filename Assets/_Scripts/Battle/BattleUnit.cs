@@ -44,25 +44,17 @@ public class BattleUnit : MonoBehaviour
         Monster = monster;
 
         if (isPlayerUnit)
-        {
             _image.sprite = Monster.Base.BackSprite;
-        }
         else
-        {
             _image.sprite = Monster.Base.FrontSprite;
-        }
-
         Monster.HP = Monster.MaxHp;
 
-        //Hud.UpdateHP();
         _hpBar.SetHP((float)Monster.HP / Monster.MaxHp);
 
         _hud.SetData(Monster);
 
-
         _image.color = originalColor;
         PlayEnterAnimation();
-
     }
 
 
@@ -76,12 +68,8 @@ public class BattleUnit : MonoBehaviour
     }
     public void PlayEnterAnimation()
     {
-
-
         if (isPlayerUnit)
-        {
             _image.transform.localPosition = new Vector3(-500f, _originalPos.y);
-        }
         else
             _image.transform.localPosition = new Vector3(500f, _originalPos.y);
 
@@ -97,8 +85,6 @@ public class BattleUnit : MonoBehaviour
             sequance.Append(_image.transform.DOLocalMoveX(_originalPos.x - 50f, 0.25f));
 
         sequance.Append(_image.transform.DOLocalMoveX(_originalPos.x, 0.25f));
-
-
     }
     public void PlayHitAnimation()
     {
@@ -110,20 +96,13 @@ public class BattleUnit : MonoBehaviour
     public void PlayFaintAnimation()
     {
         var sequance = DOTween.Sequence();
-        sequance.Append(_image.transform.DOLocalMoveY(_originalPos.y - 150f, 0.5f));
         sequance.Join(_image.DOFade(0f, 0.5f));
-    }
-
-    public void OnMouseOver()
-    {
     }
     public void OnMouseExit()
     {
         if (isPlayerUnit)
             StartCoroutine(_seeOrNot.enableOrDisableObject());
-
     }
-
 
     private void OnMouseDown()
     {

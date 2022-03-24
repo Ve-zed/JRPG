@@ -30,7 +30,6 @@ public class ConditionDB
                     monster.StatusTime--;
                     monster.UpdateHP(monster.MaxHp / 8);
                 }
-
             }
         },
         {
@@ -53,8 +52,6 @@ public class ConditionDB
                         return false;
 
                 },
-
-
             }
         },
         {
@@ -119,5 +116,4 @@ public class ConditionDB
             }
         }
     };
-
 }

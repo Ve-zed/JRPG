@@ -28,5 +28,6 @@ public class BattleHud : MonoBehaviour
             _monster.HpChanged = false;
         }
     }
+     
 
 }

@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour
     [SerializeField] PlayerController _playerController;
     [SerializeField] BattleSystem _battleSystem;
     [SerializeField] Camera _worldCamera;
+    private EnnemiController _ennemi;
 
     private GameState _state;
 
@@ -32,7 +33,6 @@ public class GameController : MonoBehaviour
                 StartCoroutine(ennemi.TriggerEnnemiBattle(_playerController));
             }
         };
-
         DialogManager.Instance.onShowDialog += () =>
         {
             _state = GameState.Dialog;
@@ -42,7 +42,6 @@ public class GameController : MonoBehaviour
             if (_state == GameState.Dialog)
                 _state = GameState.FreeRoam;
         };
-
     }
 
     private void StartBattle()
@@ -50,15 +49,7 @@ public class GameController : MonoBehaviour
         _state = GameState.Battle;
         _battleSystem.gameObject.SetActive(true);
         _worldCamera.gameObject.SetActive(false);
-
-        var playerParty = _playerController.GetComponent<MonsterParty>();
-        var wildMonster = FindObjectOfType<MapArea>().GetComponent<MapArea>().GetRandomWildMonster();
-
-
-        _battleSystem.StartBattle(playerParty, wildMonster);
-
     }
-    EnnemiController _ennemi;
     public void StartEnnemiBattle(EnnemiController ennemi)
     {
         _state = GameState.Battle;

@@ -11,11 +11,10 @@ public enum BattleState { Start, ActionSelection, MoveSelection, PerformMove, En
 
 public class BattleSystem : MonoBehaviour
 {
-    [SerializeField] List<BattleUnit> _playerUnits;
-    public List<BattleUnit> _playerUnitsDead;
-
     public bool isEnnemiBattle = false;
 
+    [SerializeField] List<BattleUnit> _playerUnits;
+    public List<BattleUnit> _playerUnitsDead;
     [SerializeField] List<BattleUnit> _ennemyUnits;
 
     [SerializeField] BattleDialogBox _dialogBox;
@@ -30,30 +29,18 @@ public class BattleSystem : MonoBehaviour
     public bool EnnemiSelected = false;
 
     private BattleState _state;
-
-    private int _currentPlayer = 0;
-    private int _currentEnnemy = 0;
     private int _currentAction;
     private int _currentMove;
     private int _currentMember = 0;
-    private int _currentEnnemySelection = 0;
-
     private MonsterParty _playerParty;
     private MonsterParty _ennemiParty;
-    private Monster _wildMonster;
-
 
     private PlayerController _player;
     private EnnemiController _ennemi;
 
     BattleUnit target;
+    Move currentMove;
 
-    public void StartBattle(MonsterParty playerParty, Monster wildMonster)
-    {
-        this._playerParty = playerParty;
-        this._wildMonster = wildMonster;
-        StartCoroutine(SetupBattle());
-    }
     public void StartEnnemiBattle(MonsterParty playerParty, MonsterParty ennemiParty)
     {
         this._playerParty = playerParty;
@@ -122,18 +109,6 @@ public class BattleSystem : MonoBehaviour
         onBattleOver(won);
     }
 
-    private void ActionSelection()
-    {
-        _state = BattleState.ActionSelection;
-
-
-        StartCoroutine(_dialogBox.TypeDialog("Choose an action"));
-        _dialogBox.EnableActionSelector(true);
-    }
-    private void OpenPartyScreen()
-    {
-        _state = BattleState.PartyScreen;
-    }
     public void MoveSelection()
     {
         _state = BattleState.MoveSelection;
@@ -154,19 +129,10 @@ public class BattleSystem : MonoBehaviour
                 canSelected = true;
         }
         canSelectedEnnemi = true;
-        Debug.Log(canSelected);
-        Debug.Log(_state);
         //if(EnnemiSelected && _targetSeletedUnit.Monster.HP > 0)
         //    StartCoroutine(PlayerMove());
 
     }
-
-    /*public void PlayerMoveSelection()
-    {
-
-        _state = BattleState.PerformMove;
-
-    }*/
 
     public IEnumerator PlayerMove()
     {
@@ -184,33 +150,21 @@ public class BattleSystem : MonoBehaviour
         }
 
 
-        //if (_targetSeletedUnit.Monster.HP <= 0 && _ennemiParty.GetHealthyMonster() != null)
-
-
-        /*target = _ennemyUnits[Random.Range(0, _ennemiParty.Monsters.Count)];
-        if (target.Monster.HP <= 0 && _ennemiParty.GetHealthyMonster() != null)
-        {
-
-            for (int i = _ennemiParty.Monsters.Count - 1; i >= 0; i--)
-            {
-                yield return RunMove(_playerSeletedUnit, _targetSeletedUnit, move);
-                
-            }
-        }*/
         var move = _playerSeletedUnit.Monster.Moves[_currentMove];
         if (move.Base.Target == MoveTarget.AllEnnemi)
-        {
-            yield return RunMoveForAllEnnemis(_playerSeletedUnit, move);
-
-        }
+            yield return RunMoveAttackAll(_playerSeletedUnit, _ennemyUnits, move);
+        else if (move.Base.Target == MoveTarget.AllPlayer)
+            yield return RunMoveForAllPlayer(_playerSeletedUnit, move);
+        else if (move.Base.Category == MoveCategory.Special)
+            yield return RunMoveSpecial(_playerSeletedUnit, _targetSeletedUnit, move);
         else
             yield return RunMove(_playerSeletedUnit, _targetSeletedUnit, move);
 
-        foreach (var item in _playerUnits)
+        foreach (var player in _playerUnits)
         {
-            if (item.isSelected)
+            if (player.isSelected)
             {
-                item.isSelected = false;
+                player.isSelected = false;
                 canSelected = true;
                 break;
             }
@@ -233,7 +187,6 @@ public class BattleSystem : MonoBehaviour
     IEnumerator EnemyMove()
     {
         _state = BattleState.PerformMove;
-        _currentEnnemy = 0;
         for (int i = 0; i < _ennemiParty.Monsters.Count; i++)
         {
             if (_ennemyUnits[i].Monster.HP > 0)
@@ -260,7 +213,14 @@ public class BattleSystem : MonoBehaviour
                         }
                     }
                 }
-                yield return RunMove(_ennemyUnits[i], target, move);
+                if (move.Base.Target == MoveTarget.AllEnnemi)
+                {
+                    yield return RunMoveAttackAll(_ennemyUnits[i], _playerUnits, move);
+                }
+                else if (move.Base.Target == MoveTarget.Self)
+                    yield return EnnemiHealMove(_ennemyUnits[i]);
+                else
+                    yield return RunMove(_ennemyUnits[i], target, move);
             }
         }
 
@@ -274,54 +234,208 @@ public class BattleSystem : MonoBehaviour
             }
         }
     }
-    IEnumerator RunMoveForAllEnnemis(BattleUnit sourceUnit, Move move)
+    IEnumerator EnnemiHealMove(BattleUnit sourceUnit)
     {
-        move.PP--;
+        if (sourceUnit.Monster.HP > 0)
+        {
+            sourceUnit.Monster.HP += sourceUnit.Monster.MaxHp / 5;
+            if (sourceUnit.Monster.HP > sourceUnit.Monster.MaxHp)
+                sourceUnit.Monster.HP = sourceUnit.Monster.MaxHp;
+            sourceUnit.Monster.HpChanged = true;
+            StartCoroutine(sourceUnit.Hud.UpdateHP());
+        }
+        yield return new WaitForSeconds(1f);
+    }
+    IEnumerator RunMoveSpecial(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
+    {
+        bool canRunMove = sourceUnit.Monster.OnBeforeMove();
+        if (!canRunMove)
+        {
+            yield break;
+        }
         sourceUnit.PlayAttackAnimation();
         yield return new WaitForSeconds(1f);
+        targetUnit.PlayHitAnimation();
 
-        for (int i = 0; i < _ennemiParty.Monsters.Count; i++)
+        //Damage
+        var damageDetails = targetUnit.Monster.TakeDamage(move, sourceUnit.Monster);
+        yield return targetUnit.Hud.UpdateHP();
+        yield return ShowDamageDetails(damageDetails);
+        yield return new WaitForSeconds(1f);
+
+        //Heal
+        if (sourceUnit.Monster.HP > 0)
         {
-            if (_ennemyUnits[i].Monster.HP >= 0)
+            sourceUnit.Monster.HP += sourceUnit.Monster.Damage / 2;
+            if (sourceUnit.Monster.HP > sourceUnit.Monster.MaxHp)
+                sourceUnit.Monster.HP = sourceUnit.Monster.MaxHp;
+            sourceUnit.Monster.HpChanged = true;
+            StartCoroutine(sourceUnit.Hud.UpdateHP());
+        }
+
+        if (targetUnit.Monster.HP <= 0)
+        {
+            if (targetUnit.isPlayerUnit)
+                _playerUnitsDead.Add(_playerSeletedUnit);
+
+            yield return _dialogBox.TypeDialog($"{targetUnit.Monster.Base.Name} Fainted");
+            targetUnit.PlayFaintAnimation();
+
+            var _hudTarget = targetUnit.GetComponentInChildren<BattleHud>(true);
+            _hudTarget.gameObject.SetActive(false);
+            yield return new WaitForSeconds(2f);
+
+            CheckForBattleOver(targetUnit);
+        }
+        sourceUnit.Monster.OnAfterTurn();
+        yield return sourceUnit.Hud.UpdateHP();
+        if (sourceUnit.Monster.HP <= 0)
+        {
+            if (sourceUnit.isPlayerUnit)
+                _playerUnitsDead.Add(_playerSeletedUnit);
+
+            yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} Fainted");
+            sourceUnit.PlayFaintAnimation();
+
+            var _hudTarget = sourceUnit.GetComponentInChildren<BattleHud>(true);
+            _hudTarget.gameObject.SetActive(false);
+            yield return new WaitForSeconds(2f);
+
+            CheckForBattleOver(sourceUnit);
+        }
+
+    }
+
+    IEnumerator RunMoveForAllPlayer(BattleUnit sourceUnit, Move move)
+    {
+        yield return new WaitForSeconds(1f);
+        for (int i = 0; i < _playerParty.Monsters.Count; i++)
+        {
+            if (move.Base.Category == MoveCategory.Status)
             {
-                _ennemyUnits[i].PlayHitAnimation();
-                if (move.Base.Category == MoveCategory.Status)
+                StartCoroutine(RunMoveEffects(move, sourceUnit.Monster, _playerUnits[i].Monster));
+            }
+            else
+            {
+                var player = _playerUnits[i].Monster;
+                if (_playerUnits[i].Monster.HP > 0)
                 {
-                    StartCoroutine(RunMoveEffects(move, sourceUnit.Monster, _ennemyUnits[i].Monster));
-                }
-
-                else
-                {
-                    if (_targetSeletedUnit == _ennemyUnits[i])
-                    {
-                        sourceUnit.Monster.ApplyBoosts(move.Base.Effects.Boosts);
-                        _ennemyUnits[i].Monster.TakeDamage(move, sourceUnit.Monster);
-                        StartCoroutine(_ennemyUnits[i].Hud.UpdateHP());
-                        sourceUnit.Monster.ResetStatBoost();
-
-                    }
-                    else
-                    {
-                        _ennemyUnits[i].Monster.TakeDamage(move, sourceUnit.Monster);
-                        StartCoroutine(_ennemyUnits[i].Hud.UpdateHP());
-                    }
+                    player.HP += player.MaxHp / 5;
+                    if (player.HP > player.MaxHp)
+                        player.HP = player.MaxHp;
+                    player.HpChanged = true;
+                    StartCoroutine(_playerUnits[i].Hud.UpdateHP());
                 }
             }
         }
         yield return new WaitForSeconds(1.5f);
-        for (int i = 0; i < _ennemiParty.Monsters.Count; i++)
-        {
-            if (_ennemyUnits[i].Monster.HP <= 0)
-            {
-                _ennemyUnits[i].PlayFaintAnimation();
-                var _hudTarget = _ennemyUnits[i].GetComponentInChildren<BattleHud>(true);
-                _hudTarget.gameObject.SetActive(false);
-            }
 
-            if (i == _ennemiParty.Monsters.Count - 1)
+        sourceUnit.Monster.OnAfterTurn();
+        yield return sourceUnit.Hud.UpdateHP();
+        if (sourceUnit.Monster.HP <= 0)
+        {
+            if (sourceUnit.isPlayerUnit)
+                _playerUnitsDead.Add(_playerSeletedUnit);
+
+            yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} Fainted");
+            sourceUnit.PlayFaintAnimation();
+
+            var _hudTarget = sourceUnit.GetComponentInChildren<BattleHud>(true);
+            _hudTarget.gameObject.SetActive(false);
+            yield return new WaitForSeconds(2f);
+
+            CheckForBattleOver(sourceUnit);
+        }
+    }
+
+    IEnumerator RunMoveAttackAll(BattleUnit sourceUnit, List<BattleUnit> targetUnits, Move move)
+    {
+        sourceUnit.PlayAttackAnimation();
+        yield return new WaitForSeconds(1f);
+        if (sourceUnit.isPlayerUnit)
+        {
+            for (int i = 0; i < _ennemiParty.Monsters.Count; i++)
             {
-                yield return new WaitForSeconds(1f);
-                CheckForBattleOver(_ennemyUnits[i]);
+                if (targetUnits[i].Monster.HP > 0)
+                {
+                    targetUnits[i].PlayHitAnimation();
+                    if (move.Base.Category == MoveCategory.Status)
+                    {
+                        StartCoroutine(RunMoveEffects(move, sourceUnit.Monster, targetUnits[i].Monster));
+                    }
+
+                    else
+                    {
+                        if (_targetSeletedUnit == targetUnits[i])
+                        {
+                            sourceUnit.Monster.ApplyBoosts(move.Base.Effects.Boosts);
+                            targetUnits[i].Monster.TakeDamage(move, sourceUnit.Monster);
+                            StartCoroutine(targetUnits[i].Hud.UpdateHP());
+                            sourceUnit.Monster.ResetStatBoost();
+
+                        }
+                        else
+                        {
+                            targetUnits[i].Monster.TakeDamage(move, sourceUnit.Monster);
+                            StartCoroutine(_ennemyUnits[i].Hud.UpdateHP());
+                        }
+                    }
+                }
+            }
+            yield return new WaitForSeconds(1.5f);
+            for (int i = 0; i < _ennemiParty.Monsters.Count; i++)
+            {
+                if (targetUnits[i].Monster.HP <= 0)
+                {
+                    targetUnits[i].PlayFaintAnimation();
+                    var _hudTarget = targetUnits[i].GetComponentInChildren<BattleHud>(true);
+                    _hudTarget.gameObject.SetActive(false);
+                }
+
+                if (i == _ennemiParty.Monsters.Count - 1)
+                {
+                    yield return new WaitForSeconds(1f);
+                    CheckForBattleOver(targetUnits[i]);
+                }
+            }
+        }
+        else
+        {
+            for (int i = 0; i < _playerParty.Monsters.Count; i++)
+            {
+                if (targetUnits[i].Monster.HP > 0)
+                {
+                    targetUnits[i].PlayHitAnimation();
+                    if (move.Base.Category == MoveCategory.Status)
+                    {
+                        StartCoroutine(RunMoveEffects(move, sourceUnit.Monster, targetUnits[i].Monster));
+                    }
+
+                    else
+                    {
+                        Debug.Log("maj life plz");
+
+                        targetUnits[i].Monster.TakeDamage(move, sourceUnit.Monster);
+                        StartCoroutine(targetUnits[i].Hud.UpdateHP());
+
+                    }
+                }
+            }
+            yield return new WaitForSeconds(1.5f);
+            for (int i = 0; i < _playerParty.Monsters.Count; i++)
+            {
+                if (targetUnits[i].Monster.HP <= 0)
+                {
+                    targetUnits[i].PlayFaintAnimation();
+                    var _hudTarget = targetUnits[i].GetComponentInChildren<BattleHud>(true);
+                    _hudTarget.gameObject.SetActive(false);
+                }
+
+                if (i == _playerParty.Monsters.Count - 1)
+                {
+                    yield return new WaitForSeconds(1f);
+                    CheckForBattleOver(targetUnits[i]);
+                }
             }
         }
 
@@ -351,7 +465,6 @@ public class BattleSystem : MonoBehaviour
             yield break;
         }
 
-        move.PP--;
         yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} used {move.Base.Name}");
 
         sourceUnit.PlayAttackAnimation();
@@ -416,7 +529,7 @@ public class BattleSystem : MonoBehaviour
                 target.ApplyBoosts(effects.Boosts);
         }
         //Status
-        if (effects.Status != ConditionID.none)
+        else if (effects.Status != ConditionID.none)
         {
             if (move.Base.Target == MoveTarget.Self)
                 source.SetStatus(effects.Status);
@@ -508,8 +621,17 @@ public class BattleSystem : MonoBehaviour
         _playerSeletedUnit.isAttacking = true;
         _dialogBox.EnableMoveSelector(false);
         _currentMove = move;
+        var movePlayer = _playerSeletedUnit.Monster.Moves[_currentMove];
+        /*if (movePlayer.Base.Target == MoveTarget.AllEnnemi)
+            StartCoroutine(RunMoveForAllEnnemis(_playerSeletedUnit, movePlayer));
+        else if (movePlayer.Base.Target != MoveTarget.Self)
+            BoostMove();
+        else*/
         EnnemiSelection();
         //StartCoroutine(PlayerMove());
     }
-
+    public void BoostMove()
+    {
+        Debug.Log("Boost");
+    }
 }

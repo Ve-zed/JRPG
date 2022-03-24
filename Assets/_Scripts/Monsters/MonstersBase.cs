@@ -6,15 +6,12 @@ using UnityEngine;
 public class MonstersBase : ScriptableObject
 {
     [SerializeField] string _name;
-
     [SerializeField] string _description;
     public Sprite FrontSprite;
     public Sprite BackSprite;
 
-
     public MonsterType type1;
     public MonsterType type2;
-
 
     //Base stats
     [SerializeField] int _maxHp;
@@ -24,46 +21,18 @@ public class MonstersBase : ScriptableObject
     [SerializeField] int _spDefense;
     [SerializeField] int _speed;
 
-
     [SerializeField] List<LearnableMove> _learnableMoves;
 
-    public string Name
-    {
-        get { return _name; }
-    }
-    public string Description
-    {
-        get { return _description; }
-    }
-    public int MaxHp
-    {
-        get { return _maxHp; }
-    }
-    public int Attack
-    {
-        get { return _attack; }
-    }
-    public int Defense
-    {
-        get { return _defense; }
-    }
-    public int SpAttack
-    {
-        get { return _spAttack; }
-    }
-    public int SpDefense
-    {
-        get { return _spDefense; }
-    }
-    public int Speed
-    {
-        get { return _speed; }
-    }
+    public string Name{get { return _name; }}
+    public string Description{get { return _description; }}
+    public int MaxHp{get { return _maxHp; }}
+    public int Attack{get { return _attack; }}
+    public int Defense{get { return _defense; }}
+    public int SpAttack{get { return _spAttack; }}
+    public int SpDefense{get { return _spDefense; }}
+    public int Speed{get { return _speed; }}
 
-    public List<LearnableMove> LearnableMoves
-    {
-        get { return _learnableMoves; }
-    }
+    public List<LearnableMove> LearnableMoves{get { return _learnableMoves; }}
 
 }
 
@@ -73,14 +42,8 @@ public class LearnableMove
     [SerializeField] MoveBase _moveBase;
     [SerializeField] int _level;
 
-    public MoveBase Base
-    {
-        get { return _moveBase; }
-    }
-    public int Level
-    {
-        get { return _level; }
-    }
+    public MoveBase Base{get { return _moveBase; }}
+    public int Level{get { return _level; }}
 
 }
 
@@ -94,20 +57,6 @@ public enum MonsterType
 {
     None,
     Normal,
-    Fire,
-    Water,
-    Electric,
-    Grass,
-    Ice,
-    Fighting,
-    Poison,
-    Ground,
-    Flying,
-    Psychic,
-    Bug,
-    Rock,
-    Ghost,
-    Dragon,
     Virus
 }
 
@@ -117,22 +66,9 @@ public class TypeChart
     static float[][] chart =
     {
 
-        //                     {NOR, FIR, WAT, ELEC, GRASS, ICE, FIGHT, POIS, GROUND, FLY, PSY, BUG, ROCK, GHOST, DRAG, VIRUS}
-        /*NOR*/   new float[]  {1f,   1f, 1f,   1f ,  1f,    1f,  1f,    1f,   1f,    1f,  1f,  1f,  0.5f,  0f,    1f,    2f},
-        /*FIR*/   new float[]  {1f, 0.5f, 0.5f, 1f ,  2f,    2f,  1f,    1f,   1f,    1f,  1f,  2f,  0.5f,  1f,   0.5f,   2f},
-        /*WAT*/   new float[]  {1f,   2f, 0.5f, 1f ,  0.5f,  1f,  1f,    1f,   2f,    1f,  1f,  1f,   2f,   1f,   0.5f,   2f},
-        /*ELEC*/  new float[]  {1f,   1f,  2f, 0.5f , 0.5f,  1f,  1f,    1f,   0f,    2f,  1f,  1f,   1f,   1f,   0.5f,   2f},
-        /*GRASS*/ new float[]  {1f, 0.5f,  2f,  1f ,  0.5f,  1f,  1f,   0.5f,  2f,   0.5f, 1f, 0.5f,  2f,   1f,   0.5f,   2f},
-        /*ICE*/   new float[]  {1f, 0.5f, 0.5f,  1f , 2f,   0.5f, 1f,    1f,   2f,    2f,  1f,  1f,   1f,   1f,    2f,    2f},
-        /*FIGHT*/ new float[]  {2f,   1f,  1f,  1f ,  1f,    2f,  1f,   0.5f,  1f,   0.5f,0.5f,0.5f,  2f,   0f,    1f,    2f},
-        /*POIS*/  new float[]  {1f,   1f,  1f,  1f ,  2f,    1f,  1f,   0.5f, 0.5f,   1f,  1f,  1f,  0.5f, 0.5f,   1f,    2f},
-        /*GROUND*/new float[]  {1f,   2f,  1f,  2f ,  0.5f,  1f,  1f,    2f,   1f,    0f,  1f, 0.5f,  2f,   1f,    1f,    2f},
-        /*FLY*/   new float[]  {1f, 0.5f,  1f, 0.5f , 2f,    1f,  2f,    1f,   1f,    1f,  1f,  2f,  0.5f,  1f,    1f,    2f},
-        /*PSY*/   new float[]  {1f,   1f,  1f,  1f ,  1f,    1f,  2f,    2f,   1f,    1f, 0.5f, 1f,   1f,   1f,    1f,    2f},
-        /*BUG*/   new float[]  {1f, 0.5f,  1f,  1f ,  2f,    1f, 0.5f,  0.5f,  1f,   0.5f, 2f,  1f,   1f,  0.5f,   1f,    2f},
-        /*ROCK*/  new float[]  {1f,   2f,  1f,  1f ,  1f,    2f, 0.5f,   1f,  0.5f,   2f,  1f,  2f,   1f,   1f,    1f,    2f},
-        /*GHOST*/ new float[]  {0f,   1f,  1f,  1f ,  1f,    1f,  1f,    1f,   1f,    1f,  2f,  1f,   1f,   2f,    1f,    2f},
-        /*DRAG*/  new float[]  {1f,   1f,  1f,  1f ,  1f,    1f,  1f,    1f,   1f,    1f,  1f,  1f,   1f,   1f,    2f,    2f}
+        //                     {NOR, VIRUS}
+        /*NOR*/   new float[]  {1f,   2f},
+        /*VIRUS*/ new float[]  {1f,   1f}
     };
 
     public static float GetEffectiveness(MonsterType attackType, MonsterType defenseType)

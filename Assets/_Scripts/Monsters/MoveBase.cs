@@ -57,7 +57,7 @@ public class MoveBase : ScriptableObject
     }
     public enum MoveTarget
     {
-        Foe, Self, AllEnnemi, FocusOneTargetAll
+        Foe, Self, AllEnnemi, AllPlayer, FocusOneTargetAll
     }
 
 

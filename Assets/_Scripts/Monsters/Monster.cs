@@ -17,8 +17,9 @@ public class Monster
     public Condition Status { get; private set; }
     public bool HpChanged { get; set; }
     public int StatusTime { get; set; }
+    public int MaxHp { get; private set; }
 
-
+    public int Damage {get; set;}
 
     public void Init()
     {
@@ -68,7 +69,7 @@ public class Monster
         int statVal = Stats[stat];
 
         int boost = StatBoosts[stat];
-        var boostValues = new float[] { 2.0f, 2.5f,3.0f,3.5f, 15f, 10000f, 20000f };
+        var boostValues = new float[] { 10f, 15f,20f,25f, 1f, 10000f, 20000f };
 
         if (boost >= 0)
             statVal = Mathf.FloorToInt(statVal * boostValues[boost]);
@@ -110,7 +111,6 @@ public class Monster
     {
         get { return GetStat(Stat.Speed); }
     }
-    public int MaxHp { get; private set; }
 
 
     public DamageDetails TakeDamage(Move move, Monster attacker)
@@ -138,10 +138,12 @@ public class Monster
         if (defense > 90000)
             def = 0;
 
-        int damage = Mathf.FloorToInt(def * modifiers);
+        //int damage = Mathf.FloorToInt(def * modifiers);
+        Damage = Mathf.FloorToInt(def * modifiers);
 
-        UpdateHP(damage);
-        Debug.Log(damage);
+        UpdateHP(Damage);
+        //UpdateHP(damage);
+        Debug.Log(Damage);
         return damageDetails;
 
     }
