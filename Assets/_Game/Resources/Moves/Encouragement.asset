@@ -10,20 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fc4911ce85304642951675f99c5f2c9, type: 3}
-  m_Name: Tackle
+  m_Name: Encouragement
   m_EditorClassIdentifier: 
-  _name: Tackle
+  _name: Encouragement
   _description: 
-  _type: 1
-  _power: 40
+  _type: 0
+  _power: 0
   _accuary: 100
-  _pp: 20
+  _pp: 0
   _category: 2
   _effects:
     boosts:
-    - stat: 1
-      boost: 0
     - stat: 0
-      boost: 0
-    _status: 0
-  _target: 0
+      boost: 1
+    _status: 4
+  _target: 3
