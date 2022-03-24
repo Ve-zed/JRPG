@@ -138,11 +138,9 @@ public class Monster
         if (defense > 90000)
             def = 0;
 
-        //int damage = Mathf.FloorToInt(def * modifiers);
         Damage = Mathf.FloorToInt(def * modifiers);
 
         UpdateHP(Damage);
-        //UpdateHP(damage);
         Debug.Log(Damage);
         return damageDetails;
 

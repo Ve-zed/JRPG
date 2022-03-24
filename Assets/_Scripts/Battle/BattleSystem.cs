@@ -113,7 +113,6 @@ public class BattleSystem : MonoBehaviour
     {
         _state = BattleState.MoveSelection;
         _dialogBox.SetMoveNames(_playerSeletedUnit.Monster.Moves);
-        Debug.Log(_state);
     }
     public void EnnemiSelection()
     {
@@ -413,11 +412,8 @@ public class BattleSystem : MonoBehaviour
 
                     else
                     {
-                        Debug.Log("maj life plz");
-
                         targetUnits[i].Monster.TakeDamage(move, sourceUnit.Monster);
                         StartCoroutine(targetUnits[i].Hud.UpdateHP());
-
                     }
                 }
             }
@@ -614,7 +610,6 @@ public class BattleSystem : MonoBehaviour
     public void onClickRun()
     {
         _currentAction = 1;
-        Debug.Log(_currentAction);
     }
     public void onClickMove(int move)
     {
