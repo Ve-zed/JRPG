@@ -106,6 +106,7 @@ public class BattleUnit : MonoBehaviour
 
     private void OnMouseDown()
     {
+        Debug.Log(_state);
         if (_battleSystem.canSelectedEnnemi&& !_battleSystem.EnnemiSelected && !isPlayerUnit)
         {
             _battleSystem._targetSeletedUnit = this;
@@ -123,6 +124,7 @@ public class BattleUnit : MonoBehaviour
             _seeOrNot.transform.position = pos;
             _battleSystem.MoveSelection();
             _dialogBox.EnableMoveSelector(true);
+            Debug.Log(_state);
         }
 
     }
