@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fc4911ce85304642951675f99c5f2c9, type: 3}
-  m_Name: VolDeVie
+  m_Name: Destruction
   m_EditorClassIdentifier: 
-  _name: Vol de vie
+  _name: Destruction
   _description: 
   _type: 0
-  _power: 10
+  _power: 20
   _accuary: 100
-  _pp: 50
-  _category: 1
+  _pp: 12
+  _category: 0
   _effects:
     boosts: []
     _status: 0
-  _target: 0
+  _target: 2

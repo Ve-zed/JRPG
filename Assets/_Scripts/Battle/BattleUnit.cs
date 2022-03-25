@@ -22,6 +22,7 @@ public class BattleUnit : MonoBehaviour
 
     public bool isAttacking;
     public bool isSelected;
+    public bool isPowerUsed = false;
 
     public Image _image;
     Vector3 _originalPos;
@@ -44,9 +45,9 @@ public class BattleUnit : MonoBehaviour
         Monster = monster;
 
         if (isPlayerUnit)
-            _image.sprite = Monster.Base.BackSprite;
+            _image.sprite = Monster.Base.PlayerSprite;
         else
-            _image.sprite = Monster.Base.FrontSprite;
+            _image.sprite = Monster.Base.EnnemiSprite;
         Monster.HP = Monster.MaxHp;
 
         _hpBar.SetHP((float)Monster.HP / Monster.MaxHp);
@@ -93,6 +94,22 @@ public class BattleUnit : MonoBehaviour
         sequance.Append(_image.DOColor(Color.red, 0.1f));
         sequance.Append(_image.DOColor(originalColor, 0.1f));
     }
+    public IEnumerator PlayHealAnimation()
+    {
+        var sequance = DOTween.Sequence();
+
+        sequance.Append(_image.DOColor(Color.green, 0.1f));
+        yield return new WaitForSeconds(0.5f);
+        sequance.Append(_image.DOColor(originalColor, 0.1f));
+    }
+    public IEnumerator PlayBoostAnimation()
+    {
+        var sequance = DOTween.Sequence();
+
+        sequance.Append(_image.DOColor(Color.blue, 0.1f));
+        yield return new WaitForSeconds(0.5f);
+        sequance.Append(_image.DOColor(originalColor, 0.1f));
+    }
     public void PlayFaintAnimation()
     {
         var sequance = DOTween.Sequence();
@@ -103,22 +120,27 @@ public class BattleUnit : MonoBehaviour
         if (isPlayerUnit)
             StartCoroutine(_seeOrNot.enableOrDisableObject());
     }
+    [SerializeField] GameObject _pouvoirBarre;
 
     private void OnMouseDown()
     {
         if (_battleSystem.canSelectedEnnemi&& !_battleSystem.EnnemiSelected && !isPlayerUnit)
         {
-            _battleSystem._targetSeletedUnit = this;
+            _battleSystem._targetSelectedUnit = this;
             _battleSystem.canSelectedEnnemi = false;
             _battleSystem.EnnemiSelected= true;
-            if (_battleSystem._targetSeletedUnit.Monster.HP > 0)
+            if (_battleSystem._targetSelectedUnit.Monster.HP > 0 && !_battleSystem.powerUsed)
                 StartCoroutine(_battleSystem.PlayerMove());
+            else if(_battleSystem._targetSelectedUnit.Monster.HP > 0 && _battleSystem.powerUsed)
+            {
+                _pouvoirBarre.SetActive(true);
+            }
         }
         else if (!isAttacking && _battleSystem.canSelected && isPlayerUnit)
         {
             isSelected = true;
-            _battleSystem._playerSeletedUnit = this;
-            var pos = _battleSystem._playerSeletedUnit.transform.position;
+            _battleSystem._playerSelectedUnit = this;
+            var pos = _battleSystem._playerSelectedUnit.transform.position;
             pos.x += 4.5f;
             _seeOrNot.transform.position = pos;
             _battleSystem.MoveSelection();

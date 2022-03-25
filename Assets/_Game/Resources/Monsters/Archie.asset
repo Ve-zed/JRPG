@@ -10,26 +10,28 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8de60f0604624814d84552a9468daa73, type: 3}
-  m_Name: Herbe
+  m_Name: Archie
   m_EditorClassIdentifier: 
-  _name: Herbe
+  _name: Archie
   _description: 
-  FrontSprite: {fileID: 21300000, guid: 0f37bf3cf5680a64d863b5f155b2a597, type: 3}
-  BackSprite: {fileID: 21300000, guid: aacaae602a38f884ab9e02e43de3736d, type: 3}
-  type1: 1
+  EnnemiSprite: {fileID: 0}
+  PlayerSprite: {fileID: 0}
+  type1: 0
   type2: 0
-  _maxHp: 45
-  _attack: 49
-  _defense: 49
-  _spAttack: 65
-  _spDefense: 65
-  _speed: 45
+  _maxHp: 0
+  _attack: 0
+  _defense: 0
+  _spAttack: 0
+  _spDefense: 0
+  _speed: 0
   _learnableMoves:
+  - _moveBase: {fileID: 11400000, guid: 43cc7aa8ecea3b64a8c4f80424214b42, type: 2}
+    _level: 0
   - _moveBase: {fileID: 11400000, guid: 27900b0795a6b2f4a896b21ed6f471d0, type: 2}
-    _level: 1
-  - _moveBase: {fileID: 11400000, guid: 4d90d3b6d41155e4eb7980c48f2dbce4, type: 2}
-    _level: 1
-  - _moveBase: {fileID: 11400000, guid: cfe153940ca96ce438f2ab8b1e48a3cf, type: 2}
-    _level: 1
+    _level: 0
   - _moveBase: {fileID: 11400000, guid: 0ea19bfc0b3d40c4d80b4be4d0a00d5a, type: 2}
-    _level: 9
+    _level: 0
+  - _moveBase: {fileID: 11400000, guid: 58ebcdd01c4225c4085f6fd1d246b717, type: 2}
+    _level: 0
+  - _moveBase: {fileID: 11400000, guid: 81ebb6240cae26b4e870ed8f5053ba04, type: 2}
+    _level: 0

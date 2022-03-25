@@ -20,6 +20,7 @@ public class BattleDialogBox : MonoBehaviour
     [SerializeField] Text _ppText;
     [SerializeField] Text _typeText;
 
+    [SerializeField] BattleSystem _battleSystem;
 
     public void SetDialog(string dialog)
     {
@@ -42,19 +43,25 @@ public class BattleDialogBox : MonoBehaviour
     {
         _moveSelector.SetActive(enabled);
     }
-   
+
     public void SetMoveNames(List<Move> moves)
     {
         for (int i = 0; i < _moveTexts.Count; i++)
         {
-            if (i < moves.Count)
+            if (i < moves.Count && _battleSystem._playerSelectedUnit.isPowerUsed)
+            {
                 _moveTexts[i].text = moves[i].Base.Name;
+                _moveTexts[4].text = "-";
+            }
+            else if (i < moves.Count)
+            {
+                _moveTexts[i].text = moves[i].Base.Name;
+            }
             else
                 _moveTexts[i].text = "-";
-
         }
     }
 
-    
+
 
 }

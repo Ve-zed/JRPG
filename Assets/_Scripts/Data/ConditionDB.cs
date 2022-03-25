@@ -8,18 +8,33 @@ public enum ConditionID
 }
 public class ConditionDB
 {
-
     public static Dictionary<ConditionID, Condition> Conditions { get; set; } = new Dictionary<ConditionID, Condition>()
     {
+
         {
             ConditionID.Psn,
             new Condition()
             {
+
                 Name = "Poison",
                 StartMessage = "has been poisoned",
                 OnStart = (Monster monster) =>
                 {
-                    monster.StatusTime = 3;
+                    if(PrecisionBar.Instance.barreSplit == 1)
+                    {
+                        //red
+                        monster.StatusTime = 2;
+                    }
+                    else if (PrecisionBar.Instance.barreSplit == 2)
+                    {
+                        //orange
+                        monster.StatusTime = 4;
+                    }
+                    else if (PrecisionBar.Instance.barreSplit == 3)
+                    {
+                        //green
+                        monster.StatusTime = 6;
+                    }
                 },
                 OnAfterTurn = (Monster monster) =>
                 {
@@ -41,6 +56,7 @@ public class ConditionDB
                 OnStart = (Monster monster) =>
                 {
                     monster.StatusTime = 1;
+                    Debug.Log(monster.StatusTime);
                 },
                 OnBeforeMove = (Monster monster) =>
                 {

@@ -54,7 +54,6 @@ public class DialogManager : MonoBehaviour
                 _onDialogueFinished?.Invoke();
                 onCloseDialog?.Invoke();
             }
-
         }
     }
     public IEnumerator TypeDialog(string line)

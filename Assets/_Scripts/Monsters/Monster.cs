@@ -29,7 +29,7 @@ public class Monster
             if (move.Level <= Level)
                 Moves.Add(new Move(move.Base));
 
-            if (Moves.Count >= 4)
+            if (Moves.Count >= 5)
                 break;
         }
         CalculateStats();
@@ -91,29 +91,14 @@ public class Monster
     }
 
 
-    public int Attack
-    {
-        get { return GetStat(Stat.Attack); }
-    }
-    public int Defense
-    {
-        get { return GetStat(Stat.Defense); }
-    }
-    public int SpAttack
-    {
-        get { return GetStat(Stat.SpAttack); }
-    }
-    public int SpDefense
-    {
-        get { return GetStat(Stat.SpDefense); }
-    }
-    public int Speed
-    {
-        get { return GetStat(Stat.Speed); }
-    }
+    public int Attack{get { return GetStat(Stat.Attack); }}
+    public int Defense{get { return GetStat(Stat.Defense); }}
+    public int SpAttack{get { return GetStat(Stat.SpAttack); }}
+    public int SpDefense{get { return GetStat(Stat.SpDefense); }}
+    public int Speed{get { return GetStat(Stat.Speed); }}
 
 
-    public DamageDetails TakeDamage(Move move, Monster attacker)
+    public DamageDetails TakeDamage(Move move, Monster attacker, int multiplicateur)
     {
         float critical = 1f;
         if (Random.value * 100f <= 6.25f)
@@ -140,8 +125,9 @@ public class Monster
 
         Damage = Mathf.FloorToInt(def * modifiers);
 
-        UpdateHP(Damage);
-        Debug.Log(Damage);
+        
+        UpdateHP(Damage * multiplicateur);
+        Debug.Log(Damage * multiplicateur);
         return damageDetails;
 
     }
@@ -207,20 +193,3 @@ public class DamageDetails
     public float Critical { get; set; }
     public float TypeEffectiveness { get; set; }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

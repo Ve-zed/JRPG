@@ -7,8 +7,8 @@ public class MonstersBase : ScriptableObject
 {
     [SerializeField] string _name;
     [SerializeField] string _description;
-    public Sprite FrontSprite;
-    public Sprite BackSprite;
+    public Sprite EnnemiSprite;
+    public Sprite PlayerSprite;
 
     public MonsterType type1;
     public MonsterType type2;
