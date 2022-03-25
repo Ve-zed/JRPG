@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fc4911ce85304642951675f99c5f2c9, type: 3}
-  m_Name: Poison
+  m_Name: Confusion
   m_EditorClassIdentifier: 
-  _name: Poison
-  _description: all ennemi are poisoned
+  _name: Confusion
+  _description: 
   _type: 0
   _power: 0
   _accuary: 100
-  _pp: 10
+  _pp: 20
   _category: 2
   _effects:
     boosts: []
-    _status: 1
-  _target: 2
+    _status: 2
+  _target: 0

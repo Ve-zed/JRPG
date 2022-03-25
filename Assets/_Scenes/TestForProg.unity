@@ -2840,12 +2840,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8230d2ac56c1a48a275ccd5e6038b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnnemiBattle: 0
   _playerUnits:
   - {fileID: 1177021269}
   - {fileID: 542518849}
   - {fileID: 1762517164}
   _playerUnitsDead: []
-  isEnnemiBattle: 0
   _ennemyUnits:
   - {fileID: 486709407}
   - {fileID: 1367584536}
@@ -12488,6 +12488,10 @@ PrefabInstance:
       propertyPath: _dialogBox
       value: 
       objectReference: {fileID: 680742815}
+    - target: {fileID: 7497398866215729134, guid: 3dc7db73a750a2d488055d31aa0a76b9, type: 3}
+      propertyPath: isPlayerUnit
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7497398866215729134, guid: 3dc7db73a750a2d488055d31aa0a76b9, type: 3}
       propertyPath: _battleSystem
       value: 

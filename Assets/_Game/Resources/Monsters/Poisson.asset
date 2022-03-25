@@ -28,6 +28,6 @@ MonoBehaviour:
   - _moveBase: {fileID: 11400000, guid: 23afccbaa011eca4e8b1557e88c2c336, type: 2}
     _level: 3
   - _moveBase: {fileID: 11400000, guid: 2f6a220411a28e04fa9a589945b4225d, type: 2}
+    _level: 8
+  - _moveBase: {fileID: 11400000, guid: 43cc7aa8ecea3b64a8c4f80424214b42, type: 2}
     _level: 1
-  - _moveBase: {fileID: 11400000, guid: a2ea2d53a14b1eb41aa8a5b540e20abb, type: 2}
-    _level: 7
