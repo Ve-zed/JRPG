@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc4911ce85304642951675f99c5f2c9, type: 3}
   m_Name: VolDeVie
   m_EditorClassIdentifier: 
-  _name: Vol de vie
+  _name: 
   _description: 
   _type: 0
-  _power: 10
-  _accuary: 100
+  _power: 0
+  _accuary: 0
   _pp: 0
-  _category: 1
+  _category: 0
   _effects:
     boosts: []
     _status: 0

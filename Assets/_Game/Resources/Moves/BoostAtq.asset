@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8fc4911ce85304642951675f99c5f2c9, type: 3}
-  m_Name: Balayage
+  m_Name: BoostAtq
   m_EditorClassIdentifier: 
-  _name: Balayage
+  _name: 
   _description: 
   _type: 0
-  _power: 10
-  _accuary: 100
-  _pp: 20
+  _power: 0
+  _accuary: 0
+  _pp: 0
   _category: 0
   _effects:
     boosts: []
     _status: 0
-  _target: 2
+  _target: 0
