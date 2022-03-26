@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     private bool _isMoving;
     private Vector2 _input;
 
+
+    
     public void HandleUpdate()
     {
         if (!_isMoving)
@@ -36,7 +38,10 @@ public class PlayerController : MonoBehaviour
                 targetPos.x += _input.x;
                 targetPos.y += _input.y;
                 if (IsWalkable(targetPos))
+                {
+            AudioManager.Instance.PlaySFXSound("snd_interface");
                     StartCoroutine(Move(targetPos, OnMoveOver));
+                }
             }
         }
         animator.SetBool("isMoving", _isMoving);
@@ -62,14 +67,15 @@ public class PlayerController : MonoBehaviour
     IEnumerator Move(Vector3 targetPos, Action OnMoveOver = null)
     {
         _isMoving = true;
+
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
             yield return null;
         }
         transform.position = targetPos;
-
         _isMoving = false;
+
 
         OnMoveOver?.Invoke();
     }

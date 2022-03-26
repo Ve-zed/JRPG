@@ -16,7 +16,7 @@ MonoBehaviour:
   _description: 
   EnnemiSprite: {fileID: 0}
   PlayerSprite: {fileID: 0}
-  type1: 0
+  type1: 2
   type2: 0
   _maxHp: 0
   _attack: 0

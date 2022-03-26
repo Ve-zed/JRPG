@@ -9,8 +9,9 @@ public class AudioManager : MonoBehaviour
     public AudioSource audioSourceSFX;
 
     public AudioClip[] audioClips;
-    
-    public float step = 1f;
+
+    [HideInInspector] public bool coroutine = false;
+    //public float step = 1f;
 
     public float m_sliderMusicValue = 0.3f;
     public float m_sliderSfxValue = 0.3f;
@@ -60,12 +61,12 @@ public class AudioManager : MonoBehaviour
         yield return new WaitForSeconds(clip.length);
         StartCoroutine(IEPlayMusicSound(name));
     }
-    public IEnumerator test(string name)
-    {
-        AudioClip clip = GetClip(name);
-        audioSourceMusic.PlayOneShot(clip);
-        yield return new WaitForSeconds(step);
-    }
+    //public IEnumerator step(string name)
+    //{
+    //    AudioClip clip = GetClip(name);
+    //    audioSourceMusic.PlayOneShot(clip);
+    //    yield return new WaitForSeconds(step);
+    //}
 
     AudioClip GetClip(string name)
     {
