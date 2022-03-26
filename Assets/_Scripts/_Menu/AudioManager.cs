@@ -5,10 +5,12 @@ using UnityEngine.Audio;
 public class AudioManager : MonoBehaviour
 {
     public AudioMixer mixer;
-    public AudioSource audioSource;
+    public AudioSource audioSourceMusic;
+    public AudioSource audioSourceSFX;
 
     public AudioClip[] audioClips;
-    public AudioClip[] audioMusics;
+    
+    public float step = 1f;
 
     public float m_sliderMusicValue = 0.3f;
     public float m_sliderSfxValue = 0.3f;
@@ -23,28 +25,49 @@ public class AudioManager : MonoBehaviour
         SetSFXLevel(m_sliderSfxValue);
     }
 
-
+    private void Update()
+    {
+    }
     public void SetMusicLevel(float sliderValue)
     {
         m_sliderMusicValue = sliderValue;
         mixer.SetFloat("MusicVolume", Mathf.Log10(sliderValue) * 20);
-
-        Debug.Log(sliderValue);
+        //Debug.Log(sliderValue);
     }
     public void SetSFXLevel(float sliderValue)
     {
         m_sliderSfxValue = sliderValue;
         mixer.SetFloat("SFXVolume", Mathf.Log10(sliderValue) * 20);
 
-        Debug.Log(sliderValue);
+        //Debug.Log(sliderValue);
     }
-    public void PlaySound(string name)
+    public void PlayMusicSound(string name)
     {
         AudioClip clip = GetClip(name);
-        audioSource.PlayOneShot(clip);
+        audioSourceMusic.PlayOneShot(clip);
+        Debug.Log(clip);
+    }
+    public void PlaySFXSound(string name)
+    {
+        AudioClip clip = GetClip(name);
+        audioSourceSFX.PlayOneShot(clip);
     }
 
-    AudioClip GetClip( string name)
+    public IEnumerator IEPlayMusicSound(string name)
+    {
+        AudioClip clip = GetClip(name);
+        audioSourceMusic.PlayOneShot(clip);
+        yield return new WaitForSeconds(clip.length);
+        StartCoroutine(IEPlayMusicSound(name));
+    }
+    public IEnumerator test(string name)
+    {
+        AudioClip clip = GetClip(name);
+        audioSourceMusic.PlayOneShot(clip);
+        yield return new WaitForSeconds(step);
+    }
+
+    AudioClip GetClip(string name)
     {
         foreach (var item in audioClips)
         {
@@ -53,5 +76,6 @@ public class AudioManager : MonoBehaviour
         }
         return null;
     }
+
 
 }

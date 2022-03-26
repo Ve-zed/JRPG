@@ -12,10 +12,18 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
+        //StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_music_menu"));
+
+        //AudioManager.Instance.PlayMusicSound("snd_music_fight");
         accueil.SetActive(true);
         parameter.SetActive(false);
         controls.SetActive(false);
         credits.SetActive(false);
+    }
+    private void Update()
+    {
+       
+
     }
     public void OnClickPlay()
     {
