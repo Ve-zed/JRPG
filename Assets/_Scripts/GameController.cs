@@ -64,6 +64,7 @@ public class GameController : MonoBehaviour
         _battleSystem.StartEnnemiBattle(playerParty, ennemiParty);
 
     }
+    
     private void EndBattle(bool won)
     {
         if(_ennemi != null && won == true)

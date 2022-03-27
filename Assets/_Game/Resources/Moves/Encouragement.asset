@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Encouragement
   m_EditorClassIdentifier: 
   _name: Encouragement
+  _sound: snd_encouragement
   _description: 
   _type: 0
   _power: 0

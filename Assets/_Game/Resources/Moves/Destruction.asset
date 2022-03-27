@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Destruction
   m_EditorClassIdentifier: 
   _name: Destruction
+  _sound: snd_destruction
   _description: 
   _type: 0
   _power: 20

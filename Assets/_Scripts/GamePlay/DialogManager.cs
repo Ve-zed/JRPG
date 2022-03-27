@@ -46,6 +46,7 @@ public class DialogManager : MonoBehaviour
             if (_currentLine < _dialog.Lines.Count)
             {
                 StartCoroutine(TypeDialog(_dialog.Lines[_currentLine]));
+
             }
             else
             {
@@ -59,6 +60,7 @@ public class DialogManager : MonoBehaviour
     public IEnumerator TypeDialog(string line)
     {
         _isTyping = true;
+        AudioManager.Instance.PlaySFXSound("snd_dialogue");
         _dialogText.text = "";
         foreach (var letter in line.ToCharArray())
         {
@@ -66,5 +68,6 @@ public class DialogManager : MonoBehaviour
             yield return new WaitForSeconds(1f / _lettersPerSecond);
         }
         _isTyping = false;
+        AudioManager.Instance.audioSourceSFX.Stop();
     }
 }

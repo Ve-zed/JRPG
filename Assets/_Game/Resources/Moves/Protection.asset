@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Protection
   m_EditorClassIdentifier: 
   _name: Protection
+  _sound: snd_protection
   _description: 
   _type: 0
   _power: 0

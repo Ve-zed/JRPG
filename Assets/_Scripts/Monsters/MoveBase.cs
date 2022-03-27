@@ -7,6 +7,7 @@ using UnityEngine;
 public class MoveBase : ScriptableObject
 {
     [SerializeField] string _name;
+    [SerializeField] string _sound;
 
     [TextArea]
     [SerializeField] string _description;
@@ -21,6 +22,7 @@ public class MoveBase : ScriptableObject
 
 
     public string Name { get { return _name; } }
+    public string Sound { get { return _sound; } }
     public string Description { get { return _description; } }
     public MonsterType Type { get { return _type; } }
     public int Power { get { return _power; } }

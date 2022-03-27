@@ -29,7 +29,6 @@ public class BattleSystem : MonoBehaviour
 
     public bool canSelected = true;
     public bool canSelectedEnnemi = false;
-    public bool EnnemiSelected = false;
     public bool powerUsed = false;
 
     private BattleState _state;
@@ -55,19 +54,26 @@ public class BattleSystem : MonoBehaviour
         _ennemi = ennemiParty.GetComponent<EnnemiController>();
         StartCoroutine(SetupBattle());
     }
+   
 
     private void ResetBattleState()
     {
         canSelected = true;
         canSelectedEnnemi = false;
-        EnnemiSelected = false;
         _playerSelectedUnit = null;
         _targetSelectedUnit = null;
+        foreach (var item in _playerUnits)
+        {
+            item.isPowerUsed = false;
+        }
         _playerUnitsDead.RemoveRange(0, _playerUnitsDead.Count);
     }
-
+   
     public IEnumerator SetupBattle()
     {
+        AudioManager.Instance.audioSourceMusic.Stop();
+        StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_music_fight"));
+
         foreach (var _playerUnit in _playerUnits)
         {
             _playerUnit.Clear();
@@ -75,6 +81,10 @@ public class BattleSystem : MonoBehaviour
         }
         foreach (var _ennemyUnit in _ennemyUnits)
         {
+            if(!_ennemi._virus)
+            _ennemyUnit.isVirus = false;
+            else
+            _ennemyUnit.isVirus = true;
             _ennemyUnit.Clear();
         }
 
@@ -110,6 +120,11 @@ public class BattleSystem : MonoBehaviour
     {
         _state = BattleState.BattleOver;
         _playerParty.Monsters.ForEach(p => p.OnBattleOver());
+        if (won)
+            AudioManager.Instance.PlaySFXSound("snd_victory");
+        AudioManager.Instance.audioSourceMusic.Stop();
+        StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_music_exploration"));
+        StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_ambiance_exploration"));
         onBattleOver(won);
     }
 
@@ -190,7 +205,6 @@ public class BattleSystem : MonoBehaviour
             if (player.isSelected)
             {
                 player.isSelected = false;
-                canSelected = true;
                 break;
             }
         }
@@ -205,12 +219,11 @@ public class BattleSystem : MonoBehaviour
                 StartCoroutine(EnemyMove());
                 break;
             }
-            else
-                EnnemiSelected = false;
         }
         _precision.ResetFillAmount();
         _pouvoirBarre.SetActive(false);
         powerUsed = false;
+        canSelected = true;
     }
     IEnumerator EnemyMove()
     {
@@ -247,6 +260,8 @@ public class BattleSystem : MonoBehaviour
                 }
                 else if (move.Base.Target == MoveTarget.Self)
                     yield return EnnemiHealMove(_ennemyUnits[i]);
+                else if (move.Base.Category == MoveCategory.Special)
+                    yield return RunMoveSpecial(_ennemyUnits[i], target, move);
                 else
                     yield return RunMove(_ennemyUnits[i], target, move);
             }
@@ -269,6 +284,8 @@ public class BattleSystem : MonoBehaviour
             sourceUnit.Monster.HP += sourceUnit.Monster.MaxHp / 5;
             if (sourceUnit.Monster.HP > sourceUnit.Monster.MaxHp)
                 sourceUnit.Monster.HP = sourceUnit.Monster.MaxHp;
+
+            sourceUnit.PlayHealAnimation();
             sourceUnit.Monster.HpChanged = true;
             StartCoroutine(sourceUnit.Hud.UpdateHP());
         }
@@ -282,8 +299,13 @@ public class BattleSystem : MonoBehaviour
             yield break;
         }
         sourceUnit.PlayAttackAnimation();
+        AudioManager.Instance.PlaySFXSound(move.Base.Sound);
         yield return new WaitForSeconds(1f);
         targetUnit.PlayHitAnimation();
+        if (targetUnit.isVirus)
+            AudioManager.Instance.PlaySFXSound("snd_virus_hurt");
+        else
+            AudioManager.Instance.PlaySFXSound("snd_player_hurt");
 
         //Damage
         var damageDetails = targetUnit.Monster.TakeDamage(move, sourceUnit.Monster, 1);
@@ -333,6 +355,8 @@ public class BattleSystem : MonoBehaviour
             CheckForBattleOver(sourceUnit);
         }
 
+        canSelected = true;
+
     }
 
     IEnumerator RunMoveForAllPlayer(BattleUnit sourceUnit, Move move)
@@ -341,6 +365,7 @@ public class BattleSystem : MonoBehaviour
         for (int i = 0; i < _playerParty.Monsters.Count; i++)
         {
             var player = _playerUnits[i];
+            AudioManager.Instance.PlaySFXSound(move.Base.Sound);
             if (move.Base.Category == MoveCategory.Status)
             {
                 StartCoroutine(RunMoveEffects(move, sourceUnit.Monster, _playerUnits[i].Monster, sourceUnit));
@@ -380,11 +405,14 @@ public class BattleSystem : MonoBehaviour
 
             CheckForBattleOver(sourceUnit);
         }
+        canSelected = true;
+
     }
 
     IEnumerator RunMoveAttackAll(BattleUnit sourceUnit, List<BattleUnit> targetUnits, Move move)
     {
         sourceUnit.PlayAttackAnimation();
+        AudioManager.Instance.PlaySFXSound(move.Base.Sound);
         yield return new WaitForSeconds(1f);
         if (sourceUnit.isPlayerUnit)
         {
@@ -393,6 +421,10 @@ public class BattleSystem : MonoBehaviour
                 if (targetUnits[i].Monster.HP > 0)
                 {
                     targetUnits[i].PlayHitAnimation();
+                    if(targetUnits[i].isVirus)
+                        AudioManager.Instance.PlaySFXSound("snd_virus_hurt");
+                    else
+                        AudioManager.Instance.PlaySFXSound("snd_player_hurt");
                     if (powerUsed && move.Base.Effects.Status == ConditionID.none)
                     {
                         if (PrecisionBar.Instance.barreSplit == 1)
@@ -527,11 +559,15 @@ public class BattleSystem : MonoBehaviour
         }
 
         yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} used {move.Base.Name}");
-
         sourceUnit.PlayAttackAnimation();
+        AudioManager.Instance.PlaySFXSound(move.Base.Sound);
         yield return new WaitForSeconds(1f);
 
         targetUnit.PlayHitAnimation();
+        if (targetUnit.isVirus)
+            AudioManager.Instance.PlaySFXSound("snd_virus_hurt");
+        else
+            AudioManager.Instance.PlaySFXSound("snd_player_hurt");
 
         if (move.Base.Category == MoveCategory.Status)
         {
@@ -574,6 +610,8 @@ public class BattleSystem : MonoBehaviour
 
             CheckForBattleOver(sourceUnit);
         }
+        canSelected = true;
+
     }
 
     IEnumerator RunMoveEffects(Move move, Monster source, Monster target, BattleUnit sourceUnit = null)
@@ -619,6 +657,7 @@ public class BattleSystem : MonoBehaviour
             if (!isEnnemiBattle)
             {
                 BattleOver(true);
+
             }
             else
             {

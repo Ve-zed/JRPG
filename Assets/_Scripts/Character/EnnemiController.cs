@@ -17,16 +17,21 @@ public class EnnemiController : MonoBehaviour, Interactable
     public BoxCollider2D collider2D;
 
     bool _battleLost = false;
+    public bool _virus = false;
 
     public void Interact()
     {
-        if (!_battleLost)
+        if (!_battleLost && !_virus)
         {
             StartCoroutine(DialogManager.Instance.ShowDialog(_dialog, () =>
 
             StartCoroutine(StartBattle())
 
             ));
+        }
+        else if (!_battleLost && _virus)
+        {
+            StartCoroutine(StartBattle());
         }
         else
             StartCoroutine(DialogManager.Instance.ShowDialog(_dialogAfterBattle)); ;
@@ -38,6 +43,7 @@ public class EnnemiController : MonoBehaviour, Interactable
         _dialogManager.dialogBox.SetActive(false);
         GameController.Instance.StartEnnemiBattle(this);
     }
+    
 
     public void BattleLost()
     {

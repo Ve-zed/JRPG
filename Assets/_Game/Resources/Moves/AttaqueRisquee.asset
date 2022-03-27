@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AttaqueRisquee
   m_EditorClassIdentifier: 
   _name: "Attaque risqu\xE9e"
+  _sound: snd_attaque_risquee
   _description: 
   _type: 0
   _power: 0

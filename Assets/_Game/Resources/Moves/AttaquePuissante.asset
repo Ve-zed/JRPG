@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AttaquePuissante
   m_EditorClassIdentifier: 
   _name: Attaque puissante
+  _sound: snd_balayage_cible
   _description: 
   _type: 0
   _power: 80

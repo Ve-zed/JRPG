@@ -8,6 +8,7 @@ public class BattleUnit : MonoBehaviour
 {
 
     public bool isPlayerUnit;
+    public bool isVirus;
     [SerializeField] BattleHud _hud;
     [SerializeField] HPBar _hpBar;
 
@@ -124,11 +125,10 @@ public class BattleUnit : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (_battleSystem.canSelectedEnnemi&& !_battleSystem.EnnemiSelected && !isPlayerUnit)
+        if (_battleSystem.canSelectedEnnemi && !isPlayerUnit)
         {
             _battleSystem._targetSelectedUnit = this;
             _battleSystem.canSelectedEnnemi = false;
-            _battleSystem.EnnemiSelected= true;
             if (_battleSystem._targetSelectedUnit.Monster.HP > 0 && !_battleSystem.powerUsed)
                 StartCoroutine(_battleSystem.PlayerMove());
             else if(_battleSystem._targetSelectedUnit.Monster.HP > 0 && _battleSystem.powerUsed)

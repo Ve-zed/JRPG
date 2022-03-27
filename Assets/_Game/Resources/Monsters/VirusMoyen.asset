@@ -25,7 +25,7 @@ MonoBehaviour:
   _spDefense: 0
   _speed: 0
   _learnableMoves:
-  - _moveBase: {fileID: 11400000, guid: 72e117b22c8e56c4fb83599307b7858a, type: 2}
+  - _moveBase: {fileID: 11400000, guid: 3cebc5b1b95199447ab0d48bbbc8c350, type: 2}
     _level: 0
-  - _moveBase: {fileID: 11400000, guid: 914e9c008f7a63e47aa6cf9deeff1b86, type: 2}
+  - _moveBase: {fileID: 11400000, guid: 70d480090c1bcf14f93738a58d81479d, type: 2}
     _level: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: AttaqueBasique
   m_EditorClassIdentifier: 
   _name: Attaque basique
+  _sound: snd_attaque_basique
   _description: 
   _type: 0
   _power: 40

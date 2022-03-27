@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: NuageDePoison
   m_EditorClassIdentifier: 
   _name: Nuage de poison
+  _sound: snd_nuage_de_poison
   _description: 
   _type: 0
   _power: 0

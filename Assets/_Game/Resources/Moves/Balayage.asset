@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Balayage
   m_EditorClassIdentifier: 
   _name: Balayage
+  _sound: snd_balayage
   _description: 
   _type: 0
   _power: 10

@@ -2919,7 +2919,6 @@ MonoBehaviour:
   _pouvoirBarre: {fileID: 998910296}
   canSelected: 1
   canSelectedEnnemi: 0
-  EnnemiSelected: 0
   powerUsed: 0
 --- !u!1 &1202160348
 GameObject:
@@ -3727,7 +3726,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1648098048}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!4 &1648098051
 Transform:
   m_ObjectHideFlags: 0
@@ -12432,6 +12431,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4472211314815570437, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: _virus
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472211314815570437, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
       propertyPath: _dialogManager
       value: 
       objectReference: {fileID: 197559271}
@@ -12588,6 +12591,10 @@ PrefabInstance:
     - target: {fileID: 6678224072163117597, guid: 2bfb2b598953cf843ada2721b894cd01, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6678224072163117598, guid: 2bfb2b598953cf843ada2721b894cd01, type: 3}
+      propertyPath: isVirus
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6678224072163117598, guid: 2bfb2b598953cf843ada2721b894cd01, type: 3}
       propertyPath: _battleSystem

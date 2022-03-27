@@ -28,6 +28,12 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            //audioSourceMusic.Stop();
+            StartCoroutine(IEPlayMusicSound("snd_ambiance_exploration"));
+        }
+
     }
     public void SetMusicLevel(float sliderValue)
     {
@@ -77,6 +83,41 @@ public class AudioManager : MonoBehaviour
         }
         return null;
     }
+    /* all sound,
+    
+    autre
 
+    snd_music_menu(fait)
+    snd_music_fight(fait)
+    snd_music_exploration(fait)
+    snd_ambiance_exploration(fait)
+    snd_victory(fait)
+    snd_interface(fait)
+    snd_dialogue(fait)
+
+
+    atq
+
+    snd_virus_hurt(fait)
+    snd_attaque_basique_virus(fait)
+    snd_attaque_puissante(fait)
+    snd_bouclier(fait)
+    snd_player_hurt(fait)
+    snd_attaque_basique(fait)
+    snd_attaque_risquee(fait)
+    snd_balayage(fait)
+    snd_balayage_cilbe(fait)
+    snd_confusion(fait)
+    snd_debug(fait)
+    snd_destruction(fait)
+    snd_encouragement(fait)
+    snd_nuage_de_poison(fait)
+    snd_protection(fait)
+    snd_provocation(fait)
+    snd_rafale_de_coups(fait)
+    snd_soins_instante
+    snd_soins_majeurs(fait)
+    snd_vol_de_vie(fait)
+     */
 
 }

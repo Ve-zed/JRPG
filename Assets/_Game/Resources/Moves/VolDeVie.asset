@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: VolDeVie
   m_EditorClassIdentifier: 
   _name: Vol de vie
+  _sound: snd_vol_de_vie
   _description: 
   _type: 0
   _power: 10

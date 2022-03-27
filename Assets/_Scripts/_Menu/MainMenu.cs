@@ -12,9 +12,8 @@ public class MainMenu : MonoBehaviour
 
     private void Awake()
     {
-        //StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_music_menu"));
+        StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_music_menu"));
 
-        //AudioManager.Instance.PlayMusicSound("snd_music_fight");
         accueil.SetActive(true);
         parameter.SetActive(false);
         controls.SetActive(false);
@@ -28,6 +27,10 @@ public class MainMenu : MonoBehaviour
     public void OnClickPlay()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        AudioManager.Instance.audioSourceMusic.Stop();
+        StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_music_exploration"));
+        StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_ambiance_exploration"));
+
     }
     public void OnClickParameter()
     {

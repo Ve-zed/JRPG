@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: BalayageCible
   m_EditorClassIdentifier: 
   _name: "Balayage cibl\xE9"
+  _sound: snd_balayage_cible
   _description: 
   _type: 0
   _power: 40

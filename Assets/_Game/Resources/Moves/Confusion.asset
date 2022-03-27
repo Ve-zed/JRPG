@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Confusion
   m_EditorClassIdentifier: 
   _name: Confusion
+  _sound: snd_confusion
   _description: 
   _type: 0
   _power: 0
