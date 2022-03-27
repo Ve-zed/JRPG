@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 37013164}
   - component: {fileID: 37013163}
   m_Layer: 5
-  m_Name: NFTDescBig
+  m_Name: NFTTradingBig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1661,7 +1661,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pouvoir
+  m_text: Medium
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2377,7 +2377,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pouvoir description
+  m_text: Small description
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3176,12 +3176,12 @@ GameObject:
   - component: {fileID: 241288234}
   - component: {fileID: 241288233}
   m_Layer: 5
-  m_Name: Btn_NFTDescSmall_3
+  m_Name: Btn_NFTTradingSmall_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &241288232
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3193,12 +3193,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1351464902}
-  m_RootOrder: 2
+  m_Father: {fileID: 1349804339}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 65.00003, y: -3}
+  m_AnchoredPosition: {x: -217.99979, y: -3}
   m_SizeDelta: {x: 57, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &241288233
@@ -3852,6 +3852,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
+  isVirus: 0
   _hud: {fileID: 950603277}
   _hpBar: {fileID: 0}
   _seeOrNot: {fileID: 0}
@@ -4236,7 +4237,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pouvoir description
+  m_text: Medium description
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4418,12 +4419,12 @@ GameObject:
   - component: {fileID: 336193675}
   - component: {fileID: 336193674}
   m_Layer: 5
-  m_Name: Btn_NFTDescSmall_2
+  m_Name: Btn_NFTTradingSmall_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &336193673
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4435,12 +4436,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1351464902}
-  m_RootOrder: 1
+  m_Father: {fileID: 1349804339}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.9999695, y: -3}
+  m_AnchoredPosition: {x: -285, y: -3}
   m_SizeDelta: {x: 57, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &336193674
@@ -4996,6 +4997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
+  isVirus: 0
   _hud: {fileID: 765390443}
   _hpBar: {fileID: 67128331}
   _seeOrNot: {fileID: 0}
@@ -5300,6 +5302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 1
+  isVirus: 0
   _hud: {fileID: 137613382}
   _hpBar: {fileID: 2013338600}
   _seeOrNot: {fileID: 0}
@@ -5611,12 +5614,12 @@ GameObject:
   - component: {fileID: 486010117}
   - component: {fileID: 486010116}
   m_Layer: 5
-  m_Name: Btn_NFTDescSmall_1
+  m_Name: Btn_NFTTradingSmall_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &486010115
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5628,12 +5631,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1351464902}
-  m_RootOrder: 0
+  m_Father: {fileID: 1349804339}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -68, y: -3}
+  m_AnchoredPosition: {x: -351.00003, y: -3}
   m_SizeDelta: {x: 57, y: 54}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &486010116
@@ -5808,6 +5811,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
+  isVirus: 0
   _hud: {fileID: 542156681}
   _hpBar: {fileID: 909117166}
   _seeOrNot: {fileID: 0}
@@ -8178,6 +8182,7 @@ GameObject:
   - component: {fileID: 653306456}
   - component: {fileID: 653306455}
   - component: {fileID: 653306454}
+  - component: {fileID: 653306458}
   m_Layer: 5
   m_Name: Btn_TreeNFTMedium
   m_TagString: Untagged
@@ -8227,9 +8232,10 @@ MonoBehaviour:
   _nFTTextDesc: {fileID: 321407830}
   _nFTModifTextName: {fileID: 720647470}
   _nFTModifTextDesc: {fileID: 858327513}
-  _nFTCountTrading: {fileID: 1148541942}
   NFTCount:
   - {fileID: 2022288650}
+  NFTTrading:
+  - {fileID: 1148541942}
 --- !u!114 &653306455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8273,19 +8279,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 653306456}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 653306454}
-        m_TargetAssemblyTypeName: NFT_Change_Image, Assembly-CSharp
-        m_MethodName: OnClickNFT
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &653306456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8324,6 +8318,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 653306452}
   m_CullTransparentMesh: 1
+--- !u!61 &653306458
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653306452}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.000009536743, y: -2.762764}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 83.88309, y: 78.357506}
+  m_EdgeRadius: 0
 --- !u!1 &653827883
 GameObject:
   m_ObjectHideFlags: 0
@@ -8970,6 +8990,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
+  isVirus: 0
   _hud: {fileID: 1490251167}
   _hpBar: {fileID: 850117280}
   _seeOrNot: {fileID: 0}
@@ -10973,6 +10994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
+  isVirus: 0
   _hud: {fileID: 162410215}
   _hpBar: {fileID: 329535116}
   _seeOrNot: {fileID: 0}
@@ -14616,7 +14638,7 @@ GameObject:
   - component: {fileID: 1148541945}
   - component: {fileID: 1148541944}
   m_Layer: 5
-  m_Name: NFTDescMedium
+  m_Name: NFTTradingMedium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15242,6 +15264,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 1
+  isVirus: 0
   _hud: {fileID: 818049218}
   _hpBar: {fileID: 1118414628}
   _seeOrNot: {fileID: 0}
@@ -15317,7 +15340,6 @@ MonoBehaviour:
   _pouvoirBarre: {fileID: 0}
   canSelected: 1
   canSelectedEnnemi: 0
-  EnnemiSelected: 0
   powerUsed: 0
 --- !u!1 &1202160348
 GameObject:
@@ -15510,6 +15532,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
+  isVirus: 0
   _hud: {fileID: 1168108372}
   _hpBar: {fileID: 92984442}
   _seeOrNot: {fileID: 0}
@@ -15780,6 +15803,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 1
+  isVirus: 0
   _hud: {fileID: 1154538930}
   _hpBar: {fileID: 0}
   _seeOrNot: {fileID: 0}
@@ -16393,6 +16417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
+  isVirus: 0
   _hud: {fileID: 242020862}
   _hpBar: {fileID: 0}
   _seeOrNot: {fileID: 0}
@@ -17425,7 +17450,9 @@ RectTransform:
   - {fileID: 858327512}
   - {fileID: 37013162}
   - {fileID: 1148541943}
-  - {fileID: 1351464902}
+  - {fileID: 486010115}
+  - {fileID: 336193673}
+  - {fileID: 241288232}
   m_Father: {fileID: 576981568}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -17568,44 +17595,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351391126}
   m_CullTransparentMesh: 1
---- !u!1 &1351464901
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1351464902}
-  m_Layer: 5
-  m_Name: NFTDescSmall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &1351464902
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1351464901}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 486010115}
-  - {fileID: 336193673}
-  - {fileID: 241288232}
-  m_Father: {fileID: 1349804339}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -283, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1359703987
 GameObject:
   m_ObjectHideFlags: 0
@@ -18485,6 +18474,7 @@ GameObject:
   - component: {fileID: 1513252244}
   - component: {fileID: 1513252243}
   - component: {fileID: 1513252246}
+  - component: {fileID: 1513252247}
   m_Layer: 5
   m_Name: Btn_TreeNFTBig
   m_TagString: Untagged
@@ -18557,19 +18547,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1513252244}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1513252246}
-        m_TargetAssemblyTypeName: NFT_Change_Image, Assembly-CSharp
-        m_MethodName: OnClickNFT
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1513252244
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18628,9 +18606,36 @@ MonoBehaviour:
   _nFTTextDesc: {fileID: 622194367}
   _nFTModifTextName: {fileID: 720647470}
   _nFTModifTextDesc: {fileID: 858327513}
-  _nFTCountTrading: {fileID: 37013161}
   NFTCount:
   - {fileID: 484066812}
+  NFTTrading:
+  - {fileID: 37013161}
+--- !u!61 &1513252247
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513252241}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.5000305, y: -0.00008010864}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 135.54071, y: 131.86673}
+  m_EdgeRadius: 0
 --- !u!1 &1534929454
 GameObject:
   m_ObjectHideFlags: 0
@@ -18817,6 +18822,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
+  isVirus: 0
   _hud: {fileID: 165741456}
   _hpBar: {fileID: 0}
   _seeOrNot: {fileID: 0}
@@ -19228,6 +19234,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 1
+  isVirus: 0
   _hud: {fileID: 1534929456}
   _hpBar: {fileID: 1088832430}
   _seeOrNot: {fileID: 0}
@@ -28149,13 +28156,14 @@ GameObject:
   - component: {fileID: 1861888247}
   - component: {fileID: 1861888246}
   - component: {fileID: 1861888245}
+  - component: {fileID: 1861888249}
   m_Layer: 5
   m_Name: Btn_TreeNFTSmall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1861888244
 RectTransform:
   m_ObjectHideFlags: 0
@@ -28200,11 +28208,14 @@ MonoBehaviour:
   _nFTTextDesc: {fileID: 186764081}
   _nFTModifTextName: {fileID: 720647470}
   _nFTModifTextDesc: {fileID: 858327513}
-  _nFTCountTrading: {fileID: 1351464901}
   NFTCount:
   - {fileID: 468462951}
-  - {fileID: 468462951}
-  - {fileID: 468462951}
+  - {fileID: 598612124}
+  - {fileID: 485311808}
+  NFTTrading:
+  - {fileID: 486010114}
+  - {fileID: 336193672}
+  - {fileID: 241288231}
 --- !u!114 &1861888246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28248,19 +28259,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1861888247}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1861888245}
-        m_TargetAssemblyTypeName: NFT_Change_Image, Assembly-CSharp
-        m_MethodName: OnClickNFT
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1861888247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28299,6 +28298,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1861888243}
   m_CullTransparentMesh: 1
+--- !u!61 &1861888249
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861888243}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.3814535, y: -2.7627907}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 42.441696, y: 45.204323}
+  m_EdgeRadius: 0
 --- !u!1 &1870647208
 GameObject:
   m_ObjectHideFlags: 0
@@ -28510,7 +28535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Pouvoir
+  m_text: Small
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -29126,6 +29151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
+  isVirus: 0
   _hud: {fileID: 188622775}
   _hpBar: {fileID: 0}
   _seeOrNot: {fileID: 0}
@@ -29360,6 +29386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayerUnit: 0
+  isVirus: 0
   _hud: {fileID: 171395642}
   _hpBar: {fileID: 0}
   _seeOrNot: {fileID: 0}
