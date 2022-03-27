@@ -26,28 +26,21 @@ public class NFT_Properties : MonoBehaviour
     //Nombre
     public List<GameObject> NFTCount;
 
-    /*private void Start()
+    private bool Selected = false;
+
+    private void Update()
     {
-        int NbNFTCount = NFTCount.Count;
-        switch(NbNFTCount)
+        if (Selected == true)
         {
-            case 1:
-                if (tag == "NFTPower")
-                {
-
-                }
-                break;
-            case 3:
-
-                break;
+            _nFTSprite.sprite = _nFTSpriteSelected;
+            _nFTModifTextName.text = _nFTTextName.text;
+            _nFTModifTextDesc.text = _nFTTextDesc.text;
+            _nFTCountTrading.SetActive(true);
         }
-    }*/
+    }
 
     public void OnClickNFT()
     {
-        _nFTSprite.sprite = _nFTSpriteSelected;
-        _nFTModifTextName.text = _nFTTextName.text;
-        _nFTModifTextDesc.text = _nFTTextDesc.text;
-        _nFTCountTrading.SetActive(true);
+        Selected = true;
     }
 }
