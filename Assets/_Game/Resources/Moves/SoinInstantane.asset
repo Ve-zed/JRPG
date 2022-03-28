@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fc4911ce85304642951675f99c5f2c9, type: 3}
   m_Name: SoinInstantane
   m_EditorClassIdentifier: 
-  _name: "Soin instantan\xE9"
+  _name: Soin instantane
   _sound: snd_soin_instantane
   _description: 
   _type: 0
