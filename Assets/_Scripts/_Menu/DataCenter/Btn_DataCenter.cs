@@ -10,7 +10,10 @@ public class Btn_DataCenter : MonoBehaviour
     [SerializeField] GameObject tree_Player;
     [SerializeField] GameObject tree_Partner_1;
     [SerializeField] GameObject tree_Partner_2;
-    
+    [SerializeField] NFT_Update _NFT_Update_Player;
+    [SerializeField] NFT_Update _NFT_Update_Partner_1;
+    [SerializeField] NFT_Update _NFT_Update_Partner_2;
+
     public void OnClickDataCenter()
     {
         dataCenter.SetActive(true);
@@ -21,7 +24,6 @@ public class Btn_DataCenter : MonoBehaviour
     {
         dataCenter.SetActive(false);
     }
-
     public void OnClickTreeNFT()
     {
         treeNFT.SetActive(true);
@@ -33,23 +35,28 @@ public class Btn_DataCenter : MonoBehaviour
         treeNFT.SetActive(false);
         options.SetActive(true);
     }
-
     public void OnClickTreePlayer()
     {
         tree_Player.SetActive(true);
         tree_Partner_1.SetActive(false);
         tree_Partner_2.SetActive(false);
+        _NFT_Update_Player.OnClickNFT();
     }
+
     public void OnClickTreePartner1()
     {
         tree_Player.SetActive(false);
         tree_Partner_1.SetActive(true);
         tree_Partner_2.SetActive(false);
+        _NFT_Update_Partner_1.OnClickNFT();
     }
+
     public void OnClickTreePartner2()
     {
         tree_Player.SetActive(false);
         tree_Partner_1.SetActive(false);
         tree_Partner_2.SetActive(true);
+        _NFT_Update_Partner_2.OnClickNFT();
     }
+
 }
