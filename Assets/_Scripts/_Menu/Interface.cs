@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Interface : MonoBehaviour
 {
-
-    private void OnMouseEnter()
+    private void OnMouseDown()
     {
+        
         AudioManager.Instance.PlaySFXSound("snd_interface");
     }
 

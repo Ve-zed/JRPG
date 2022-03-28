@@ -1250,6 +1250,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 9842d34e47ee4704f90535a2f4729359, type: 3}
   - {fileID: 8300000, guid: 6aa17d6b7e1d2a945ae3f6ad6c35755f, type: 3}
   - {fileID: 8300000, guid: 4c43e65ca9b02b14d899f78324dd11ca, type: 3}
+  - {fileID: 8300000, guid: 64254c3d7afb67e41a2bf8602352d9cb, type: 3}
   - {fileID: 8300000, guid: 7a30eea03746cee4bb230cbf51820066, type: 3}
   - {fileID: 8300000, guid: 765765f261233d845bb25a510e7ee05f, type: 3}
   coroutine: 0
@@ -3220,7 +3221,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6855056577468358246, guid: 08a365461d167bc4fb3e61dfaefd9fc2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 460.00006
+      value: 460.00012
       objectReference: {fileID: 0}
     - target: {fileID: 6855056577468358246, guid: 08a365461d167bc4fb3e61dfaefd9fc2, type: 3}
       propertyPath: m_AnchoredPosition.y
