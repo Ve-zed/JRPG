@@ -777,11 +777,11 @@ public class BattleSystem : MonoBehaviour
         {
             _playerSelectedUnit.isAttacking = false;
         }
-        else if(curmove.Base.Target == MoveTarget.AllPlayer)
+        /*else if(curmove.Base.Target == MoveTarget.AllPlayer)
             StartCoroutine(RunMoveForAllPlayer(_playerSelectedUnit, curmove));
         else if(curmove.Base.Target == MoveTarget.Self)
             StartCoroutine(RunMove(_playerSelectedUnit, null, curmove));
-        else if (move >= 4 && !_playerSelectedUnit.isPowerUsed)
+        */else if (move >= 4 && !_playerSelectedUnit.isPowerUsed)
         {
             powerUsed = true;
             EnnemiSelection();
