@@ -19,11 +19,11 @@ MonoBehaviour:
   type1: 2
   type2: 0
   _maxHp: 50
-  _attack: 0
-  _defense: 0
-  _spAttack: 0
-  _spDefense: 0
-  _speed: 0
+  _attack: 50
+  _defense: 50
+  _spAttack: 50
+  _spDefense: 50
+  _speed: 50
   _learnableMoves:
   - _moveBase: {fileID: 11400000, guid: cfe153940ca96ce438f2ab8b1e48a3cf, type: 2}
     _level: 1

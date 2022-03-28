@@ -18,12 +18,12 @@ MonoBehaviour:
   PlayerSprite: {fileID: 0}
   type1: 0
   type2: 0
-  _maxHp: 0
-  _attack: 0
-  _defense: 0
-  _spAttack: 0
-  _spDefense: 0
-  _speed: 0
+  _maxHp: 50
+  _attack: 50
+  _defense: 50
+  _spAttack: 50
+  _spDefense: 50
+  _speed: 50
   _learnableMoves:
   - _moveBase: {fileID: 11400000, guid: 43cc7aa8ecea3b64a8c4f80424214b42, type: 2}
     _level: 0
