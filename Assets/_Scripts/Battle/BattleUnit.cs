@@ -19,8 +19,9 @@ public class BattleUnit : MonoBehaviour
 
     [SerializeField] BattleDialogBox _dialogBox;
 
+    [SerializeField] GameObject _pouvoirBarre;
 
-
+    public BoxCollider2D boxCollider;
     public bool isAttacking;
     public bool isSelected;
     public bool isPowerUsed = false;
@@ -115,44 +116,43 @@ public class BattleUnit : MonoBehaviour
     {
         var sequance = DOTween.Sequence();
 
-        sequance.Append(_image.DOFade(1f, 0.5f));
+        _image.DOFade(1f, 0.5f);
     }
     public IEnumerator PlayHealAnimation()
     {
         var sequance = DOTween.Sequence();
         if (_image.color.a < 1)
         {
-            sequance.Append(_image.DOColor(Color.green, 0.1f));
+            _image.DOColor(Color.green, 0.1f);
             yield return new WaitForSeconds(0.5f);
-            sequance.Append(_image.DOColor(originalColor, 0.1f));
+            _image.DOColor(originalColor, 0.1f);
             yield return new WaitForSeconds(1f);
             PlayFadeAnimation();
 
         }
         else
         {
-            sequance.Append(_image.DOColor(Color.green, 0.1f));
+            _image.DOColor(Color.green, 0.1f);
             yield return new WaitForSeconds(0.5f);
-            sequance.Append(_image.DOColor(originalColor, 0.1f));
+            _image.DOColor(originalColor, 0.1f);
         }
     }
     public IEnumerator PlayBoostAnimation()
     {
-        var sequance = DOTween.Sequence();
         if (_image.color.a < 1)
         {
-            sequance.Append(_image.DOColor(Color.blue, 0.1f));
+            _image.DOColor(Color.blue, 0.1f);
             yield return new WaitForSeconds(0.5f);
-            sequance.Append(_image.DOColor(originalColor, 0.1f));
+            _image.DOColor(originalColor, 0.1f);
             yield return new WaitForSeconds(1f);
             PlayFadeAnimation();
 
         }
         else
         {
-            sequance.Append(_image.DOColor(Color.blue, 0.1f));
+            _image.DOColor(Color.blue, 0.1f);
             yield return new WaitForSeconds(0.5f);
-            sequance.Append(_image.DOColor(originalColor, 0.1f));
+            _image.DOColor(originalColor, 0.1f);
         }
 
     }
@@ -160,13 +160,13 @@ public class BattleUnit : MonoBehaviour
     {
         var sequance = DOTween.Sequence();
         sequance.Join(_image.DOFade(0f, 0.5f));
+        boxCollider.enabled = false;
     }
-    public void OnMouseExit()
+    public void OnMouseEnter()
     {
-        /*if (isPlayerUnit)
-            StartCoroutine(_seeOrNot.enableOrDisableObject());*/
+        if (isPlayerUnit)
+            _seeOrNot.seeTrigger = true;
     }
-    [SerializeField] GameObject _pouvoirBarre;
 
     private void OnMouseDown()
     {

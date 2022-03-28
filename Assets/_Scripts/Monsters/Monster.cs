@@ -101,6 +101,7 @@ public class Monster
 
     public DamageDetails TakeDamage(Move move, Monster attacker, int multiplicateur)
     {
+        Damage = 0;
         float critical = 1f;
         if (Random.value * 100f <= 6.25f)
             critical = 2f;
@@ -121,7 +122,7 @@ public class Monster
         float modifiers = Random.Range(0.85f, 1f) * type * critical;
         float atk = (2 * attacker.Level + 10) / 250f;
         float def = atk * move.Base.Power * ((float)attack / defense) + 2;
-        if (defense > 90000)
+        if (defense > 50000)
             def = 0;
 
         Damage = Mathf.FloorToInt(def * modifiers);

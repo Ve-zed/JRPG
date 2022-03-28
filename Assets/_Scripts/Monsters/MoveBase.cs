@@ -33,7 +33,6 @@ public class MoveBase : ScriptableObject
     public MoveTarget Target { get { return _target; } }
 
 
-    //chantier
     [System.Serializable]
     public class MoveEffects
     {

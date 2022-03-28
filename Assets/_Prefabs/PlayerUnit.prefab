@@ -426,6 +426,7 @@ MonoBehaviour:
   _seeOrNot: {fileID: 0}
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
+  boxCollider: {fileID: 7497398866215729133}
   isAttacking: 0
   isSelected: 0
   isPowerUsed: 0
