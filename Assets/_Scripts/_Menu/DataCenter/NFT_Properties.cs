@@ -28,15 +28,17 @@ public class NFT_Properties : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            print("clic");
             Vector3 world = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             RaycastHit2D Click = Physics2D.Raycast(world, Vector2.zero);
             
             if (Click.collider != null)
             {
+                print("collider touché");
                 _nFTSprite.sprite = _nFTSpriteSelected;
                 _nFTModifTextName.text = _nFTTextName.text;
                 _nFTModifTextDesc.text = _nFTTextDesc.text;
-                for (int i = 0; i < NFTTrading.Count; i++)
+                for (int i = 0; i <= NFTTrading.Count - 1; i++)
                 {
                     NFTTrading[i].SetActive(true);
                 }
@@ -50,6 +52,5 @@ public class NFT_Properties : MonoBehaviour
                 }
             }*/
         }
-
     }
 }
