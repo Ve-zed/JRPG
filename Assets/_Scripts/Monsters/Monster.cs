@@ -8,6 +8,7 @@ public class Monster
 {
     [SerializeField] MonstersBase _base;
     [SerializeField] int _level;
+    
     public MonstersBase Base { get { return _base; } }
     public int Level { get { return _level; } }
     public int HP { get; set; }

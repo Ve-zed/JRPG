@@ -88,28 +88,73 @@ public class BattleUnit : MonoBehaviour
 
         sequance.Append(_image.transform.DOLocalMoveX(_originalPos.x, 0.25f));
     }
-    public void PlayHitAnimation()
+    public IEnumerator PlayHitAnimation()
     {
         var sequance = DOTween.Sequence();
 
-        sequance.Append(_image.DOColor(Color.red, 0.1f));
-        sequance.Append(_image.DOColor(originalColor, 0.1f));
+        if (_image.color.a < 1)
+        {
+            sequance.Append(_image.DOColor(Color.red, 0.1f));
+            sequance.Append(_image.DOColor(originalColor, 0.1f));
+            yield return new WaitForSeconds(1f);
+            PlayFadeAnimation();
+        }
+        else {
+            sequance.Append(_image.DOColor(Color.red, 0.1f));
+            sequance.Append(_image.DOColor(originalColor, 0.1f));
+        }
+    }
+    public void PlayFadeAnimation()
+    {
+
+        var sequance = DOTween.Sequence();
+
+        sequance.Append(_image.DOFade(0.5f, 0.5f));
+    }
+    public void PlayNormalAnimation()
+    {
+        var sequance = DOTween.Sequence();
+
+        sequance.Append(_image.DOFade(1f, 0.5f));
     }
     public IEnumerator PlayHealAnimation()
     {
         var sequance = DOTween.Sequence();
+        if (_image.color.a < 1)
+        {
+            sequance.Append(_image.DOColor(Color.green, 0.1f));
+            yield return new WaitForSeconds(0.5f);
+            sequance.Append(_image.DOColor(originalColor, 0.1f));
+            yield return new WaitForSeconds(1f);
+            PlayFadeAnimation();
 
-        sequance.Append(_image.DOColor(Color.green, 0.1f));
-        yield return new WaitForSeconds(0.5f);
-        sequance.Append(_image.DOColor(originalColor, 0.1f));
+        }
+        else
+        {
+            sequance.Append(_image.DOColor(Color.green, 0.1f));
+            yield return new WaitForSeconds(0.5f);
+            sequance.Append(_image.DOColor(originalColor, 0.1f));
+        }
     }
     public IEnumerator PlayBoostAnimation()
     {
         var sequance = DOTween.Sequence();
+        if (_image.color.a < 1)
+        {
+            sequance.Append(_image.DOColor(Color.blue, 0.1f));
+            yield return new WaitForSeconds(0.5f);
+            sequance.Append(_image.DOColor(originalColor, 0.1f));
+            yield return new WaitForSeconds(1f);
+            PlayFadeAnimation();
 
-        sequance.Append(_image.DOColor(Color.blue, 0.1f));
-        yield return new WaitForSeconds(0.5f);
-        sequance.Append(_image.DOColor(originalColor, 0.1f));
+        }
+        else
+        {
+            sequance.Append(_image.DOColor(Color.blue, 0.1f));
+            yield return new WaitForSeconds(0.5f);
+            sequance.Append(_image.DOColor(originalColor, 0.1f));
+        }
+
     }
     public void PlayFaintAnimation()
     {
@@ -118,8 +163,8 @@ public class BattleUnit : MonoBehaviour
     }
     public void OnMouseExit()
     {
-        if (isPlayerUnit)
-            StartCoroutine(_seeOrNot.enableOrDisableObject());
+        /*if (isPlayerUnit)
+            StartCoroutine(_seeOrNot.enableOrDisableObject());*/
     }
     [SerializeField] GameObject _pouvoirBarre;
 
@@ -131,7 +176,7 @@ public class BattleUnit : MonoBehaviour
             _battleSystem.canSelectedEnnemi = false;
             if (_battleSystem._targetSelectedUnit.Monster.HP > 0 && !_battleSystem.powerUsed)
                 StartCoroutine(_battleSystem.PlayerMove());
-            else if(_battleSystem._targetSelectedUnit.Monster.HP > 0 && _battleSystem.powerUsed)
+            else if (_battleSystem._targetSelectedUnit.Monster.HP > 0 && _battleSystem.powerUsed)
             {
                 _pouvoirBarre.SetActive(true);
             }
@@ -141,7 +186,7 @@ public class BattleUnit : MonoBehaviour
             isSelected = true;
             _battleSystem._playerSelectedUnit = this;
             var pos = _battleSystem._playerSelectedUnit.transform.position;
-            pos.x += 4.5f;
+            pos.x += 4f;
             _seeOrNot.transform.position = pos;
             _battleSystem.MoveSelection();
             _dialogBox.EnableMoveSelector(true);

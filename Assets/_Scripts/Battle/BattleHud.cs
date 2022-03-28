@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class BattleHud : MonoBehaviour
 {
     [SerializeField] Text _levelText;
+    [SerializeField] Text _nameText;
     [SerializeField] HPBar _hpBar;
     [SerializeField] Image _image;
     [SerializeField] BattleUnit _unit;
@@ -16,6 +17,7 @@ public class BattleHud : MonoBehaviour
     {
         _monster = monster;
 
+        _nameText.text = monster.Base.Name;
         _levelText.text = "Lvl" + monster.Level;
         monster.HP = monster.MaxHp;
     }

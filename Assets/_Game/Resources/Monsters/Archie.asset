@@ -15,7 +15,7 @@ MonoBehaviour:
   _name: Archie
   _description: 
   EnnemiSprite: {fileID: 0}
-  PlayerSprite: {fileID: 0}
+  PlayerSprite: {fileID: 21300000, guid: 818cf159951cf9a4e8e810b2bbab4096, type: 3}
   type1: 0
   type2: 0
   _maxHp: 0

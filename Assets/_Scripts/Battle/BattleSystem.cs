@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using static MoveBase;
 using Random = UnityEngine.Random;
+using DG.Tweening;
 
 public enum BattleState { Start, ActionSelection, MoveSelection, PerformMove, EnnemiSelection, Busy, PartyScreen, BattleOver }
 
@@ -54,7 +55,7 @@ public class BattleSystem : MonoBehaviour
         _ennemi = ennemiParty.GetComponent<EnnemiController>();
         StartCoroutine(SetupBattle());
     }
-   
+
 
     private void ResetBattleState()
     {
@@ -64,11 +65,12 @@ public class BattleSystem : MonoBehaviour
         _targetSelectedUnit = null;
         foreach (var item in _playerUnits)
         {
+            item.PlayNormalAnimation();
             item.isPowerUsed = false;
         }
         _playerUnitsDead.RemoveRange(0, _playerUnitsDead.Count);
     }
-   
+
     public IEnumerator SetupBattle()
     {
         AudioManager.Instance.audioSourceMusic.Stop();
@@ -81,10 +83,10 @@ public class BattleSystem : MonoBehaviour
         }
         foreach (var _ennemyUnit in _ennemyUnits)
         {
-            if(!_ennemi._virus)
-            _ennemyUnit.isVirus = false;
+            if (!_ennemi._virus)
+                _ennemyUnit.isVirus = false;
             else
-            _ennemyUnit.isVirus = true;
+                _ennemyUnit.isVirus = true;
             _ennemyUnit.Clear();
         }
 
@@ -208,6 +210,7 @@ public class BattleSystem : MonoBehaviour
                 break;
             }
         }
+        yield return new WaitForSeconds(1f);
         int playerCount = 0;
         for (int i = 0; i < _playerUnits.Count; i++)
         {
@@ -215,6 +218,11 @@ public class BattleSystem : MonoBehaviour
                 playerCount++;
             if (playerCount >= 3 - _playerUnitsDead.Count)
             {
+                //foreach (var player in _playerUnits)
+                //{
+                //    if (player.Monster.HP > 0)
+                //        player.PlayNormalAnimation();
+                //}
                 yield return new WaitForSeconds(2.5f);
                 StartCoroutine(EnemyMove());
                 break;
@@ -224,6 +232,7 @@ public class BattleSystem : MonoBehaviour
         _pouvoirBarre.SetActive(false);
         powerUsed = false;
         canSelected = true;
+
     }
     IEnumerator EnemyMove()
     {
@@ -268,12 +277,14 @@ public class BattleSystem : MonoBehaviour
         }
 
         var playerParty = _playerParty.GetHealthyMonster();
+        yield return new WaitForSeconds(1f);
         if (playerParty != null)
         {
-
-            for (int i = 0; i < _playerUnits.Count; i++)
+            foreach (var player in _playerUnits)
             {
-                _playerUnits[i].isAttacking = false;
+                player.isAttacking = false;
+                if (player.Monster.HP > 0)
+                    player.PlayNormalAnimation();
             }
         }
     }
@@ -301,7 +312,10 @@ public class BattleSystem : MonoBehaviour
         sourceUnit.PlayAttackAnimation();
         AudioManager.Instance.PlaySFXSound(move.Base.Sound);
         yield return new WaitForSeconds(1f);
-        targetUnit.PlayHitAnimation();
+        StartCoroutine(targetUnit.PlayHitAnimation());
+        if (sourceUnit.IsPlayerUnit)
+            sourceUnit.PlayFadeAnimation();
+
         if (targetUnit.isVirus)
             AudioManager.Instance.PlaySFXSound("snd_virus_hurt");
         else
@@ -320,10 +334,10 @@ public class BattleSystem : MonoBehaviour
             if (sourceUnit.Monster.HP > sourceUnit.Monster.MaxHp)
                 sourceUnit.Monster.HP = sourceUnit.Monster.MaxHp;
             sourceUnit.Monster.HpChanged = true;
-            StartCoroutine(sourceUnit.PlayHealAnimation());
             StartCoroutine(sourceUnit.Hud.UpdateHP());
-        }
+            StartCoroutine(sourceUnit.PlayHealAnimation());
 
+        }
         if (targetUnit.Monster.HP <= 0)
         {
             if (targetUnit.isPlayerUnit)
@@ -339,7 +353,9 @@ public class BattleSystem : MonoBehaviour
             CheckForBattleOver(targetUnit);
         }
         sourceUnit.Monster.OnAfterTurn();
+       
         yield return sourceUnit.Hud.UpdateHP();
+
         if (sourceUnit.Monster.HP <= 0)
         {
             if (sourceUnit.isPlayerUnit)
@@ -356,6 +372,7 @@ public class BattleSystem : MonoBehaviour
         }
 
         canSelected = true;
+
 
     }
 
@@ -384,6 +401,7 @@ public class BattleSystem : MonoBehaviour
                     StartCoroutine(player.Hud.UpdateHP());
                     if (player.Monster.HP > 0)
                         StartCoroutine(player.PlayHealAnimation());
+
                 }
             }
         }
@@ -391,6 +409,8 @@ public class BattleSystem : MonoBehaviour
 
         sourceUnit.Monster.OnAfterTurn();
         yield return sourceUnit.Hud.UpdateHP();
+        if (sourceUnit.IsPlayerUnit)
+            sourceUnit.PlayFadeAnimation();
         if (sourceUnit.Monster.HP <= 0)
         {
             if (sourceUnit.isPlayerUnit)
@@ -407,6 +427,7 @@ public class BattleSystem : MonoBehaviour
         }
         canSelected = true;
 
+
     }
 
     IEnumerator RunMoveAttackAll(BattleUnit sourceUnit, List<BattleUnit> targetUnits, Move move)
@@ -420,8 +441,8 @@ public class BattleSystem : MonoBehaviour
             {
                 if (targetUnits[i].Monster.HP > 0)
                 {
-                    targetUnits[i].PlayHitAnimation();
-                    if(targetUnits[i].isVirus)
+                    StartCoroutine(targetUnits[i].PlayHitAnimation());
+                    if (targetUnits[i].isVirus)
                         AudioManager.Instance.PlaySFXSound("snd_virus_hurt");
                     else
                         AudioManager.Instance.PlaySFXSound("snd_player_hurt");
@@ -459,6 +480,8 @@ public class BattleSystem : MonoBehaviour
                             }
                         }
                     }
+                    if (sourceUnit.IsPlayerUnit)
+                        sourceUnit.PlayFadeAnimation();
                 }
             }
             if (powerUsed && move.Base.Effects.Status == ConditionID.none)
@@ -501,7 +524,8 @@ public class BattleSystem : MonoBehaviour
             {
                 if (targetUnits[i].Monster.HP > 0)
                 {
-                    targetUnits[i].PlayHitAnimation();
+                    StartCoroutine(targetUnits[i].PlayHitAnimation());
+
                     if (move.Base.Category == MoveCategory.Status)
                     {
                         StartCoroutine(RunMoveEffects(move, sourceUnit.Monster, targetUnits[i].Monster, sourceUnit));
@@ -514,7 +538,9 @@ public class BattleSystem : MonoBehaviour
                     }
                 }
             }
+
             yield return new WaitForSeconds(1.5f);
+
             for (int i = 0; i < _playerParty.Monsters.Count; i++)
             {
                 if (targetUnits[i].Monster.HP <= 0)
@@ -548,6 +574,7 @@ public class BattleSystem : MonoBehaviour
 
             CheckForBattleOver(sourceUnit);
         }
+
     }
 
     IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
@@ -560,10 +587,17 @@ public class BattleSystem : MonoBehaviour
 
         yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} used {move.Base.Name}");
         sourceUnit.PlayAttackAnimation();
+        //test
+        AudioManager.Instance.audioSourceSFX.Pause();
         AudioManager.Instance.PlaySFXSound(move.Base.Sound);
         yield return new WaitForSeconds(1f);
 
-        targetUnit.PlayHitAnimation();
+        StartCoroutine(targetUnit.PlayHitAnimation());
+
+        if (sourceUnit.IsPlayerUnit)
+            sourceUnit.PlayFadeAnimation();
+        yield return new WaitForSeconds(1f);
+
         if (targetUnit.isVirus)
             AudioManager.Instance.PlaySFXSound("snd_virus_hurt");
         else
@@ -612,6 +646,7 @@ public class BattleSystem : MonoBehaviour
         }
         canSelected = true;
 
+
     }
 
     IEnumerator RunMoveEffects(Move move, Monster source, Monster target, BattleUnit sourceUnit = null)
@@ -639,6 +674,8 @@ public class BattleSystem : MonoBehaviour
         }
 
         yield return new WaitForSeconds(0.1f);
+
+
     }
 
 
@@ -715,22 +752,40 @@ public class BattleSystem : MonoBehaviour
     {
         _currentAction = 1;
     }
+    private void Update()
+    {
+        if (_state == BattleState.EnnemiSelection && Input.GetKeyDown(KeyCode.Escape))
+        {
+            _playerSelectedUnit.isAttacking = false;
+            foreach (var item in _playerUnits)
+            {
+                if (item.isSelected)
+                    canSelected = true;
+            }
+            canSelectedEnnemi = false;
+        }
 
+    }
     public void onClickMove(int move)
     {
+        _state = BattleState.MoveSelection;
         _playerSelectedUnit.isAttacking = true;
         _dialogBox.EnableMoveSelector(false);
         _currentMove = move;
-
-        if (move >= 4 && !_playerSelectedUnit.isPowerUsed)
+        var curmove = _playerSelectedUnit.Monster.Moves[_currentMove];
+        if (move >= 4 && _playerSelectedUnit.isPowerUsed)
+        {
+            _playerSelectedUnit.isAttacking = false;
+        }
+        else if(curmove.Base.Target == MoveTarget.AllPlayer)
+            StartCoroutine(RunMoveForAllPlayer(_playerSelectedUnit, curmove));
+        else if(curmove.Base.Target == MoveTarget.Self)
+            StartCoroutine(RunMove(_playerSelectedUnit, null, curmove));
+        else if (move >= 4 && !_playerSelectedUnit.isPowerUsed)
         {
             powerUsed = true;
             EnnemiSelection();
             _playerSelectedUnit.isPowerUsed = true;
-        }
-        else if (move >= 4 && _playerSelectedUnit.isPowerUsed)
-        {
-            _playerSelectedUnit.isAttacking = false;
         }
         else
         {

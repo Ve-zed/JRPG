@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SeeOrNot : MonoBehaviour
 {
-    public GameObject enableOrDisablegameObject;
+    public GameObject enableOrDisableGameObject;
 
     public bool seeTrigger = false;
 
@@ -12,17 +12,26 @@ public class SeeOrNot : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         if (!seeTrigger)
-            enableOrDisablegameObject.SetActive(false);
+            enableOrDisableGameObject.SetActive(false);
     }
-    
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            StartCoroutine(enableOrDisableObject());
+            seeTrigger = false;
+        }
+    }
+
     private void OnMouseOver()
     {
-            seeTrigger = true;
-        
+        seeTrigger = true;
+
     }
     private void OnMouseExit()
     {
         seeTrigger = false;
-        StartCoroutine(enableOrDisableObject());
+            StartCoroutine(enableOrDisableObject());
     }
 }

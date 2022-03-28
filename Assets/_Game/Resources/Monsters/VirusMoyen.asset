@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Virus moyen
   _description: 
-  EnnemiSprite: {fileID: 0}
+  EnnemiSprite: {fileID: 21300000, guid: d819d29c71518d340b52028b17af51c2, type: 3}
   PlayerSprite: {fileID: 0}
   type1: 2
   type2: 0
