@@ -41,7 +41,7 @@ public class BattleSystem : MonoBehaviour
 
     private PlayerController _player;
     private EnnemiController _ennemi;
-
+    private bool _isEnnemiTurn = false;
     BattleUnit target;
     Move currentMove;
 
@@ -56,8 +56,6 @@ public class BattleSystem : MonoBehaviour
         _ennemi = ennemiParty.GetComponent<EnnemiController>();
         StartCoroutine(SetupBattle());
     }
-
-
     private void ResetBattleState()
     {
         canSelected = true;
@@ -68,7 +66,17 @@ public class BattleSystem : MonoBehaviour
         {
             item.PlayNormalAnimation();
             item.isPowerUsed = false;
+            item.isSelected = false;
             item.isAttacking = false;
+            item.boxCollider.enabled = true;
+            item._image.material = item.originalMaterial;
+        }
+        foreach (var item in _ennemyUnits)
+        {
+            item.PlayNormalAnimation();
+            item.isPowerUsed = false;
+            item.isAttacking = false;
+            item.boxCollider.enabled = true;
         }
 
         _playerUnitsDead.RemoveRange(0, _playerUnitsDead.Count);
@@ -216,7 +224,7 @@ public class BattleSystem : MonoBehaviour
                 break;
             }
         }
-        yield return EnnemiTurn();
+
         _precision.ResetFillAmount();
         _pouvoirBarre.SetActive(false);
         powerUsed = false;
@@ -230,8 +238,9 @@ public class BattleSystem : MonoBehaviour
         {
             if (_playerUnits[i].isAttacking)
                 playerCount++;
-            if (playerCount >= 3 - _playerUnitsDead.Count)
+            if (playerCount >= 3 - _playerUnitsDead.Count && !_isEnnemiTurn)
             {
+                _isEnnemiTurn = true;
                 yield return new WaitForSeconds(2f);
                 StartCoroutine(EnemyMove());
                 break;
@@ -303,6 +312,7 @@ public class BattleSystem : MonoBehaviour
                 if (player.Monster.HP > 0)
                     player.PlayNormalAnimation();
             }
+            _isEnnemiTurn = false;
         }
     }
     IEnumerator EnnemiHealMove(BattleUnit sourceUnit)
@@ -328,6 +338,7 @@ public class BattleSystem : MonoBehaviour
         var effects = move.Base.Effects;
 
         sourceUnit.Monster.ApplyBoosts(effects.Boosts);
+        sourceUnit.Monster.SetStatus(effects.Status);
         StartCoroutine(sourceUnit.PlayBoostAnimation());
         yield return new WaitForSeconds(1f);
         sourceUnit.PlayFadeAnimation();
@@ -350,8 +361,10 @@ public class BattleSystem : MonoBehaviour
 
             CheckForBattleOver(sourceUnit);
         }
-        yield return EnnemiTurn();
+        if (sourceUnit.IsPlayerUnit)
+            yield return EnnemiTurn();
         canSelected = true;
+        sourceUnit._image.material = sourceUnit.originalMaterial;
     }
 
     IEnumerator RunMoveForAllPlayer(BattleUnit sourceUnit, Move move)
@@ -403,8 +416,9 @@ public class BattleSystem : MonoBehaviour
 
             CheckForBattleOver(sourceUnit);
         }
+        if (sourceUnit.IsPlayerUnit)
+            yield return EnnemiTurn();
         canSelected = true;
-        yield return EnnemiTurn();
 
     }
 
@@ -558,7 +572,8 @@ public class BattleSystem : MonoBehaviour
 
             CheckForBattleOver(sourceUnit);
         }
-
+        if (sourceUnit.IsPlayerUnit)
+            yield return EnnemiTurn();
     }
 
     IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
@@ -651,6 +666,8 @@ public class BattleSystem : MonoBehaviour
             CheckForBattleOver(sourceUnit);
         }
         canSelected = true;
+        if (sourceUnit.IsPlayerUnit)
+            yield return EnnemiTurn();
     }
 
     IEnumerator RunMoveEffects(Move move, Monster source, Monster target, BattleUnit sourceUnit = null)
