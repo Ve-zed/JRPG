@@ -422,6 +422,15 @@ public class BattleSystem : MonoBehaviour
 
     }
 
+    /*IEnumerator AttacksEnemies( List<Monster> monsters )
+    {
+       
+        yield return AttacksEnemies(_ennemiParty.Monsters);
+        yield return AttacksEnemies(_playerParty.Monsters);
+    }*/
+
+
+
     IEnumerator RunMoveAttackAll(BattleUnit sourceUnit, List<BattleUnit> targetUnits, Move move)
     {
         bool canRunMove = sourceUnit.Monster.OnBeforeMove();
@@ -446,12 +455,8 @@ public class BattleSystem : MonoBehaviour
                         AudioManager.Instance.PlaySFXSound("snd_player_hurt");
                     if (powerUsed && move.Base.Effects.Status == ConditionID.none)
                     {
-                        if (PrecisionBar.Instance.barreSplit == 1)
-                            targetUnits[i].Monster.TakeDamage(move, sourceUnit.Monster, 1);
-                        else if (PrecisionBar.Instance.barreSplit == 2)
-                            targetUnits[i].Monster.TakeDamage(move, sourceUnit.Monster, 2);
-                        else if (PrecisionBar.Instance.barreSplit == 3)
-                            targetUnits[i].Monster.TakeDamage(move, sourceUnit.Monster, 3);
+                        targetUnits[i].Monster.TakeDamage(move, sourceUnit.Monster, PrecisionBar.Instance.barreSplit);
+
                         StartCoroutine(targetUnits[i].Hud.UpdateHP());
                     }
                     else
