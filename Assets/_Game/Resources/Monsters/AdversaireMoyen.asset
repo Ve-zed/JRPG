@@ -29,3 +29,4 @@ MonoBehaviour:
     _level: 0
   - _moveBase: {fileID: 11400000, guid: 914e9c008f7a63e47aa6cf9deeff1b86, type: 2}
     _level: 0
+  _XPByLevel: a00f00008813000070170000581b0000401f0000
