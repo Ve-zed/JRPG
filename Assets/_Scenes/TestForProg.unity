@@ -3385,9 +3385,9 @@ MonoBehaviour:
   _monsters:
   - _base: {fileID: 11400000, guid: c7015001b72808f43a38702da4015460, type: 2}
     _level: 2
-  - _base: {fileID: 11400000, guid: c82f5d1c1ac3cd94a86c3fac4cef1ab6, type: 2}
-    _level: 2
   - _base: {fileID: 11400000, guid: bed7e88f10ee6e243baee339190932cb, type: 2}
+    _level: 2
+  - _base: {fileID: 11400000, guid: c82f5d1c1ac3cd94a86c3fac4cef1ab6, type: 2}
     _level: 2
 --- !u!50 &1294185979
 Rigidbody2D:
@@ -12667,7 +12667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7497398866215729129, guid: 3dc7db73a750a2d488055d31aa0a76b9, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 7497398866215729129, guid: 3dc7db73a750a2d488055d31aa0a76b9, type: 3}
       propertyPath: m_LocalRotation.w

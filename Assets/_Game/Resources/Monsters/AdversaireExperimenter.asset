@@ -30,6 +30,6 @@ MonoBehaviour:
   - _moveBase: {fileID: 11400000, guid: 914e9c008f7a63e47aa6cf9deeff1b86, type: 2}
     _level: 0
   - _moveBase: {fileID: 11400000, guid: 43cc7aa8ecea3b64a8c4f80424214b42, type: 2}
-    _level: 0
+    _level: 3
   - _moveBase: {fileID: 11400000, guid: 89e5eeb3d100c2e42ac674b4784e8f30, type: 2}
     _level: 0

@@ -27,6 +27,8 @@ public class BattleUnit : MonoBehaviour
     public bool isPowerUsed = false;
 
     public Image _image;
+    public Material originalMaterial;
+    public Material outLineMaterial;
     Vector3 _originalPos;
     public Color originalColor;
 
@@ -100,7 +102,8 @@ public class BattleUnit : MonoBehaviour
             yield return new WaitForSeconds(1f);
             PlayFadeAnimation();
         }
-        else {
+        else
+        {
             sequance.Append(_image.DOColor(Color.red, 0.1f));
             sequance.Append(_image.DOColor(originalColor, 0.1f));
         }
@@ -164,8 +167,18 @@ public class BattleUnit : MonoBehaviour
     }
     public void OnMouseEnter()
     {
-        if (isPlayerUnit)
+        if (!isAttacking && _battleSystem.canSelected && isPlayerUnit)
+        {
             _seeOrNot.seeTrigger = true;
+            _image.material = outLineMaterial;
+        }
+        if (_battleSystem.canSelectedEnnemi && !isPlayerUnit)
+            _image.material = outLineMaterial;
+    }
+    public void OnMouseExit()
+    {
+        if (!isSelected)
+            _image.material = originalMaterial;
     }
 
     private void OnMouseDown()
@@ -174,6 +187,7 @@ public class BattleUnit : MonoBehaviour
         {
             _battleSystem._targetSelectedUnit = this;
             _battleSystem.canSelectedEnnemi = false;
+            _image.material = outLineMaterial;
             if (_battleSystem._targetSelectedUnit.Monster.HP > 0 && !_battleSystem.powerUsed)
                 StartCoroutine(_battleSystem.PlayerMove());
             else if (_battleSystem._targetSelectedUnit.Monster.HP > 0 && _battleSystem.powerUsed)
@@ -183,6 +197,11 @@ public class BattleUnit : MonoBehaviour
         }
         else if (!isAttacking && _battleSystem.canSelected && isPlayerUnit)
         {
+            if (_battleSystem._playerSelectedUnit != null)
+            {
+                _battleSystem._playerSelectedUnit._image.material = originalMaterial;
+                _battleSystem._playerSelectedUnit.isSelected = false;
+            }
             isSelected = true;
             _battleSystem._playerSelectedUnit = this;
             var pos = _battleSystem._playerSelectedUnit.transform.position;
@@ -190,6 +209,7 @@ public class BattleUnit : MonoBehaviour
             _seeOrNot.transform.position = pos;
             _battleSystem.MoveSelection();
             _dialogBox.EnableMoveSelector(true);
+            _image.material = outLineMaterial;
         }
 
     }

@@ -19,7 +19,6 @@ public class Monster
     public bool HpChanged { get; set; }
     public int StatusTime { get; set; }
     public int MaxHp { get; private set; }
-
     public int Damage {get; set;}
 
     public void Init()

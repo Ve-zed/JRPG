@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &5412891821489266382
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34,8 +34,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -100, y: 10}
-  m_SizeDelta: {x: 80, y: 25}
+  m_AnchoredPosition: {x: -62.5, y: 10}
+  m_SizeDelta: {x: 105, y: 25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3867664481834744678
 CanvasRenderer:
@@ -72,13 +72,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 2
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Lvl
+  m_Text: Name
 --- !u!1 &7497398865328714488
 GameObject:
   m_ObjectHideFlags: 0
@@ -426,13 +426,15 @@ MonoBehaviour:
   _seeOrNot: {fileID: 0}
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
+  _pouvoirBarre: {fileID: 0}
   boxCollider: {fileID: 7497398866215729133}
   isAttacking: 0
   isSelected: 0
   isPowerUsed: 0
   _image: {fileID: 0}
+  originalMaterial: {fileID: 0}
+  outLineMaterial: {fileID: 2100000, guid: 2ea75444cf6498648bce8d3c2795a622, type: 2}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
-  _pouvoirBarre: {fileID: 0}
 --- !u!61 &7497398866215729133
 BoxCollider2D:
   m_ObjectHideFlags: 0

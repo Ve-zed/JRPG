@@ -47,6 +47,7 @@ public class BattleSystem : MonoBehaviour
 
     public void StartEnnemiBattle(MonsterParty playerParty, MonsterParty ennemiParty)
     {
+        _state = BattleState.Start;
         this._playerParty = playerParty;
         this._ennemiParty = ennemiParty;
 
@@ -67,15 +68,19 @@ public class BattleSystem : MonoBehaviour
         {
             item.PlayNormalAnimation();
             item.isPowerUsed = false;
+            item.isAttacking = false;
         }
+
         _playerUnitsDead.RemoveRange(0, _playerUnitsDead.Count);
     }
 
     public IEnumerator SetupBattle()
     {
+        Debug.Log(_state);
         AudioManager.Instance.audioSourceMusic.Stop();
         StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_music_fight"));
 
+        ResetBattleState();
         foreach (var _playerUnit in _playerUnits)
         {
             _playerUnit.Clear();
@@ -91,7 +96,6 @@ public class BattleSystem : MonoBehaviour
         }
 
 
-        ResetBattleState();
 
         for (int i = 0; i < _playerUnits.Count; i++)
         {
@@ -217,7 +221,7 @@ public class BattleSystem : MonoBehaviour
         _pouvoirBarre.SetActive(false);
         powerUsed = false;
         canSelected = true;
-
+        _playerSelectedUnit._image.material = _playerSelectedUnit.originalMaterial;
     }
     IEnumerator EnnemiTurn()
     {
@@ -742,6 +746,7 @@ public class BattleSystem : MonoBehaviour
 
     private void Update()
     {
+
         if (_state == BattleState.EnnemiSelection && Input.GetKeyDown(KeyCode.Escape))
         {
             _playerSelectedUnit.isAttacking = false;

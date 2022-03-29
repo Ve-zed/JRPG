@@ -364,13 +364,15 @@ MonoBehaviour:
   _seeOrNot: {fileID: 0}
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
+  _pouvoirBarre: {fileID: 0}
   boxCollider: {fileID: -2458649815096455779}
   isAttacking: 0
   isSelected: 0
   isPowerUsed: 0
   _image: {fileID: 0}
+  originalMaterial: {fileID: 0}
+  outLineMaterial: {fileID: 2100000, guid: 2ea75444cf6498648bce8d3c2795a622, type: 2}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
-  _pouvoirBarre: {fileID: 0}
 --- !u!61 &-2458649815096455779
 BoxCollider2D:
   m_ObjectHideFlags: 0

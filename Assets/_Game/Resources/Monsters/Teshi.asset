@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8de60f0604624814d84552a9468daa73, type: 3}
   m_Name: Teshi
   m_EditorClassIdentifier: 
-  _name: 
+  _name: Teshi
   _description: 
   EnnemiSprite: {fileID: 0}
   PlayerSprite: {fileID: 21300000, guid: 163cdf30ffc80c34d918ea83ab5e762f, type: 3}
