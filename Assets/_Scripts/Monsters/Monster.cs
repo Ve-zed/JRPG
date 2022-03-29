@@ -7,8 +7,9 @@ using static MoveBase;
 public class Monster
 {
     [SerializeField] MonstersBase _base;
-    [SerializeField] int _level;
+    public int _level;
     
+    public int Exp = 0;
     public MonstersBase Base { get { return _base; } }
     public int Level { get { return _level; } }
     public int HP { get; set; }
@@ -21,6 +22,20 @@ public class Monster
     public int MaxHp { get; private set; }
     public int Damage {get; set;}
 
+
+
+
+
+    //class Virus
+    //{
+    //    public int Virusmineur;
+    //    public int Virussdfmineur;
+    //    public int Virusmindsfeur;
+    //    public int Virusmsdfineur;
+    //}
+
+    //List<Virus> Virusssss;
+
     public void Init()
     {
         Moves = new List<Move>();
@@ -32,12 +47,15 @@ public class Monster
             if (Moves.Count >= 5)
                 break;
         }
+       
         CalculateStats();
 
         HP = MaxHp;
 
         ResetStatBoost();
     }
+
+
 
     void CalculateStats()
     {

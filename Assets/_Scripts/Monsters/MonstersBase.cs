@@ -23,6 +23,9 @@ public class MonstersBase : ScriptableObject
 
     [SerializeField] List<LearnableMove> _learnableMoves;
 
+    [SerializeField] List<int> _XPByLevel;
+
+
     public string Name{get { return _name; }}
     public string Description{get { return _description; }}
     public int MaxHp{get { return _maxHp; }}
@@ -33,6 +36,7 @@ public class MonstersBase : ScriptableObject
     public int Speed{get { return _speed; }}
 
     public List<LearnableMove> LearnableMoves{get { return _learnableMoves; }}
+   public List<int> XPByLevel { get { return _XPByLevel; }}
 
 }
 

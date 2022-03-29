@@ -14,7 +14,7 @@ public class BattleSystem : MonoBehaviour
 {
     public bool isEnnemiBattle = false;
 
-    [SerializeField] List<BattleUnit> _playerUnits;
+    public List<BattleUnit> _playerUnits;
     public List<BattleUnit> _playerUnitsDead;
     [SerializeField] List<BattleUnit> _ennemyUnits;
 
@@ -107,6 +107,7 @@ public class BattleSystem : MonoBehaviour
 
         for (int i = 0; i < _playerUnits.Count; i++)
         {
+            _playerUnits[i].UpdateLevel(_playerParty.Monsters[_currentMember + i]);
             _playerUnits[i].Setup(_playerParty.Monsters[_currentMember + i]);
         }
         for (int i = 0; i < _ennemyUnits.Count; i++)
@@ -404,11 +405,25 @@ public class BattleSystem : MonoBehaviour
             sourceUnit.PlayFadeAnimation();
         if (sourceUnit.Monster.HP <= 0)
         {
-            if (sourceUnit.isPlayerUnit)
+            if (!sourceUnit.isPlayerUnit)
+            {
+                Debug.Log("Crash Test Xp");
+                    sourceUnit.WinXP(_playerUnits, sourceUnit);
+                //for (int i = 0; i < _playerUnits.Count; i++)
+                //{
+
+                //}
+
+            }
+            else
+            {
                 _playerUnitsDead.Add(_playerSelectedUnit);
 
+            }
             yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} Fainted");
             sourceUnit.PlayFaintAnimation();
+
+
 
             var _hudTarget = sourceUnit.GetComponentInChildren<BattleHud>(true);
             _hudTarget.gameObject.SetActive(false);
@@ -438,7 +453,7 @@ public class BattleSystem : MonoBehaviour
         {
             yield break;
         }
-
+        
         sourceUnit.PlayAttackAnimation();
         AudioManager.Instance.PlaySFXSound(move.Base.Sound);
         yield return new WaitForSeconds(1f);
