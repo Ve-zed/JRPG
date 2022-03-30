@@ -3385,10 +3385,13 @@ MonoBehaviour:
   _monsters:
   - _base: {fileID: 11400000, guid: c7015001b72808f43a38702da4015460, type: 2}
     _level: 2
+    Exp: 0
   - _base: {fileID: 11400000, guid: bed7e88f10ee6e243baee339190932cb, type: 2}
     _level: 2
+    Exp: 0
   - _base: {fileID: 11400000, guid: c82f5d1c1ac3cd94a86c3fac4cef1ab6, type: 2}
     _level: 2
+    Exp: 0
 --- !u!50 &1294185979
 Rigidbody2D:
   serializedVersion: 4
@@ -3654,10 +3657,13 @@ MonoBehaviour:
   _wildMonsters:
   - _base: {fileID: 0}
     _level: 100
+    Exp: 0
   - _base: {fileID: 0}
     _level: 100
+    Exp: 0
   - _base: {fileID: 0}
     _level: 100
+    Exp: 0
 --- !u!1 &1648098048
 GameObject:
   m_ObjectHideFlags: 0
@@ -12745,7 +12751,7 @@ PrefabInstance:
     - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: _monsters.Array.data[0]._base
       value: 
-      objectReference: {fileID: 11400000, guid: 140743c2ae9efcc44a4961c45dbc955b, type: 2}
+      objectReference: {fileID: 11400000, guid: a084b0e2c22d1e74ab49ab64854ba07d, type: 2}
     - target: {fileID: 8429885589739097547, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: m_Name
       value: Ennemi Variant (2)

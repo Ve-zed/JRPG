@@ -16,7 +16,7 @@ MonoBehaviour:
   _sound: snd_balayage
   _description: 
   _type: 0
-  _power: 10
+  _power: 200
   _accuary: 100
   _pp: 20
   _category: 0

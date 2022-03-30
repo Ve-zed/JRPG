@@ -260,9 +260,9 @@ public class BattleSystem : MonoBehaviour
                 bool provoqued = _ennemyUnits[i].Monster.OnFocusTarget();
                 if (provoqued)
                 {
-                    if (_playerUnits[1].Monster.HP > 0)
-                        target = _playerUnits[1];
-                    else
+                    if (_playerUnits[2].Monster.HP > 0)
+                        target = _playerUnits[2];
+                    /*else
                     {
                         if (target.Monster.HP <= 0 && _playerParty.GetHealthyMonster() != null)
                         {
@@ -275,7 +275,7 @@ public class BattleSystem : MonoBehaviour
                                 }
                             }
                         }
-                    }
+                    }*/
                 }
                 else
                 {
@@ -291,6 +291,7 @@ public class BattleSystem : MonoBehaviour
                             }
                         }
                     }
+                   // target = _playerUnits[2];
                 }
                 if (move.Base.Target == MoveTarget.AllEnnemi)
                 {
@@ -318,6 +319,11 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator EnnemiHealMove(BattleUnit sourceUnit)
     {
+        bool canRunMove = sourceUnit.Monster.OnBeforeMove();
+        if (!canRunMove)
+        {
+            yield break;
+        }
         if (sourceUnit.Monster.HP > 0)
         {
             sourceUnit.Monster.HP += sourceUnit.Monster.MaxHp / 5;
@@ -350,8 +356,22 @@ public class BattleSystem : MonoBehaviour
 
         if (sourceUnit.Monster.HP <= 0)
         {
-            if (sourceUnit.isPlayerUnit)
+
+            if (!sourceUnit.isPlayerUnit)
+            {
+                Debug.Log("Crash Test Xp");
+                //for (int i = 0; i < _playerUnits.Count; i++)
+                //{
+
+                //    _playerUnits[i].WinXP(_playerUnits[i], sourceUnit);
+                //}
+
+            }
+            else
+            {
                 _playerUnitsDead.Add(_playerSelectedUnit);
+
+            }
 
             yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} Fainted");
             sourceUnit.PlayFaintAnimation();
@@ -408,10 +428,10 @@ public class BattleSystem : MonoBehaviour
             if (!sourceUnit.isPlayerUnit)
             {
                 Debug.Log("Crash Test Xp");
-                    sourceUnit.WinXP(_playerUnits, sourceUnit);
                 //for (int i = 0; i < _playerUnits.Count; i++)
                 //{
 
+                //    _playerUnits[i].WinXP(_playerUnits[i], sourceUnit);
                 //}
 
             }
@@ -453,7 +473,7 @@ public class BattleSystem : MonoBehaviour
         {
             yield break;
         }
-        
+
         sourceUnit.PlayAttackAnimation();
         AudioManager.Instance.PlaySFXSound(move.Base.Sound);
         yield return new WaitForSeconds(1f);
@@ -498,8 +518,7 @@ public class BattleSystem : MonoBehaviour
                             }
                         }
                     }
-                    if (sourceUnit.IsPlayerUnit)
-                        sourceUnit.PlayFadeAnimation();
+                    sourceUnit.PlayFadeAnimation();
                 }
             }
             if (powerUsed && move.Base.Effects.Status == ConditionID.none)
@@ -524,6 +543,21 @@ public class BattleSystem : MonoBehaviour
             {
                 if (targetUnits[i].Monster.HP <= 0)
                 {
+
+
+
+                    
+                    
+                        Debug.Log("Crash Test Xp");
+                        for (int y = 0; y < _playerUnits.Count; y++)
+                        {
+                            //.WinXP(_playerUnits, targetUnit);
+                            _playerSelectedUnit.WinXP(_playerUnits[y], targetUnits[i]);
+                        }
+
+                    
+                        _playerUnitsDead.Add(_playerSelectedUnit);
+
                     targetUnits[i].PlayFaintAnimation();
                     var _hudTarget = targetUnits[i].GetComponentInChildren<BattleHud>(true);
                     _hudTarget.gameObject.SetActive(false);
@@ -564,6 +598,7 @@ public class BattleSystem : MonoBehaviour
                 if (targetUnits[i].Monster.HP <= 0)
                 {
                     targetUnits[i].PlayFaintAnimation();
+
                     var _hudTarget = targetUnits[i].GetComponentInChildren<BattleHud>(true);
                     _hudTarget.gameObject.SetActive(false);
                 }
@@ -580,8 +615,11 @@ public class BattleSystem : MonoBehaviour
         yield return sourceUnit.Hud.UpdateHP();
         if (sourceUnit.Monster.HP <= 0)
         {
+
             if (sourceUnit.isPlayerUnit)
                 _playerUnitsDead.Add(_playerSelectedUnit);
+
+
 
             yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} Fainted");
             sourceUnit.PlayFaintAnimation();
@@ -657,8 +695,20 @@ public class BattleSystem : MonoBehaviour
 
         if (targetUnit.Monster.HP <= 0)
         {
-            if (targetUnit.isPlayerUnit)
+            if (!targetUnit.isPlayerUnit)
+            {
+                for (int i = 0; i < _playerUnits.Count; i++)
+                {
+                    //.WinXP(_playerUnits, targetUnit);
+                    _playerSelectedUnit.WinXP(_playerUnits[i], targetUnit);
+                }
+
+            }
+            else
+            {
                 _playerUnitsDead.Add(_playerSelectedUnit);
+
+            }
 
             yield return _dialogBox.TypeDialog($"{targetUnit.Monster.Base.Name} Fainted");
             targetUnit.PlayFaintAnimation();
@@ -673,8 +723,21 @@ public class BattleSystem : MonoBehaviour
         yield return sourceUnit.Hud.UpdateHP();
         if (sourceUnit.Monster.HP <= 0)
         {
-            if (sourceUnit.isPlayerUnit)
+            if (!sourceUnit.isPlayerUnit)
+            {
+                Debug.Log("Crash Test Xp");
+                //for (int i = 0; i < _playerUnits.Count; i++)
+                //{
+
+                //    _playerUnits[i].WinXP(_playerUnits[i], sourceUnit);
+                //}
+
+            }
+            else
+            {
                 _playerUnitsDead.Add(_playerSelectedUnit);
+
+            }
 
             yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} Fainted");
             sourceUnit.PlayFaintAnimation();

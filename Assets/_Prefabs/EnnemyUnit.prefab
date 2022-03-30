@@ -373,6 +373,7 @@ MonoBehaviour:
   originalMaterial: {fileID: 0}
   outLineMaterial: {fileID: 2100000, guid: 2ea75444cf6498648bce8d3c2795a622, type: 2}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
+  ExpLvl: a0860100801a060020a1070060ae0a0040420f00
 --- !u!61 &-2458649815096455779
 BoxCollider2D:
   m_ObjectHideFlags: 0
