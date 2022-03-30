@@ -152,7 +152,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13914479}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.7, y: -0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1494198574}
@@ -80235,7 +80235,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 145402030}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.25, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1030981146}
@@ -80281,7 +80281,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 191610510}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.25, y: -0.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 172315317}
@@ -136484,10 +136484,13 @@ MonoBehaviour:
   _monsters:
   - _base: {fileID: 11400000, guid: c7015001b72808f43a38702da4015460, type: 2}
     _level: 2
+    Exp: 0
   - _base: {fileID: 11400000, guid: bed7e88f10ee6e243baee339190932cb, type: 2}
     _level: 2
+    Exp: 0
   - _base: {fileID: 11400000, guid: c82f5d1c1ac3cd94a86c3fac4cef1ab6, type: 2}
     _level: 2
+    Exp: 0
 --- !u!50 &1294185979
 Rigidbody2D:
   serializedVersion: 4
@@ -136933,10 +136936,13 @@ MonoBehaviour:
   _wildMonsters:
   - _base: {fileID: 0}
     _level: 100
+    Exp: 0
   - _base: {fileID: 0}
     _level: 100
+    Exp: 0
   - _base: {fileID: 0}
     _level: 100
+    Exp: 0
 --- !u!156049354 &1494198573
 Grid:
   m_ObjectHideFlags: 0

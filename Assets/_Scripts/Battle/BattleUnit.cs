@@ -181,7 +181,7 @@ public class BattleUnit : MonoBehaviour
 
     public void WinXP(BattleUnit sourceUnit = null, BattleUnit enemy = null)
     {
-        sourceUnit.Monster.Exp += enemy.Monster.Base.XPByLevel[enemy.Monster.Level];
+        sourceUnit.Monster.Exp += enemy.Monster.Base.XPByLevel[enemy.Monster.Level-1];
     }
 
     public void OnMouseEnter()
