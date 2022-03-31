@@ -16,7 +16,7 @@ MonoBehaviour:
   _sound: snd_attaque_puissante
   _description: 
   _type: 0
-  _power: 80
+  _power: 30
   _accuary: 100
   _pp: 50
   _category: 0

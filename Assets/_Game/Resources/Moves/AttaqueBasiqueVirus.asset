@@ -16,7 +16,7 @@ MonoBehaviour:
   _sound: snd_attaque_basique_virus
   _description: 
   _type: 0
-  _power: 40
+  _power: 10
   _accuary: 100
   _pp: 50
   _category: 0
