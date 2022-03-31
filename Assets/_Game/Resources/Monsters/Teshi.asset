@@ -30,9 +30,9 @@ MonoBehaviour:
   - _moveBase: {fileID: 11400000, guid: cfe153940ca96ce438f2ab8b1e48a3cf, type: 2}
     _level: 0
   - _moveBase: {fileID: 11400000, guid: 2f6a220411a28e04fa9a589945b4225d, type: 2}
-    _level: 0
+    _level: 1
   - _moveBase: {fileID: 11400000, guid: e97933cd26bb8c64faa72dbaa7a920df, type: 2}
-    _level: 0
+    _level: 2
   - _moveBase: {fileID: 11400000, guid: b805ddb86b1854843b181ab23ffd75a4, type: 2}
-    _level: 0
+    _level: 3
   _XPByLevel: 

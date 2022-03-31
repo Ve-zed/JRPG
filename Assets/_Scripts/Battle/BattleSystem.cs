@@ -17,6 +17,8 @@ public class BattleSystem : MonoBehaviour
     public List<BattleUnit> _playerUnits;
     public List<BattleUnit> _playerUnitsDead;
     [SerializeField] List<BattleUnit> _ennemyUnits;
+    [SerializeField] GameController _gameController;
+    //[SerializeField] List<MonsterParty> _playerListParty;
 
     [SerializeField] BattleDialogBox _dialogBox;
     [SerializeField] PrecisionBar _precision;
@@ -87,7 +89,11 @@ public class BattleSystem : MonoBehaviour
         Debug.Log(_state);
         AudioManager.Instance.audioSourceMusic.Stop();
         StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_music_fight"));
-
+        if (powerUsed)
+        {
+            PrecisionBar.Instance.ResetFillAmount();
+            powerUsed = false;
+        }
         ResetBattleState();
         foreach (var _playerUnit in _playerUnits)
         {
@@ -96,7 +102,7 @@ public class BattleSystem : MonoBehaviour
         }
         foreach (var _ennemyUnit in _ennemyUnits)
         {
-            if (!_ennemi._virus)
+            if (!_ennemi.isVirus)
                 _ennemyUnit.isVirus = false;
             else
                 _ennemyUnit.isVirus = true;
@@ -128,6 +134,10 @@ public class BattleSystem : MonoBehaviour
         {
             _ennemyUnit.Show();
         }
+        foreach (var monster in _playerParty.Monsters)
+        {
+            monster.Init();
+        }
         yield return new WaitForSeconds(0.5f);
     }
 
@@ -136,7 +146,10 @@ public class BattleSystem : MonoBehaviour
         _state = BattleState.BattleOver;
         _playerParty.Monsters.ForEach(p => p.OnBattleOver());
         if (won)
+        {
+            _gameController.money += _ennemi.moneyAfterBattle;
             AudioManager.Instance.PlaySFXSound("snd_victory");
+        }
         AudioManager.Instance.audioSourceMusic.Stop();
         StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_music_exploration"));
         StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_ambiance_exploration"));
@@ -167,7 +180,7 @@ public class BattleSystem : MonoBehaviour
     public IEnumerator PlayerMove()
     {
         _state = BattleState.PerformMove;
-
+        
         foreach (var item in _playerUnits)
         {
             if (item.isSelected)
@@ -226,8 +239,8 @@ public class BattleSystem : MonoBehaviour
             }
         }
 
+        
         _precision.ResetFillAmount();
-        _pouvoirBarre.SetActive(false);
         powerUsed = false;
         canSelected = true;
         _playerSelectedUnit._image.material = _playerSelectedUnit.originalMaterial;
@@ -468,6 +481,7 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator RunMoveAttackAll(BattleUnit sourceUnit, List<BattleUnit> targetUnits, Move move)
     {
+
         bool canRunMove = sourceUnit.Monster.OnBeforeMove();
         if (!canRunMove)
         {
@@ -543,11 +557,6 @@ public class BattleSystem : MonoBehaviour
             {
                 if (targetUnits[i].Monster.HP <= 0)
                 {
-
-
-
-                    
-                    
                         Debug.Log("Crash Test Xp");
                         for (int y = 0; y < _playerUnits.Count; y++)
                         {
@@ -610,6 +619,7 @@ public class BattleSystem : MonoBehaviour
                 }
             }
         }
+        _pouvoirBarre.SetActive(false);
 
         sourceUnit.Monster.OnAfterTurn();
         yield return sourceUnit.Hud.UpdateHP();
@@ -636,6 +646,8 @@ public class BattleSystem : MonoBehaviour
 
     IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
     {
+        
+
         bool canRunMove = sourceUnit.Monster.OnBeforeMove();
         if (!canRunMove)
         {
@@ -719,6 +731,7 @@ public class BattleSystem : MonoBehaviour
 
             CheckForBattleOver(targetUnit);
         }
+        _pouvoirBarre.SetActive(false);
         sourceUnit.Monster.OnAfterTurn();
         yield return sourceUnit.Hud.UpdateHP();
         if (sourceUnit.Monster.HP <= 0)
