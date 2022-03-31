@@ -504,13 +504,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938b3e27fe82692469e00832c180054c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _nFTSpriteLock: {fileID: 21300000, guid: 6e7eeeefbdbbbf04e940c1d5b4b4b478, type: 3}
-  _nFTSpriteUnlock: {fileID: 21300000, guid: c182acd9df66182408359bc6c9cba9dc, type: 3}
-  _nFTSpriteSelected: {fileID: 21300000, guid: b3753d75de9a67c4b8950865280ca628, type: 3}
-  _nFTImage: {fileID: 4555617221541888957}
+  nFTID: 0
+  nFTSpriteLock: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+  nFTSpriteUnlock: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+  nFTSpriteSelected: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+  nFTImage: {fileID: 0}
   lVRequired: 0
-  _nFTTextName: {fileID: 4555617219829240168}
-  _nFTTextDesc: {fileID: 4555617219980003478}
+  nFTTextName: {fileID: 0}
+  nFTTextDesc: {fileID: 0}
   nFTBuy: 0
   nFTPrice: 152
 --- !u!114 &4555617221541888958
@@ -525,5 +526,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60dc42afae8823b44a8ac5d2be6e3584, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _NFT_Trading: {fileID: 0}
   _NFT_Properties: {fileID: 4555617221541888959}
+  _NFT_Trading: {fileID: 0}
