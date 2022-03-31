@@ -1623,6 +1623,10 @@ PrefabInstance:
       propertyPath: _monsters.Array.data[0]._base
       value: 
       objectReference: {fileID: 11400000, guid: 8126837fe6f6d0d47a4f07ae4fedea01, type: 2}
+    - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
+      propertyPath: _monsters.Array.data[0]._level
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8429885589739097536, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: m_SortingLayer
       value: 2
@@ -1645,11 +1649,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8429885589739097548, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.57
+      value: -10.54
       objectReference: {fileID: 0}
     - target: {fileID: 8429885589739097548, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.9
+      value: -1.93
       objectReference: {fileID: 0}
     - target: {fileID: 8429885589739097548, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12105,11 +12109,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8429885589739097548, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -10.55
+      value: -7.41
       objectReference: {fileID: 0}
     - target: {fileID: 8429885589739097548, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.93
+      value: -1.9
       objectReference: {fileID: 0}
     - target: {fileID: 8429885589739097548, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: m_LocalPosition.z

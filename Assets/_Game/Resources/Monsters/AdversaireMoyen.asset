@@ -18,8 +18,8 @@ MonoBehaviour:
   PlayerSprite: {fileID: 0}
   type1: 0
   type2: 0
-  _maxHp: 100
-  _attack: 500
+  _maxHp: 150
+  _attack: 700
   _defense: 50
   _spAttack: 50
   _spDefense: 50
