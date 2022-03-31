@@ -44,7 +44,7 @@ public class BattleDialogBox : MonoBehaviour
         _moveSelector.SetActive(enabled);
     }
 
-    public void SetMoveNames(List<Move> moves)
+    public void SetMoveNames(List<Move> moves, BattleUnit monster= null)
     {
         for (int i = 0; i < _moveTexts.Count; i++)
         {

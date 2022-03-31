@@ -19,6 +19,7 @@ public class PrecisionBar : MonoBehaviour
     public Image progress;
     public SpriteRenderer barre;
 
+    public bool canClickPower = true;
 
     public fillAmount _state;
     private Vector2 _targetPos = Vector2.zero;
@@ -42,14 +43,11 @@ public class PrecisionBar : MonoBehaviour
     {
         if (_battleSystem.powerUsed && _state == fillAmount.Idle)
             _state = fillAmount.Uno;
-        /*if (Input.GetKeyDown(KeyCode.E))
-        if (Input.GetKeyDown(KeyCode.A))
-            ResetFillAmount();
-        */
-        if (Input.GetKeyDown(KeyCode.Space))
-            OnClick();
-        if (_state != fillAmount.Idle)
+
+
+        if (_state != fillAmount.Idle && canClickPower)
         {
+
             _targetPos.y = this.transform.position.y - _bottomOfTheScreen;
             if (_state == fillAmount.Zero)
             {
@@ -68,6 +66,7 @@ public class PrecisionBar : MonoBehaviour
 
     public void ResetFillAmount()
     {
+        canClickPower = true;
         _state = fillAmount.Idle;
         progress.fillAmount = 0;
         _targetPos.x = -32;
@@ -119,23 +118,27 @@ public class PrecisionBar : MonoBehaviour
     public void OnClick()
     {
         _state = fillAmount.Default;
-        if (progress.fillAmount <= 0.2f || progress.fillAmount >= 0.8f)
+        if (canClickPower)
         {
-            barre.color = Color.red;
-            barreSplit = 1;
+            canClickPower = false;
+            if (progress.fillAmount <= 0.2f || progress.fillAmount >= 0.8f)
+            {
+                barre.color = Color.red;
+                barreSplit = 1;
+            }
+            else if (progress.fillAmount > 0.2f && progress.fillAmount <= 0.45f || progress.fillAmount > 0.55f && progress.fillAmount <= 0.8f)
+            {
+                barre.color = Color.yellow;
+                barreSplit = 2;
+            }
+            else if (progress.fillAmount > 0.45f && progress.fillAmount <= 0.55f)
+            {
+                barre.color = Color.green;
+                barreSplit = 3;
+            }
+            Debug.Log(progress.fillAmount);
+            StartCoroutine(_battleSystem.PlayerMove());
         }
-        else if (progress.fillAmount > 0.2f && progress.fillAmount <= 0.45f || progress.fillAmount > 0.55f && progress.fillAmount <= 0.8f)
-        {
-            barre.color = Color.yellow;
-            barreSplit = 2;
-        }
-        else if (progress.fillAmount > 0.45f && progress.fillAmount <= 0.55f)
-        {
-            barre.color = Color.green;
-            barreSplit = 3;
-        }
-        Debug.Log(progress.fillAmount);
-        StartCoroutine(_battleSystem.PlayerMove());
     }
 
 

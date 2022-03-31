@@ -19,7 +19,7 @@ MonoBehaviour:
   type1: 0
   type2: 0
   _maxHp: 50
-  _attack: 50
+  _attack: 500
   _defense: 50
   _spAttack: 50
   _spDefense: 50
@@ -30,8 +30,9 @@ MonoBehaviour:
   - _moveBase: {fileID: 11400000, guid: 27900b0795a6b2f4a896b21ed6f471d0, type: 2}
     _level: 0
   - _moveBase: {fileID: 11400000, guid: 0ea19bfc0b3d40c4d80b4be4d0a00d5a, type: 2}
-    _level: 0
+    _level: 1
   - _moveBase: {fileID: 11400000, guid: 58ebcdd01c4225c4085f6fd1d246b717, type: 2}
-    _level: 0
+    _level: 2
   - _moveBase: {fileID: 11400000, guid: 81ebb6240cae26b4e870ed8f5053ba04, type: 2}
-    _level: 0
+    _level: 3
+  _XPByLevel: 

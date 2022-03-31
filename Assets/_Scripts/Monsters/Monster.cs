@@ -23,19 +23,6 @@ public class Monster
     public int Damage {get; set;}
 
 
-
-
-
-    //class Virus
-    //{
-    //    public int Virusmineur;
-    //    public int Virussdfmineur;
-    //    public int Virusmindsfeur;
-    //    public int Virusmsdfineur;
-    //}
-
-    //List<Virus> Virusssss;
-
     public void Init()
     {
         Moves = new List<Move>();

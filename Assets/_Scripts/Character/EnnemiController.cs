@@ -5,8 +5,9 @@ using UnityEngine;
 public class EnnemiController : MonoBehaviour, Interactable
 {
 
+    public bool isVirus = false;
     [SerializeField] string _name;
-    [SerializeField] Sprite _sprite;
+    public int moneyAfterBattle = 0;
     [SerializeField] SpriteRenderer _ennemi;
     [SerializeField] Dialog _dialog;
     [SerializeField] Dialog _dialogAfterBattle;
@@ -17,11 +18,10 @@ public class EnnemiController : MonoBehaviour, Interactable
     public BoxCollider2D collider2D;
 
     bool _battleLost = false;
-    public bool _virus = false;
 
     public void Interact()
     {
-        if (!_battleLost && !_virus)
+        if (!_battleLost && !isVirus)
         {
             StartCoroutine(DialogManager.Instance.ShowDialog(_dialog, () =>
 
@@ -29,7 +29,7 @@ public class EnnemiController : MonoBehaviour, Interactable
 
             ));
         }
-        else if (!_battleLost && _virus)
+        else if (!_battleLost && isVirus)
         {
             StartCoroutine(StartBattle());
         }
@@ -69,6 +69,5 @@ public class EnnemiController : MonoBehaviour, Interactable
               }));
     }
 
-    public Sprite Sprite { get => _sprite; }
     public string Name { get => _name; }
 }

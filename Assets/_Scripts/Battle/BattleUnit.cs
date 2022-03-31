@@ -21,6 +21,7 @@ public class BattleUnit : MonoBehaviour
 
     [SerializeField] GameObject _pouvoirBarre;
 
+    public List<int> ExpLvl;
     public BoxCollider2D boxCollider;
     public bool isAttacking;
     public bool isSelected;
@@ -42,21 +43,15 @@ public class BattleUnit : MonoBehaviour
         _image = GetComponent<Image>();
         _originalPos = _image.transform.localPosition;
     }
-    //public List<int> ExpLvl;
     public void UpdateLevel(Monster monster)
     {
-        if (monster.Exp < 100000)
-            monster._level = 0;
-        else if (monster.Exp >= 100000 && monster.Exp < 250000)
-            monster._level = 1;
-        else if (monster.Exp >= 250000 && monster.Exp < 450000)
-            monster._level = 2;
-        else if (monster.Exp >= 450000 && monster.Exp < 700000)
-            monster._level = 3;
-        else if (monster.Exp >= 700000 && monster.Exp < 1000000)
-            monster._level = 4;
-        else if (monster.Exp >= 1000000)
-            monster._level = 5;
+        for (int i = 0; i < ExpLvl.Count; i++)
+        {
+            if (monster.Exp < ExpLvl[0])
+                monster._level = 0;
+            else if (monster.Exp >= ExpLvl[i] && monster.Exp < ExpLvl[i + 1])
+                monster._level = i + 1;
+        }
     }
 
     public void Setup(Monster monster)
@@ -181,16 +176,12 @@ public class BattleUnit : MonoBehaviour
         boxCollider.enabled = false;
 
 
-      
+
     }
 
-    public void WinXP(List<BattleUnit> sourceUnit = null, BattleUnit enemy = null)
+    public void WinXP(BattleUnit sourceUnit = null, BattleUnit enemy = null)
     {
-        for (int i = 0; i < _battleSystem._playerUnits.Count; i++)
-        {
-            sourceUnit[i].Monster.Exp += enemy.Monster.Base.XPByLevel[enemy.Monster.Level];
-        }
-
+        sourceUnit.Monster.Exp += enemy.Monster.Base.XPByLevel[enemy.Monster.Level-1];
     }
 
     public void OnMouseEnter()

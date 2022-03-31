@@ -65,7 +65,7 @@ public class ConditionDB
                     return true;
                     }
                     monster.StatusTime--;
-                        return false;
+                    return false;
 
                 },
             }
@@ -84,10 +84,10 @@ public class ConditionDB
                 {
                     if (monster.StatusTime <= 0)
                     {
-                        return true;
+                        return false;
                     }
                     monster.StatusTime--;
-                    return false;
+                    return true;
                 },
             }
         },

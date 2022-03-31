@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/_Scenes/MainMenu.unity
     guid: 6ec4eabcfd23c3846a73b43e4cc0f7c6
   - enabled: 1
+    path: Assets/_Scenes/Equilibrage.unity
+    guid: 5e72edf32b5abae49b57a835f6e532a5
+  - enabled: 1
     path: Assets/_Scenes/Map.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/_Scenes/TestForProg 1.unity
+    guid: fc7eb8a785726d24db3ed42a5508eb67
   m_configObjects: {}
