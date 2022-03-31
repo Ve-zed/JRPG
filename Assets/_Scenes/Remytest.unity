@@ -3701,7 +3701,6 @@ GameObject:
   - component: {fileID: 197559270}
   - component: {fileID: 197559269}
   - component: {fileID: 197559271}
-  - component: {fileID: 197559272}
   m_Layer: 0
   m_Name: _Scripts
   m_TagString: Untagged
@@ -3724,6 +3723,7 @@ MonoBehaviour:
   _playerController: {fileID: 1294185974}
   _battleSystem: {fileID: 1183157651}
   _worldCamera: {fileID: 519420031}
+  money: 0
 --- !u!4 &197559270
 Transform:
   m_ObjectHideFlags: 0
@@ -3753,33 +3753,6 @@ MonoBehaviour:
   dialogBox: {fileID: 1049210000}
   _dialogText: {fileID: 435575500}
   _lettersPerSecond: 45
---- !u!114 &197559272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 197559268}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41f07e92a1f4da34f96e68551289fc27, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dataCenter: {fileID: 11100525}
-  treeNFT: {fileID: 576981567}
-  btnTreeNFT: {fileID: 2129361116}
-  options: {fileID: 1927279509}
-  btnOptions: {fileID: 534768218}
-  tree_Player: {fileID: 1664814502}
-  btnPlayer: {fileID: 597241848}
-  tree_Partner_1: {fileID: 381863291}
-  btnPartner_1: {fileID: 1981527391}
-  tree_Partner_2: {fileID: 1055709351}
-  btnPartner_2: {fileID: 1245559833}
-  _NFT_Update_Player: {fileID: 597241853}
-  _NFT_Update_Partner_1: {fileID: 1981527396}
-  _NFT_Update_Partner_2: {fileID: 1245559838}
-  lastBtnUse: {fileID: 0}
 --- !u!1 &198017991
 GameObject:
   m_ObjectHideFlags: 0
@@ -3867,6 +3840,7 @@ GameObject:
   - component: {fileID: 201476122}
   - component: {fileID: 201476121}
   - component: {fileID: 201476120}
+  - component: {fileID: 201476123}
   m_Layer: 5
   m_Name: Btn_Back
   m_TagString: Untagged
@@ -3881,12 +3855,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201476118}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 993667601}
-  m_RootOrder: 3
+  m_Father: {fileID: 1039313024}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -3937,7 +3911,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197559272}
+      - m_Target: {fileID: 201476123}
         m_TargetAssemblyTypeName: Btn_DataCenter, Assembly-CSharp
         m_MethodName: OnClickBack
         m_Mode: 1
@@ -3987,6 +3961,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 201476118}
   m_CullTransparentMesh: 1
+--- !u!114 &201476123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 201476118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f07e92a1f4da34f96e68551289fc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataCenter: {fileID: 11100525}
+  treeNFT: {fileID: 576981567}
+  options: {fileID: 1927279509}
+  tree_Player: {fileID: 1664814502}
+  tree_Partner_1: {fileID: 381863291}
+  tree_Partner_2: {fileID: 1055709351}
+  commandes: {fileID: 0}
+  son: {fileID: 0}
+  _NFT_Update_Player: {fileID: 597241853}
+  _NFT_Update_Partner_1: {fileID: 1981527396}
+  _NFT_Update_Partner_2: {fileID: 1245559838}
+  _btnUpdate1: {fileID: 0}
+  _btnUpdate2: {fileID: 0}
 --- !u!1 &207872704
 GameObject:
   m_ObjectHideFlags: 0
@@ -5967,7 +5966,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &377129256
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5980,7 +5979,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1927279510}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -6093,7 +6092,7 @@ RectTransform:
   - {fileID: 8115548}
   - {fileID: 1223561521}
   m_Father: {fileID: 576981568}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7879,6 +7878,8 @@ GameObject:
   - component: {fileID: 534768222}
   - component: {fileID: 534768221}
   - component: {fileID: 534768220}
+  - component: {fileID: 534768223}
+  - component: {fileID: 534768224}
   m_Layer: 5
   m_Name: Btn_Options
   m_TagString: Untagged
@@ -7899,7 +7900,7 @@ RectTransform:
   m_Children:
   - {fileID: 146381898}
   m_Father: {fileID: 1039313024}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -7950,7 +7951,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197559272}
+      - m_Target: {fileID: 534768223}
         m_TargetAssemblyTypeName: Btn_DataCenter, Assembly-CSharp
         m_MethodName: OnClickOptions
         m_Mode: 1
@@ -7962,9 +7963,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1254842473}
-        m_TargetAssemblyTypeName: Arrow_Movements, Assembly-CSharp
-        m_MethodName: ApplyPosition
+      - m_Target: {fileID: 534768224}
+        m_TargetAssemblyTypeName: Btn_MenuProperties, Assembly-CSharp
+        m_MethodName: OnClickBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8012,6 +8013,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 534768218}
   m_CullTransparentMesh: 1
+--- !u!114 &534768223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534768218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f07e92a1f4da34f96e68551289fc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataCenter: {fileID: 11100525}
+  treeNFT: {fileID: 576981567}
+  options: {fileID: 1927279509}
+  tree_Player: {fileID: 1664814502}
+  tree_Partner_1: {fileID: 381863291}
+  tree_Partner_2: {fileID: 1055709351}
+  commandes: {fileID: 0}
+  son: {fileID: 0}
+  _NFT_Update_Player: {fileID: 597241853}
+  _NFT_Update_Partner_1: {fileID: 1981527396}
+  _NFT_Update_Partner_2: {fileID: 1245559838}
+  _btnUpdate1: {fileID: 1108249647}
+  _btnUpdate2: {fileID: 0}
+--- !u!114 &534768224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534768218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ebb7d3817151e40b100546e71e9aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _btn_MenuManager: {fileID: 1279072881}
+  _id: 2
+  _btnSpriteUnselected: {fileID: 21300000, guid: 131c210feaee6e249b90ccf138c3d448, type: 3}
+  _btnSpriteSelected: {fileID: 21300000, guid: a2af41761d40cc14883cd480bcf60595, type: 3}
+  _btnImage: {fileID: 534768221}
+  _objectMove: {fileID: 1254842469}
 --- !u!1 &542156679
 GameObject:
   m_ObjectHideFlags: 0
@@ -8371,6 +8415,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1828218336}
   - {fileID: 597241849}
   - {fileID: 1981527392}
   - {fileID: 1245559834}
@@ -8381,7 +8426,7 @@ RectTransform:
   - {fileID: 1349804339}
   - {fileID: 1768595859}
   m_Father: {fileID: 1039313024}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9165,6 +9210,8 @@ GameObject:
   - component: {fileID: 597241851}
   - component: {fileID: 597241850}
   - component: {fileID: 597241853}
+  - component: {fileID: 597241854}
+  - component: {fileID: 597241855}
   m_Layer: 5
   m_Name: Btn_Player
   m_TagString: Untagged
@@ -9185,7 +9232,7 @@ RectTransform:
   m_Children:
   - {fileID: 1359703988}
   m_Father: {fileID: 576981568}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9236,7 +9283,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197559272}
+      - m_Target: {fileID: 597241854}
         m_TargetAssemblyTypeName: Btn_DataCenter, Assembly-CSharp
         m_MethodName: OnClickTreePlayer
         m_Mode: 1
@@ -9248,9 +9295,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1100398960}
-        m_TargetAssemblyTypeName: Arrow_Movements, Assembly-CSharp
-        m_MethodName: ApplyPosition
+      - m_Target: {fileID: 597241855}
+        m_TargetAssemblyTypeName: Btn_MenuProperties, Assembly-CSharp
+        m_MethodName: OnClickBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9312,6 +9359,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _NFT_Properties: {fileID: 1757647077}
   _NFT_Trading: {fileID: 1349804340}
+--- !u!114 &597241854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597241848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f07e92a1f4da34f96e68551289fc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataCenter: {fileID: 11100525}
+  treeNFT: {fileID: 576981567}
+  options: {fileID: 1927279509}
+  tree_Player: {fileID: 1664814502}
+  tree_Partner_1: {fileID: 381863291}
+  tree_Partner_2: {fileID: 1055709351}
+  commandes: {fileID: 0}
+  son: {fileID: 0}
+  _NFT_Update_Player: {fileID: 597241853}
+  _NFT_Update_Partner_1: {fileID: 1981527396}
+  _NFT_Update_Partner_2: {fileID: 1245559838}
+  _btnUpdate1: {fileID: 0}
+  _btnUpdate2: {fileID: 0}
+--- !u!114 &597241855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 597241848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ebb7d3817151e40b100546e71e9aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _btn_MenuManager: {fileID: 1828218335}
+  _id: 1
+  _btnSpriteUnselected: {fileID: 21300000, guid: caed4acdbf34d6c43beb1e94184273ae, type: 3}
+  _btnSpriteSelected: {fileID: 21300000, guid: 25c18932f4417444a9b89c720d16f571, type: 3}
+  _btnImage: {fileID: 597241851}
+  _objectMove: {fileID: 1100398956}
 --- !u!1 &613082685
 GameObject:
   m_ObjectHideFlags: 0
@@ -9589,7 +9679,7 @@ RectTransform:
   - {fileID: 1272936075}
   - {fileID: 936504118}
   m_Father: {fileID: 1039313024}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13213,7 +13303,7 @@ RectTransform:
   - {fileID: 1100398957}
   - {fileID: 268460106}
   m_Father: {fileID: 1039313024}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13641,7 +13731,7 @@ RectTransform:
   m_Children:
   - {fileID: 2048126318}
   m_Father: {fileID: 1927279510}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14284,7 +14374,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 993667601}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15853,10 +15943,9 @@ RectTransform:
   - {fileID: 299721096}
   - {fileID: 64597944}
   - {fileID: 789949994}
-  - {fileID: 201476119}
   - {fileID: 926343940}
   m_Father: {fileID: 1039313024}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -16017,6 +16106,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1279072880}
+  - {fileID: 201476119}
   - {fileID: 993667601}
   - {fileID: 628767144}
   - {fileID: 2129361117}
@@ -16579,7 +16670,7 @@ RectTransform:
   - {fileID: 688863890}
   - {fileID: 1173230614}
   m_Father: {fileID: 576981568}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17529,9 +17620,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6afaaafb23c87d94187cea05d6929149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectMove: {fileID: 1100398956}
-  ObjectRef: {fileID: 0}
-  _Btn_DataCenter: {fileID: 197559272}
 --- !u!1 &1100886824
 GameObject:
   m_ObjectHideFlags: 0
@@ -18051,6 +18139,8 @@ GameObject:
   - component: {fileID: 1108249646}
   - component: {fileID: 1108249645}
   - component: {fileID: 1108249644}
+  - component: {fileID: 1108249648}
+  - component: {fileID: 1108249647}
   m_Layer: 5
   m_Name: Btn_Commandes
   m_TagString: Untagged
@@ -18071,7 +18161,7 @@ RectTransform:
   m_Children:
   - {fileID: 1837020755}
   m_Father: {fileID: 1927279510}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -18121,7 +18211,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1108249645}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1108249647}
+        m_TargetAssemblyTypeName: Btn_MenuProperties, Assembly-CSharp
+        m_MethodName: OnClickBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1108249648}
+        m_TargetAssemblyTypeName: Btn_DataCenter, Assembly-CSharp
+        m_MethodName: OnClickCommande
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1108249645
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18160,6 +18274,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1108249642}
   m_CullTransparentMesh: 1
+--- !u!114 &1108249647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108249642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ebb7d3817151e40b100546e71e9aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _btn_MenuManager: {fileID: 1595194439}
+  _id: 1
+  _btnSpriteUnselected: {fileID: 21300000, guid: caed4acdbf34d6c43beb1e94184273ae, type: 3}
+  _btnSpriteSelected: {fileID: 21300000, guid: 25c18932f4417444a9b89c720d16f571, type: 3}
+  _btnImage: {fileID: 1108249645}
+  _objectMove: {fileID: 1100398956}
+--- !u!114 &1108249648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1108249642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f07e92a1f4da34f96e68551289fc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataCenter: {fileID: 11100525}
+  treeNFT: {fileID: 576981567}
+  options: {fileID: 1927279509}
+  tree_Player: {fileID: 1664814502}
+  tree_Partner_1: {fileID: 381863291}
+  tree_Partner_2: {fileID: 1055709351}
+  commandes: {fileID: 1833674501}
+  son: {fileID: 377129255}
+  _NFT_Update_Player: {fileID: 597241853}
+  _NFT_Update_Partner_1: {fileID: 1981527396}
+  _NFT_Update_Partner_2: {fileID: 1245559838}
+  _btnUpdate1: {fileID: 0}
+  _btnUpdate2: {fileID: 0}
 --- !u!1 &1113864863
 GameObject:
   m_ObjectHideFlags: 0
@@ -19874,6 +20031,7 @@ MonoBehaviour:
   - {fileID: 408843053}
   - {fileID: 910324267}
   - {fileID: 1207711119}
+  _gameController: {fileID: 0}
   _dialogBox: {fileID: 680742815}
   _precision: {fileID: 0}
   _playerSelectedUnit: {fileID: 0}
@@ -21179,6 +21337,8 @@ GameObject:
   - component: {fileID: 1245559836}
   - component: {fileID: 1245559835}
   - component: {fileID: 1245559838}
+  - component: {fileID: 1245559839}
+  - component: {fileID: 1245559840}
   m_Layer: 5
   m_Name: Btn_Partner_2
   m_TagString: Untagged
@@ -21199,7 +21359,7 @@ RectTransform:
   m_Children:
   - {fileID: 2049132921}
   m_Father: {fileID: 576981568}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21250,7 +21410,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197559272}
+      - m_Target: {fileID: 1245559839}
         m_TargetAssemblyTypeName: Btn_DataCenter, Assembly-CSharp
         m_MethodName: OnClickTreePartner2
         m_Mode: 1
@@ -21262,9 +21422,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1100398960}
-        m_TargetAssemblyTypeName: Arrow_Movements, Assembly-CSharp
-        m_MethodName: ApplyPosition
+      - m_Target: {fileID: 1245559840}
+        m_TargetAssemblyTypeName: Btn_MenuProperties, Assembly-CSharp
+        m_MethodName: OnClickBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -21326,6 +21486,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _NFT_Properties: {fileID: 364470985}
   _NFT_Trading: {fileID: 1349804340}
+--- !u!114 &1245559839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245559833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f07e92a1f4da34f96e68551289fc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataCenter: {fileID: 11100525}
+  treeNFT: {fileID: 576981567}
+  options: {fileID: 1927279509}
+  tree_Player: {fileID: 1664814502}
+  tree_Partner_1: {fileID: 381863291}
+  tree_Partner_2: {fileID: 1055709351}
+  commandes: {fileID: 0}
+  son: {fileID: 0}
+  _NFT_Update_Player: {fileID: 597241853}
+  _NFT_Update_Partner_1: {fileID: 1981527396}
+  _NFT_Update_Partner_2: {fileID: 1245559838}
+  _btnUpdate1: {fileID: 0}
+  _btnUpdate2: {fileID: 0}
+--- !u!114 &1245559840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1245559833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ebb7d3817151e40b100546e71e9aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _btn_MenuManager: {fileID: 1828218335}
+  _id: 3
+  _btnSpriteUnselected: {fileID: 21300000, guid: caed4acdbf34d6c43beb1e94184273ae, type: 3}
+  _btnSpriteSelected: {fileID: 21300000, guid: 25c18932f4417444a9b89c720d16f571, type: 3}
+  _btnImage: {fileID: 1245559836}
+  _objectMove: {fileID: 1100398956}
 --- !u!1 &1247133854
 GameObject:
   m_ObjectHideFlags: 0
@@ -21432,7 +21635,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1039313024}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -21489,9 +21692,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6afaaafb23c87d94187cea05d6929149, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectMove: {fileID: 1254842469}
-  ObjectRef: {fileID: 0}
-  _Btn_DataCenter: {fileID: 197559272}
 --- !u!1001 &1258634512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21946,6 +22146,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1272936074}
   m_CullTransparentMesh: 1
+--- !u!1 &1279072879
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1279072880}
+  - component: {fileID: 1279072881}
+  m_Layer: 5
+  m_Name: ManagerMenuBtn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1279072880
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279072879}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1039313024}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1279072881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279072879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c329bae9e1e818489b1a91d40d9ca90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IdManager: 0
 --- !u!1 &1289321644
 GameObject:
   m_ObjectHideFlags: 0
@@ -22792,6 +23041,7 @@ GameObject:
   - component: {fileID: 1340458613}
   - component: {fileID: 1340458612}
   - component: {fileID: 1340458611}
+  - component: {fileID: 1340458614}
   m_Layer: 5
   m_Name: Btn_DataCenter
   m_TagString: Untagged
@@ -22863,25 +23113,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197559272}
+      - m_Target: {fileID: 1340458614}
         m_TargetAssemblyTypeName: Btn_DataCenter, Assembly-CSharp
         m_MethodName: OnClickDataCenter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Btn_DataCenter, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -22925,6 +23163,31 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1340458609}
   m_CullTransparentMesh: 1
+--- !u!114 &1340458614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340458609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f07e92a1f4da34f96e68551289fc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataCenter: {fileID: 11100525}
+  treeNFT: {fileID: 576981567}
+  options: {fileID: 1927279509}
+  tree_Player: {fileID: 1664814502}
+  tree_Partner_1: {fileID: 381863291}
+  tree_Partner_2: {fileID: 1055709351}
+  commandes: {fileID: 0}
+  son: {fileID: 0}
+  _NFT_Update_Player: {fileID: 597241853}
+  _NFT_Update_Partner_1: {fileID: 1981527396}
+  _NFT_Update_Partner_2: {fileID: 1245559838}
+  _btnUpdate1: {fileID: 2129361122}
+  _btnUpdate2: {fileID: 597241855}
 --- !u!1 &1342225657
 GameObject:
   m_ObjectHideFlags: 0
@@ -23042,7 +23305,7 @@ RectTransform:
   - {fileID: 769277157}
   - {fileID: 1005444089}
   m_Father: {fileID: 576981568}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -24826,6 +25089,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1595194438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1595194440}
+  - component: {fileID: 1595194439}
+  m_Layer: 5
+  m_Name: ManagerOptionsMenuBtn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1595194439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595194438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c329bae9e1e818489b1a91d40d9ca90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IdManager: 0
+--- !u!224 &1595194440
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1595194438}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1927279510}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1613621155 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4555617219829240168, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
@@ -25589,7 +25901,7 @@ RectTransform:
   - {fileID: 594919851}
   - {fileID: 760863140}
   m_Father: {fileID: 576981568}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -31952,7 +32264,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 576981568}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -32688,6 +33000,8 @@ GameObject:
   - component: {fileID: 1739290228}
   - component: {fileID: 1739290227}
   - component: {fileID: 1739290226}
+  - component: {fileID: 1739290230}
+  - component: {fileID: 1739290229}
   m_Layer: 5
   m_Name: Btn_Son
   m_TagString: Untagged
@@ -32708,7 +33022,7 @@ RectTransform:
   m_Children:
   - {fileID: 1210563930}
   m_Father: {fileID: 1927279510}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -32758,7 +33072,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1739290227}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1739290229}
+        m_TargetAssemblyTypeName: Btn_MenuProperties, Assembly-CSharp
+        m_MethodName: OnClickBtn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1739290230}
+        m_TargetAssemblyTypeName: Btn_DataCenter, Assembly-CSharp
+        m_MethodName: OnClickSon
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1739290227
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32797,6 +33135,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1739290224}
   m_CullTransparentMesh: 1
+--- !u!114 &1739290229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739290224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ebb7d3817151e40b100546e71e9aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _btn_MenuManager: {fileID: 1595194439}
+  _id: 2
+  _btnSpriteUnselected: {fileID: 21300000, guid: caed4acdbf34d6c43beb1e94184273ae, type: 3}
+  _btnSpriteSelected: {fileID: 21300000, guid: 25c18932f4417444a9b89c720d16f571, type: 3}
+  _btnImage: {fileID: 1739290227}
+  _objectMove: {fileID: 1100398956}
+--- !u!114 &1739290230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739290224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f07e92a1f4da34f96e68551289fc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataCenter: {fileID: 11100525}
+  treeNFT: {fileID: 576981567}
+  options: {fileID: 1927279509}
+  tree_Player: {fileID: 1664814502}
+  tree_Partner_1: {fileID: 381863291}
+  tree_Partner_2: {fileID: 1055709351}
+  commandes: {fileID: 1833674501}
+  son: {fileID: 377129255}
+  _NFT_Update_Player: {fileID: 597241853}
+  _NFT_Update_Partner_1: {fileID: 1981527396}
+  _NFT_Update_Partner_2: {fileID: 1245559838}
+  _btnUpdate1: {fileID: 0}
+  _btnUpdate2: {fileID: 0}
 --- !u!4 &1740734372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1374298476643591619, guid: b929ecd34c713e84d8718f260899fa05, type: 3}
@@ -32890,7 +33271,7 @@ RectTransform:
   - {fileID: 1336742082}
   - {fileID: 714894504}
   m_Father: {fileID: 576981568}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -33435,6 +33816,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1817643441}
   m_CullTransparentMesh: 1
+--- !u!1 &1828218334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1828218336}
+  - component: {fileID: 1828218335}
+  m_Layer: 5
+  m_Name: ManagerTreeMenuBtn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1828218335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828218334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c329bae9e1e818489b1a91d40d9ca90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IdManager: 0
+--- !u!224 &1828218336
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828218334}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 576981568}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1833674501
 GameObject:
   m_ObjectHideFlags: 0
@@ -33464,7 +33894,7 @@ RectTransform:
   m_Children:
   - {fileID: 653827884}
   m_Father: {fileID: 1927279510}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -35056,13 +35486,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 1595194440}
   - {fileID: 1108249643}
   - {fileID: 1739290225}
   - {fileID: 882358092}
   - {fileID: 1833674502}
   - {fileID: 377129256}
   m_Father: {fileID: 1039313024}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -35342,6 +35773,8 @@ GameObject:
   - component: {fileID: 1981527394}
   - component: {fileID: 1981527393}
   - component: {fileID: 1981527396}
+  - component: {fileID: 1981527397}
+  - component: {fileID: 1981527398}
   m_Layer: 5
   m_Name: Btn_Partner_1
   m_TagString: Untagged
@@ -35362,7 +35795,7 @@ RectTransform:
   m_Children:
   - {fileID: 1351391127}
   m_Father: {fileID: 576981568}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -35413,7 +35846,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197559272}
+      - m_Target: {fileID: 1981527397}
         m_TargetAssemblyTypeName: Btn_DataCenter, Assembly-CSharp
         m_MethodName: OnClickTreePartner1
         m_Mode: 1
@@ -35425,9 +35858,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1100398960}
-        m_TargetAssemblyTypeName: Arrow_Movements, Assembly-CSharp
-        m_MethodName: ApplyPosition
+      - m_Target: {fileID: 1981527398}
+        m_TargetAssemblyTypeName: Btn_MenuProperties, Assembly-CSharp
+        m_MethodName: OnClickBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35489,6 +35922,49 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _NFT_Properties: {fileID: 1553947467}
   _NFT_Trading: {fileID: 1349804340}
+--- !u!114 &1981527397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981527391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f07e92a1f4da34f96e68551289fc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataCenter: {fileID: 11100525}
+  treeNFT: {fileID: 576981567}
+  options: {fileID: 1927279509}
+  tree_Player: {fileID: 1664814502}
+  tree_Partner_1: {fileID: 381863291}
+  tree_Partner_2: {fileID: 1055709351}
+  commandes: {fileID: 0}
+  son: {fileID: 0}
+  _NFT_Update_Player: {fileID: 597241853}
+  _NFT_Update_Partner_1: {fileID: 1981527396}
+  _NFT_Update_Partner_2: {fileID: 1245559838}
+  _btnUpdate1: {fileID: 0}
+  _btnUpdate2: {fileID: 0}
+--- !u!114 &1981527398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1981527391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ebb7d3817151e40b100546e71e9aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _btn_MenuManager: {fileID: 1828218335}
+  _id: 2
+  _btnSpriteUnselected: {fileID: 21300000, guid: caed4acdbf34d6c43beb1e94184273ae, type: 3}
+  _btnSpriteSelected: {fileID: 21300000, guid: 25c18932f4417444a9b89c720d16f571, type: 3}
+  _btnImage: {fileID: 1981527394}
+  _objectMove: {fileID: 1100398956}
 --- !u!1 &1989195872
 GameObject:
   m_ObjectHideFlags: 0
@@ -37065,6 +37541,8 @@ GameObject:
   - component: {fileID: 2129361120}
   - component: {fileID: 2129361119}
   - component: {fileID: 2129361118}
+  - component: {fileID: 2129361121}
+  - component: {fileID: 2129361122}
   m_Layer: 5
   m_Name: Btn_TreeNFT
   m_TagString: Untagged
@@ -37085,7 +37563,7 @@ RectTransform:
   m_Children:
   - {fileID: 593543397}
   m_Father: {fileID: 1039313024}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -37136,7 +37614,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 197559272}
+      - m_Target: {fileID: 2129361121}
         m_TargetAssemblyTypeName: Btn_DataCenter, Assembly-CSharp
         m_MethodName: OnClickTreeNFT
         m_Mode: 1
@@ -37148,9 +37626,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1254842473}
-        m_TargetAssemblyTypeName: Arrow_Movements, Assembly-CSharp
-        m_MethodName: ApplyPosition
+      - m_Target: {fileID: 2129361122}
+        m_TargetAssemblyTypeName: Btn_MenuProperties, Assembly-CSharp
+        m_MethodName: OnClickBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -37198,6 +37676,49 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2129361116}
   m_CullTransparentMesh: 1
+--- !u!114 &2129361121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129361116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41f07e92a1f4da34f96e68551289fc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dataCenter: {fileID: 11100525}
+  treeNFT: {fileID: 576981567}
+  options: {fileID: 1927279509}
+  tree_Player: {fileID: 1664814502}
+  tree_Partner_1: {fileID: 381863291}
+  tree_Partner_2: {fileID: 1055709351}
+  commandes: {fileID: 0}
+  son: {fileID: 0}
+  _NFT_Update_Player: {fileID: 597241853}
+  _NFT_Update_Partner_1: {fileID: 1981527396}
+  _NFT_Update_Partner_2: {fileID: 1245559838}
+  _btnUpdate1: {fileID: 597241855}
+  _btnUpdate2: {fileID: 0}
+--- !u!114 &2129361122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129361116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62ebb7d3817151e40b100546e71e9aba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _btn_MenuManager: {fileID: 1279072881}
+  _id: 1
+  _btnSpriteUnselected: {fileID: 21300000, guid: 131c210feaee6e249b90ccf138c3d448, type: 3}
+  _btnSpriteSelected: {fileID: 21300000, guid: a2af41761d40cc14883cd480bcf60595, type: 3}
+  _btnImage: {fileID: 2129361119}
+  _objectMove: {fileID: 1254842469}
 --- !u!1001 &2137861269
 PrefabInstance:
   m_ObjectHideFlags: 0

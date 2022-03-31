@@ -6,23 +6,23 @@ public class Btn_DataCenter : MonoBehaviour
 {
     [SerializeField] GameObject dataCenter;
     [SerializeField] GameObject treeNFT;
-    [SerializeField] GameObject btnTreeNFT;
     [SerializeField] GameObject options;
-    [SerializeField] GameObject btnOptions;
     [SerializeField] GameObject tree_Player;
-    [SerializeField] GameObject btnPlayer;
     [SerializeField] GameObject tree_Partner_1;
-    [SerializeField] GameObject btnPartner_1;
     [SerializeField] GameObject tree_Partner_2;
-    [SerializeField] GameObject btnPartner_2;
+    [SerializeField] GameObject commandes;
+    [SerializeField] GameObject son;
     [SerializeField] NFT_Update _NFT_Update_Player;
     [SerializeField] NFT_Update _NFT_Update_Partner_1;
     [SerializeField] NFT_Update _NFT_Update_Partner_2;
-    public GameObject lastBtnUse;
+    [SerializeField] Btn_MenuProperties _btnUpdate1;
+    [SerializeField] Btn_MenuProperties _btnUpdate2;
 
     public void OnClickDataCenter()
     {
         dataCenter.SetActive(true);
+        _btnUpdate1.OnClickBtn();
+        _btnUpdate2.OnClickBtn();
         OnClickTreeNFT();
         OnClickTreePlayer();
     }
@@ -34,39 +34,44 @@ public class Btn_DataCenter : MonoBehaviour
     {
         treeNFT.SetActive(true);
         options.SetActive(false);
+        _btnUpdate1.OnClickBtn();
         OnClickTreePlayer();
-        lastBtnUse = btnTreeNFT.gameObject;
     }
     public void OnClickOptions()
     {
         treeNFT.SetActive(false);
         options.SetActive(true);
-        lastBtnUse = btnOptions.gameObject;
+        _btnUpdate1.OnClickBtn();
     }
     public void OnClickTreePlayer()
     {
         tree_Player.SetActive(true);
         tree_Partner_1.SetActive(false);
         tree_Partner_2.SetActive(false);
-        lastBtnUse = btnPlayer.gameObject;
         _NFT_Update_Player.OnClickNFT();
     }
-
     public void OnClickTreePartner1()
     {
         tree_Player.SetActive(false);
         tree_Partner_1.SetActive(true);
         tree_Partner_2.SetActive(false);
-        lastBtnUse = btnPartner_1.gameObject;
         _NFT_Update_Partner_1.OnClickNFT();
     }
-
     public void OnClickTreePartner2()
     {
         tree_Player.SetActive(false);
         tree_Partner_1.SetActive(false);
         tree_Partner_2.SetActive(true);
-        lastBtnUse = btnPartner_2.gameObject;
         _NFT_Update_Partner_2.OnClickNFT();
+    }
+    public void OnClickCommande()
+    {
+        commandes.SetActive(true);
+        son.SetActive(false);
+    }
+    public void OnClickSon()
+    {
+        commandes.SetActive(false);
+        son.SetActive(true);
     }
 }
