@@ -229,6 +229,11 @@ public class BattleSystem : MonoBehaviour
                 StartCoroutine(RunMove(_playerSelectedUnit, _targetSelectedUnit, move));
         }
 
+        powerUsed = false;
+        canSelected = true;
+        _playerSelectedUnit._image.material = _playerSelectedUnit.originalMaterial;
+        Debug.Log("ckc");
+        
 
         foreach (var player in _playerUnits)
         {
@@ -239,11 +244,7 @@ public class BattleSystem : MonoBehaviour
             }
         }
 
-        
         _precision.ResetFillAmount();
-        powerUsed = false;
-        canSelected = true;
-        _playerSelectedUnit._image.material = _playerSelectedUnit.originalMaterial;
     }
     IEnumerator EnnemiTurn()
     {
@@ -620,6 +621,10 @@ public class BattleSystem : MonoBehaviour
             }
         }
         _pouvoirBarre.SetActive(false);
+        _precision.ResetFillAmount();
+        powerUsed = false;
+        canSelected = true;
+        _playerSelectedUnit._image.material = _playerSelectedUnit.originalMaterial;
 
         sourceUnit.Monster.OnAfterTurn();
         yield return sourceUnit.Hud.UpdateHP();
@@ -642,6 +647,9 @@ public class BattleSystem : MonoBehaviour
         }
         if (sourceUnit.IsPlayerUnit)
             yield return EnnemiTurn();
+
+
+
     }
 
     IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
