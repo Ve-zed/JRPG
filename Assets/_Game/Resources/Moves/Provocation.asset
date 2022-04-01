@@ -21,8 +21,6 @@ MonoBehaviour:
   _pp: 20
   _category: 2
   _effects:
-    boosts:
-    - stat: 0
-      boost: -1
+    boosts: []
     _status: 3
   _target: 0

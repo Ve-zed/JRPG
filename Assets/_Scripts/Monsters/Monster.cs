@@ -180,9 +180,12 @@ public class Monster
         }
         return false;
     }
-    public void OnAfterTurn()
+    public void OnAfterTurn(BattleUnit sourceUnit)
     {
         Status?.OnAfterTurn?.Invoke(this);
+        sourceUnit.Hud.UpdateHP();
+        Debug.Log("nani");
+
     }
 
     public void OnBattleOver()

@@ -180,7 +180,7 @@ public class BattleSystem : MonoBehaviour
     public IEnumerator PlayerMove()
     {
         _state = BattleState.PerformMove;
-        
+
         foreach (var item in _playerUnits)
         {
             if (item.isSelected)
@@ -232,8 +232,8 @@ public class BattleSystem : MonoBehaviour
         powerUsed = false;
         canSelected = true;
         _playerSelectedUnit._image.material = _playerSelectedUnit.originalMaterial;
-        Debug.Log("ckc");
-        
+        Debug.Log("power false");
+
 
         foreach (var player in _playerUnits)
         {
@@ -248,6 +248,7 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator EnnemiTurn()
     {
+        Debug.Log("Enemy turn");
         int playerCount = 0;
         for (int i = 0; i < _playerUnits.Count; i++)
         {
@@ -305,7 +306,7 @@ public class BattleSystem : MonoBehaviour
                             }
                         }
                     }
-                   // target = _playerUnits[2];
+                    // target = _playerUnits[2];
                 }
                 if (move.Base.Target == MoveTarget.AllEnnemi)
                 {
@@ -364,7 +365,7 @@ public class BattleSystem : MonoBehaviour
         yield return new WaitForSeconds(1f);
         sourceUnit.PlayFadeAnimation();
 
-        sourceUnit.Monster.OnAfterTurn();
+        sourceUnit.Monster.OnAfterTurn(sourceUnit);
         yield return sourceUnit.Hud.UpdateHP();
 
 
@@ -433,7 +434,7 @@ public class BattleSystem : MonoBehaviour
         }
         yield return new WaitForSeconds(1.5f);
 
-        sourceUnit.Monster.OnAfterTurn();
+        sourceUnit.Monster.OnAfterTurn(sourceUnit);
         yield return sourceUnit.Hud.UpdateHP();
         if (sourceUnit.IsPlayerUnit)
             sourceUnit.PlayFadeAnimation();
@@ -558,15 +559,15 @@ public class BattleSystem : MonoBehaviour
             {
                 if (targetUnits[i].Monster.HP <= 0)
                 {
-                        Debug.Log("Crash Test Xp");
-                        for (int y = 0; y < _playerUnits.Count; y++)
-                        {
-                            //.WinXP(_playerUnits, targetUnit);
-                            _playerSelectedUnit.WinXP(_playerUnits[y], targetUnits[i]);
-                        }
+                    Debug.Log("Crash Test Xp");
+                    for (int y = 0; y < _playerUnits.Count; y++)
+                    {
+                        //.WinXP(_playerUnits, targetUnit);
+                        _playerSelectedUnit.WinXP(_playerUnits[y], targetUnits[i]);
+                    }
 
-                    
-                        _playerUnitsDead.Add(_playerSelectedUnit);
+
+                    _playerUnitsDead.Add(_playerSelectedUnit);
 
                     targetUnits[i].PlayFaintAnimation();
                     var _hudTarget = targetUnits[i].GetComponentInChildren<BattleHud>(true);
@@ -579,6 +580,14 @@ public class BattleSystem : MonoBehaviour
                     CheckForBattleOver(targetUnits[i]);
                 }
             }
+            _pouvoirBarre.SetActive(false);
+            _precision.ResetFillAmount();
+            _playerSelectedUnit._image.material = _playerSelectedUnit.originalMaterial;
+            canSelected = true;
+            powerUsed = false;
+            Debug.Log("nannnni");
+            
+
         }
         else
         {
@@ -620,14 +629,9 @@ public class BattleSystem : MonoBehaviour
                 }
             }
         }
-        _pouvoirBarre.SetActive(false);
-        _precision.ResetFillAmount();
-        powerUsed = false;
-        canSelected = true;
-        _playerSelectedUnit._image.material = _playerSelectedUnit.originalMaterial;
 
-        sourceUnit.Monster.OnAfterTurn();
-        yield return sourceUnit.Hud.UpdateHP();
+        sourceUnit.Monster.OnAfterTurn(sourceUnit);
+
         if (sourceUnit.Monster.HP <= 0)
         {
 
@@ -636,7 +640,6 @@ public class BattleSystem : MonoBehaviour
 
 
 
-            yield return _dialogBox.TypeDialog($"{sourceUnit.Monster.Base.Name} Fainted");
             sourceUnit.PlayFaintAnimation();
 
             var _hudTarget = sourceUnit.GetComponentInChildren<BattleHud>(true);
@@ -645,16 +648,18 @@ public class BattleSystem : MonoBehaviour
 
             CheckForBattleOver(sourceUnit);
         }
-        if (sourceUnit.IsPlayerUnit)
-            yield return EnnemiTurn();
 
 
+        Debug.Log("ckc bro 1");
+
+
+        StartCoroutine(EnnemiTurn());
 
     }
 
     IEnumerator RunMove(BattleUnit sourceUnit, BattleUnit targetUnit, Move move)
     {
-        
+
 
         bool canRunMove = sourceUnit.Monster.OnBeforeMove();
         if (!canRunMove)
@@ -740,7 +745,7 @@ public class BattleSystem : MonoBehaviour
             CheckForBattleOver(targetUnit);
         }
         _pouvoirBarre.SetActive(false);
-        sourceUnit.Monster.OnAfterTurn();
+        sourceUnit.Monster.OnAfterTurn(sourceUnit);
         yield return sourceUnit.Hud.UpdateHP();
         if (sourceUnit.Monster.HP <= 0)
         {
