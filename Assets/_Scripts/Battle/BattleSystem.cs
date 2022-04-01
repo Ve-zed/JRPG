@@ -246,7 +246,7 @@ public class BattleSystem : MonoBehaviour
             if (_playerUnits[i].isAttacking)
                 playerCount++;
 
-            if (playerCount >= 3)
+            if (playerCount >= 3 - _playerUnitsDead.Count)
                 enemiTurn = true;
         }
         if (playerCount >= 3 - _playerUnitsDead.Count && !_isEnnemiTurn && enemiTurn)
@@ -646,7 +646,10 @@ public class BattleSystem : MonoBehaviour
 
         sourceUnit.PlayAttackAnimation();
         AudioManager.Instance.PlaySFXSound(move.Base.Sound);
+
         yield return new WaitForSeconds(1f);
+
+        _pouvoirBarre.SetActive(false);
 
         StartCoroutine(targetUnit.PlayHitAnimation());
 
@@ -721,7 +724,6 @@ public class BattleSystem : MonoBehaviour
 
             CheckForBattleOver(targetUnit);
         }
-        _pouvoirBarre.SetActive(false);
         sourceUnit.Monster.OnAfterTurn(sourceUnit);
         yield return sourceUnit.Hud.UpdateHP();
         if (sourceUnit.Monster.HP <= 0)
