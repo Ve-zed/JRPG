@@ -475,7 +475,7 @@ MonoBehaviour:
   _playerController: {fileID: 1294185974}
   _battleSystem: {fileID: 1183157651}
   _worldCamera: {fileID: 519420031}
-  money: 0
+  mHR: 0
 --- !u!4 &197559270
 Transform:
   m_ObjectHideFlags: 0
@@ -1020,6 +1020,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 163.2831, y: 90.880035}
   m_EdgeRadius: 0
+--- !u!1 &390644663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 390644664}
+  m_Layer: 0
+  m_Name: PNJ_histoire
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &390644664
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390644663}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.362144, y: 0.895985, z: -43.86394}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &401387924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8429885589739097548, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
@@ -1710,11 +1740,23 @@ PrefabInstance:
     m_TransformParent: {fileID: 191610511}
     m_Modifications:
     - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
+      propertyPath: _monsters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: _monsters.Array.data[0]._base
       value: 
       objectReference: {fileID: 11400000, guid: 8126837fe6f6d0d47a4f07ae4fedea01, type: 2}
     - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
+      propertyPath: _monsters.Array.data[1]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: 8126837fe6f6d0d47a4f07ae4fedea01, type: 2}
+    - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: _monsters.Array.data[0]._level
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
+      propertyPath: _monsters.Array.data[1]._level
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8429885589739097536, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
@@ -12341,6 +12383,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de37192f2bc259e4c987664829c62574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &2015896539
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2015896540}
+  m_Layer: 0
+  m_Name: PNJ_combat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2015896540
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2015896539}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -24.362144, y: 0.895985, z: -43.86394}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2046994055 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8429885589739097548, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
@@ -12354,11 +12426,23 @@ PrefabInstance:
     m_TransformParent: {fileID: 191610511}
     m_Modifications:
     - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
+      propertyPath: _monsters.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: _monsters.Array.data[0]._base
       value: 
       objectReference: {fileID: 11400000, guid: b408e31d454ee424ab6778815b88a899, type: 2}
     - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
+      propertyPath: _monsters.Array.data[1]._base
+      value: 
+      objectReference: {fileID: 11400000, guid: b408e31d454ee424ab6778815b88a899, type: 2}
+    - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: _monsters.Array.data[0]._level
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
+      propertyPath: _monsters.Array.data[1]._level
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8429885589739097547, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
@@ -12517,9 +12601,47 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 145402031}
     m_Modifications:
+    - target: {fileID: 248153910521925090, guid: 88a75d5c12a5a4a4b958b5785b40cbe7, type: 3}
+      propertyPath: _dialog._lines.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 248153910521925090, guid: 88a75d5c12a5a4a4b958b5785b40cbe7, type: 3}
+      propertyPath: _dialog._lines.Array.data[0]
+      value: "Bienvenue dans BattleVers, David. le syst\xE8me a d\xE9tect\xE9 que
+        cela fait longtemps que vous n\u2019avez pas jou\xE9, je vais donc proc\xE9der
+        \xE0 un rappel des r\xE8gles du jeu."
+      objectReference: {fileID: 0}
+    - target: {fileID: 248153910521925090, guid: 88a75d5c12a5a4a4b958b5785b40cbe7, type: 3}
+      propertyPath: _dialog._lines.Array.data[1]
+      value: "BattleVers est un jeu multijoueur dans lequel vous devez vous battre
+        contre d\u2019autres adversaires pour gagner des points."
+      objectReference: {fileID: 0}
+    - target: {fileID: 248153910521925090, guid: 88a75d5c12a5a4a4b958b5785b40cbe7, type: 3}
+      propertyPath: _dialog._lines.Array.data[2]
+      value: "Le premier joueur \xE0 atteindre les 1 milliards de points aura l\u2019honneur
+        de rencontrer le myst\xE9rieux cr\xE9ateur de ce jeu : Zarc Muckerberg."
+      objectReference: {fileID: 0}
+    - target: {fileID: 248153910521925090, guid: 88a75d5c12a5a4a4b958b5785b40cbe7, type: 3}
+      propertyPath: _dialog._lines.Array.data[3]
+      value: "Rappel des r\xE8gles :  \r\n- Il est interdit d\u2019obliger des joueurs
+        \xE0 combattre.\r\n- Il est interdit d\u2019utiliser des outils ext\xE9rieurs
+        au syst\xE8me.\r\n- Veuillez rester courtois envers les autres joueurs.\r\n-
+        Le jeu ne sanctionne pas les l\xE2ches qui se battent en groupe contre des
+        joueurs seuls\r\n\r\nLe non-respect de ces r\xE8gles entra\xEEnera la perte
+        instantan\xE9e de tous vos points.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 248153910521925090, guid: 88a75d5c12a5a4a4b958b5785b40cbe7, type: 3}
+      propertyPath: _dialog._lines.Array.data[4]
+      value: "Le non-respect de ces r\xE8gles entra\xEEnera la perte instantan\xE9e
+        de tous vos points."
+      objectReference: {fileID: 0}
+    - target: {fileID: 248153910521925090, guid: 88a75d5c12a5a4a4b958b5785b40cbe7, type: 3}
+      propertyPath: _dialog._lines.Array.data[5]
+      value: "Je vous souhaite une agr\xE9able partie !"
+      objectReference: {fileID: 0}
     - target: {fileID: 248153910521925091, guid: 88a75d5c12a5a4a4b958b5785b40cbe7, type: 3}
       propertyPath: m_Name
-      value: PINJ Tuto
+      value: PINJ intro
       objectReference: {fileID: 0}
     - target: {fileID: 248153910521925092, guid: 88a75d5c12a5a4a4b958b5785b40cbe7, type: 3}
       propertyPath: m_RootOrder
