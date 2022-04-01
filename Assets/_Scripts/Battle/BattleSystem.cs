@@ -146,7 +146,7 @@ public class BattleSystem : MonoBehaviour
         _playerParty.Monsters.ForEach(p => p.OnBattleOver());
         if (won)
         {
-            _gameController.money += _ennemi.moneyAfterBattle;
+            _gameController.mHR += _ennemi.moneyAfterBattle;
             AudioManager.Instance.PlaySFXSound("snd_victory");
         }
         AudioManager.Instance.audioSourceMusic.Stop();

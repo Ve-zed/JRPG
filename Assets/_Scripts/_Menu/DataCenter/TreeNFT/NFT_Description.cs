@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class NFT_Trading : MonoBehaviour
+public class NFT_Description : MonoBehaviour
 {
     public int nFTID;
     public TextMeshProUGUI  nFTTextName;

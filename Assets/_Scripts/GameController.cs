@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
     [SerializeField] Camera _worldCamera;
     private EnnemiController _ennemi;
 
-    public int money = 0;
+    public int mHR = 0;
 
 
     private GameState _state;

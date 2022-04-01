@@ -17,6 +17,7 @@ public class Btn_DataCenter : MonoBehaviour
     [SerializeField] NFT_Update _NFT_Update_Partner_2;
     [SerializeField] Btn_MenuProperties _btnUpdate1;
     [SerializeField] Btn_MenuProperties _btnUpdate2;
+    private Monster _Hero;
 
     public void OnClickDataCenter()
     {
@@ -49,6 +50,7 @@ public class Btn_DataCenter : MonoBehaviour
         tree_Partner_1.SetActive(false);
         tree_Partner_2.SetActive(false);
         _NFT_Update_Player.OnClickNFT();
+        //_Hero = ;
     }
     public void OnClickTreePartner1()
     {

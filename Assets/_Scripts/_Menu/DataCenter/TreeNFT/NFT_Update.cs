@@ -5,11 +5,14 @@ using UnityEngine;
 public class NFT_Update : MonoBehaviour
 {
     [SerializeField] NFT_Properties _NFT_Properties;
-    [SerializeField] NFT_Trading _NFT_Trading;
+    [SerializeField] NFT_Description _NFT_Trading;
+    [SerializeField] NFT_Buy _NFT_Buy;
+    [SerializeField] NFT_Sell _NFT_Sell;
+    [SerializeField] GameObject NFT;
 
     private void Update()
     {
-        NFTImageUpdate(_NFT_Properties, _NFT_Trading);
+        NFTUpdate(_NFT_Properties, _NFT_Trading);
     }
 
     public void OnClickNFT()
@@ -17,11 +20,13 @@ public class NFT_Update : MonoBehaviour
         NFTPropertiesUpdate(_NFT_Properties, _NFT_Trading);
     }
 
-    private void NFTImageUpdate(NFT_Properties _NFT_Properties, NFT_Trading _NFT_Trading)
+    private void NFTUpdate(NFT_Properties _NFT_Properties, NFT_Description _NFT_Trading)
     {
         if (_NFT_Trading.nFTID == _NFT_Properties.nFTID)
         {
             _NFT_Properties.nFTImage.sprite = _NFT_Properties.nFTSpriteSelected;
+            _NFT_Buy.nFTSelected = NFT;
+            _NFT_Sell.nFTSelected = NFT;
         }
         else
         {
@@ -29,7 +34,7 @@ public class NFT_Update : MonoBehaviour
         }
     }
 
-    public void NFTPropertiesUpdate(NFT_Properties _NFT_Properties, NFT_Trading _NFT_Trading)
+    public void NFTPropertiesUpdate(NFT_Properties _NFT_Properties, NFT_Description _NFT_Trading)
     {
         _NFT_Trading.nFTID = _NFT_Properties.nFTID;
         _NFT_Trading.nFTTextName.text = _NFT_Properties.nFTTextName.text;

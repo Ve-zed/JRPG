@@ -528,3 +528,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _NFT_Properties: {fileID: 4555617221541888959}
   _NFT_Trading: {fileID: 0}
+  _NFT_Buy: {fileID: 0}
+  NFT: {fileID: 4555617221541888952}
