@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 4555617221541888959}
   - component: {fileID: 4555617221541888958}
   m_Layer: 5
-  m_Name: Btn_TreeNFT
+  m_Name: Btn_TreeNFTPower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -504,14 +504,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 938b3e27fe82692469e00832c180054c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nFTID: 0
-  nFTSpriteLock: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
-  nFTSpriteUnlock: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
-  nFTSpriteSelected: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
-  nFTImage: {fileID: 0}
+  nFTID: 1
+  nFTSpriteLock: {fileID: 21300000, guid: a0092bca48daa3f4b9b1b8c84e2b988b, type: 3}
+  nFTSpriteUnlock: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
+  nFTSpriteSelected: {fileID: 21300000, guid: b4ddc86c638fe98479169e0d177e5041, type: 3}
+  nFTImage: {fileID: 4555617221541888957}
   lVRequired: 0
-  nFTTextName: {fileID: 0}
-  nFTTextDesc: {fileID: 0}
+  nFTTextName: {fileID: 4555617219829240168}
+  nFTTextDesc: {fileID: 4555617219980003478}
   nFTBuy: 0
   nFTPrice: 152
 --- !u!114 &4555617221541888958
