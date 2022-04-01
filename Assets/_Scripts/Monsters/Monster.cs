@@ -184,8 +184,6 @@ public class Monster
     {
         Status?.OnAfterTurn?.Invoke(this);
         sourceUnit.Hud.UpdateHP();
-        Debug.Log("nani");
-
     }
 
     public void OnBattleOver()
