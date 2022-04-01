@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum GameState { FreeRoam, Battle, Dialog, CutScene }
+public enum GameState { FreeRoam, Battle, Dialog, CutScene, Tuto }
 
 
 public class GameController : MonoBehaviour
@@ -43,6 +43,15 @@ public class GameController : MonoBehaviour
         DialogManager.Instance.onCloseDialog += () =>
         {
             if (_state == GameState.Dialog)
+                _state = GameState.FreeRoam;
+        };
+        DialogManager.Instance.onShowDialogTuto += () =>
+        {
+            _state = GameState.Tuto;
+        };
+        DialogManager.Instance.onCloseDialogTuto += () =>
+        {
+            if (_state == GameState.Tuto)
                 _state = GameState.FreeRoam;
         };
     }
@@ -92,6 +101,10 @@ public class GameController : MonoBehaviour
         else if (_state == GameState.Dialog)
         {
             DialogManager.Instance.HandleUpdate();
+        }
+        else if (_state == GameState.Tuto)
+        {
+            DialogManager.Instance.HandleUpdateTuto();
         }
     }
 
