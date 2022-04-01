@@ -614,7 +614,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -642,7 +642,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 20222e9e58cba4a429c598b0599d5eca, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -650,7 +650,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: 75d48e3225455b6429d21607f8038b91, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -658,7 +658,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 10bc73777de305444a324dca7a92f2ab, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -784,7 +784,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -812,7 +812,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 20222e9e58cba4a429c598b0599d5eca, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -820,7 +820,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: 75d48e3225455b6429d21607f8038b91, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -828,7 +828,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 10bc73777de305444a324dca7a92f2ab, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -1090,7 +1090,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 54746093a3319c849bcf8e59e74de041, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2c9833b2b5f0f654dad99da18f500cdc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2310,15 +2310,15 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 20222e9e58cba4a429c598b0599d5eca, type: 3}
+      objectReference: {fileID: 21300000, guid: a0092bca48daa3f4b9b1b8c84e2b988b, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: 75d48e3225455b6429d21607f8038b91, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 10bc73777de305444a324dca7a92f2ab, type: 3}
+      objectReference: {fileID: 21300000, guid: b4ddc86c638fe98479169e0d177e5041, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
 --- !u!224 &133724476 stripped
@@ -2570,7 +2570,11 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
+    - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -2598,7 +2602,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -2606,7 +2610,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -2614,7 +2618,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -3724,6 +3728,7 @@ MonoBehaviour:
   _playerController: {fileID: 1294185974}
   _battleSystem: {fileID: 1183157651}
   _worldCamera: {fileID: 519420031}
+  money: 0
 --- !u!4 &197559270
 Transform:
   m_ObjectHideFlags: 0
@@ -3750,6 +3755,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5313a64569dd34945ba7fc312fa22a00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogBoxTuto: {fileID: 0}
+  _dialogTextTuto: {fileID: 0}
+  PINJTuto: {fileID: 0}
   dialogBox: {fileID: 1049210000}
   _dialogText: {fileID: 435575500}
   _lettersPerSecond: 45
@@ -3771,9 +3779,13 @@ MonoBehaviour:
   tree_Player: {fileID: 1664814502}
   tree_Partner_1: {fileID: 381863291}
   tree_Partner_2: {fileID: 1055709351}
+  commandes: {fileID: 0}
+  son: {fileID: 0}
   _NFT_Update_Player: {fileID: 597241853}
   _NFT_Update_Partner_1: {fileID: 1981527396}
   _NFT_Update_Partner_2: {fileID: 1245559838}
+  _btnUpdate1: {fileID: 0}
+  _btnUpdate2: {fileID: 0}
 --- !u!1 &198017991
 GameObject:
   m_ObjectHideFlags: 0
@@ -3963,7 +3975,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 58d6cb8e7abd24a4cb43b83b006a4b36, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3c7b9bd05afc0cf4caf1a4f9736d08f1, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4260,8 +4272,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -4.89}
-  m_SizeDelta: {x: 785, y: 160.62}
+  m_AnchoredPosition: {x: 11.125, y: -4.58}
+  m_SizeDelta: {x: 1025.25, y: 209.78}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &232986706
 MonoBehaviour:
@@ -4283,7 +4295,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 71739571e0a2986479a18af03bf594e0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7fcc8a8df2a62e344a9078decf9aee3a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4665,8 +4677,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 266}
-  m_SizeDelta: {x: 1419, y: 2}
+  m_AnchoredPosition: {x: 89.69, y: 268.43}
+  m_SizeDelta: {x: 1598.39, y: 7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &268460107
 MonoBehaviour:
@@ -4688,7 +4700,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fc4cfba4e694cd446bfb8514f650dcea, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c0b16d75ff90c3d4d941783abba9d85b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5062,7 +5074,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -5090,7 +5102,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -5098,7 +5110,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -5106,7 +5118,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -5248,6 +5260,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -6059,7 +6072,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &381863292
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6374,7 +6387,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -6402,7 +6415,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -6410,7 +6423,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -6418,7 +6431,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -6560,6 +6573,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -6972,6 +6986,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -7190,6 +7205,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -7894,7 +7910,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 155.94, y: 486}
-  m_SizeDelta: {x: 239.63, y: 47.009}
+  m_SizeDelta: {x: 275.34, y: 54.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &534768220
 MonoBehaviour:
@@ -7972,7 +7988,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c444c56496ed4c74abf3fed180ab0647, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5af1dd7e32e97a640baa8949496400bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8359,7 +8375,7 @@ RectTransform:
   - {fileID: 1349804339}
   - {fileID: 1768595859}
   m_Father: {fileID: 1039313024}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8413,8 +8429,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.0000343, y: -19}
-  m_SizeDelta: {x: 259.52, y: 52.889}
+  m_AnchoredPosition: {x: 11, y: -34}
+  m_SizeDelta: {x: 305.79, y: 116.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &581085876
 MonoBehaviour:
@@ -8480,7 +8496,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 615792fb33e6a8a499254cb594cd1275, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89fa064a8764b284abbc6bbf064c062c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8612,7 +8628,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -8640,7 +8656,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -8648,7 +8664,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -8656,7 +8672,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -9030,7 +9046,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -9058,7 +9074,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -9066,7 +9082,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -9074,7 +9090,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -9167,8 +9183,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -264.11, y: 326.59}
-  m_SizeDelta: {x: 213.94, y: 65.22}
+  m_AnchoredPosition: {x: -286.7, y: 322}
+  m_SizeDelta: {x: 274.46, y: 83.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &597241850
 MonoBehaviour:
@@ -9246,7 +9262,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1ddea018c9eab5949b348708fecdb062, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b6aca577259e2648ab9a1cb4adeca89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9550,7 +9566,7 @@ RectTransform:
   m_GameObject: {fileID: 628767143}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1, z: 1}
   m_Children:
   - {fileID: 1272936075}
   - {fileID: 936504118}
@@ -9559,7 +9575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 822.77, y: 486.24}
+  m_AnchoredPosition: {x: 816, y: 486}
   m_SizeDelta: {x: 307.43, y: 91.002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &628767145
@@ -9582,7 +9598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 51279efdf5b52254581a16b7f49fc005, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f13fa689b6497f4b89ab295a58fb5a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -9964,7 +9980,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -9992,7 +10008,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 20222e9e58cba4a429c598b0599d5eca, type: 3}
+      objectReference: {fileID: 21300000, guid: a0092bca48daa3f4b9b1b8c84e2b988b, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -10000,7 +10016,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: 75d48e3225455b6429d21607f8038b91, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -10008,7 +10024,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 10bc73777de305444a324dca7a92f2ab, type: 3}
+      objectReference: {fileID: 21300000, guid: b4ddc86c638fe98479169e0d177e5041, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -10636,8 +10652,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6, y: 12}
-  m_SizeDelta: {x: 367, y: 132}
+  m_AnchoredPosition: {x: -14.3, y: 12.8}
+  m_SizeDelta: {x: 467.18, y: 219.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &686310090
 MonoBehaviour:
@@ -10659,7 +10675,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: af9ac520aab5dee44a15c194d7c4ea01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb5525f2d5c7b844abe136f6c050986b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10774,6 +10790,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -11087,7 +11104,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -11115,7 +11132,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -11123,7 +11140,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -11131,7 +11148,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -12169,7 +12186,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -12197,7 +12214,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -12205,7 +12222,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -12213,7 +12230,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -12443,14 +12460,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.32696077, g: 0.32897812, b: 0.49019608, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 4f0d2a36081a94c4087ed1e50b785746, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 193ac34ad27a9e641ad3b99cc1d332c4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12661,7 +12678,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -12689,7 +12706,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -12697,7 +12714,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -12705,7 +12722,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -13178,7 +13195,7 @@ RectTransform:
   - {fileID: 1100398957}
   - {fileID: 268460106}
   m_Father: {fileID: 1039313024}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13809,7 +13826,11 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
+    - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -13837,7 +13858,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -13845,7 +13866,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -13853,7 +13874,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -14135,6 +14156,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -14275,7 +14297,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 77587c496fde4a24ca9f80e9e2d61f4e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3f13fa689b6497f4b89ab295a58fb5a8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -15330,7 +15352,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -15358,7 +15380,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -15366,7 +15388,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -15374,7 +15396,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -15698,7 +15720,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -15726,7 +15748,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -15734,7 +15756,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -15742,7 +15764,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -15985,7 +16007,6 @@ RectTransform:
   - {fileID: 628767144}
   - {fileID: 2129361117}
   - {fileID: 534768219}
-  - {fileID: 1254842470}
   - {fileID: 854057928}
   - {fileID: 576981568}
   - {fileID: 1927279510}
@@ -17439,8 +17460,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -259, y: 280}
-  m_SizeDelta: {x: 28, y: 24}
+  m_AnchoredPosition: {x: -266.6, y: 275.7}
+  m_SizeDelta: {x: 41.34, y: 35.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1100398958
 MonoBehaviour:
@@ -17462,7 +17483,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 9c8f3fddb8f9cd44ea6bfe1f6329259c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dd678985c327a5943b1398f0e420c774, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -17898,7 +17919,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -17926,7 +17947,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -17934,7 +17955,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -17942,7 +17963,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -18388,8 +18409,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2, y: 27}
-  m_SizeDelta: {x: 367, y: 132}
+  m_AnchoredPosition: {x: -9.7001, y: 26}
+  m_SizeDelta: {x: 467.18, y: 219.73}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1135614297
 MonoBehaviour:
@@ -18411,7 +18432,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: af9ac520aab5dee44a15c194d7c4ea01, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cb5525f2d5c7b844abe136f6c050986b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -19745,6 +19766,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -19821,6 +19843,7 @@ MonoBehaviour:
   - {fileID: 408843053}
   - {fileID: 910324267}
   - {fileID: 1207711119}
+  _gameController: {fileID: 0}
   _dialogBox: {fileID: 680742815}
   _precision: {fileID: 0}
   _playerSelectedUnit: {fileID: 0}
@@ -20409,6 +20432,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -20874,6 +20898,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -21149,7 +21174,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 262, y: 322}
-  m_SizeDelta: {x: 213.94, y: 65.22}
+  m_SizeDelta: {x: 274.46, y: 83.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1245559835
 MonoBehaviour:
@@ -21227,7 +21252,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1ddea018c9eab5949b348708fecdb062, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b6aca577259e2648ab9a1cb4adeca89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -21333,81 +21358,6 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1247133854}
-  m_CullTransparentMesh: 1
---- !u!1 &1254842469
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1254842470}
-  - component: {fileID: 1254842472}
-  - component: {fileID: 1254842471}
-  m_Layer: 5
-  m_Name: ArrowSelectedMenu
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1254842470
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254842469}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1039313024}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -165.9, y: 442.2}
-  m_SizeDelta: {x: 37, y: 32}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1254842471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254842469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: d5e8353806c63ea4e8726e4c49546041, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1254842472
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254842469}
   m_CullTransparentMesh: 1
 --- !u!1001 &1258634512
 PrefabInstance:
@@ -21523,7 +21473,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -21551,7 +21501,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -21559,7 +21509,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -21567,7 +21517,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -21720,6 +21670,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -22655,7 +22606,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.000076294, y: 51}
+  m_AnchoredPosition: {x: -0.000076294, y: 45}
   m_SizeDelta: {x: 794.85, y: 420.05}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1336742083
@@ -22678,7 +22629,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc1cebb473b58c741925b357b5ef1471, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a18f7b5bd3da6054abac318dfba22bdc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -24363,6 +24314,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -24640,7 +24592,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -24668,7 +24620,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 70629165eb94a1d4388b42c2a2614cfa, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -24676,7 +24628,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: e09be37de071a3142aaafeca29192371, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -24684,7 +24636,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -25006,6 +24958,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -25208,8 +25161,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000070572, y: -7}
-  m_SizeDelta: {x: 259.52, y: 52.889}
+  m_AnchoredPosition: {x: 9.3, y: -20.4}
+  m_SizeDelta: {x: 305.79, y: 116.23}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1654425954
 MonoBehaviour:
@@ -25275,7 +25228,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 615792fb33e6a8a499254cb594cd1275, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 89fa064a8764b284abbc6bbf064c062c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -34964,7 +34917,7 @@ RectTransform:
   - {fileID: 1833674502}
   - {fileID: 377129256}
   m_Father: {fileID: 1039313024}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -35222,6 +35175,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -35267,8 +35221,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 322}
-  m_SizeDelta: {x: 213.94, y: 65.22}
+  m_AnchoredPosition: {x: -12.24, y: 322}
+  m_SizeDelta: {x: 274.46, y: 83.67}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1981527393
 MonoBehaviour:
@@ -35346,7 +35300,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1ddea018c9eab5949b348708fecdb062, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9b6aca577259e2648ab9a1cb4adeca89, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -35475,6 +35429,7 @@ MonoBehaviour:
   _battleSystem: {fileID: 0}
   _dialogBox: {fileID: 0}
   _pouvoirBarre: {fileID: 0}
+  ExpLvl: 
   boxCollider: {fileID: 0}
   isAttacking: 0
   isSelected: 0
@@ -35840,8 +35795,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -285, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -315.45023, y: -3}
+  m_SizeDelta: {x: 240.9, y: 150.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2011464814
 MonoBehaviour:
@@ -35856,14 +35811,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.86206913, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -36977,8 +36932,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -195.08, y: 485.5}
-  m_SizeDelta: {x: 239.63, y: 47.009}
+  m_AnchoredPosition: {x: -195.56, y: 485.99994}
+  m_SizeDelta: {x: 275.34, y: 54.02}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2129361118
 MonoBehaviour:
@@ -37056,7 +37011,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c444c56496ed4c74abf3fed180ab0647, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5af1dd7e32e97a640baa8949496400bb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -37188,7 +37143,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -37216,7 +37171,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 20222e9e58cba4a429c598b0599d5eca, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteLock
       value: 
@@ -37224,7 +37179,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: 75d48e3225455b6429d21607f8038b91, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteUnlock
       value: 
@@ -37232,7 +37187,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: 10bc73777de305444a324dca7a92f2ab, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _nFTSpriteSelected
       value: 
@@ -37529,7 +37484,7 @@ PrefabInstance:
     - target: {fileID: 4555617221541888957, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1120670f507ddb5458d43bd4af3357fb, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: _NFT_Trading
       value: 
@@ -37553,14 +37508,14 @@ PrefabInstance:
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteLock
       value: 
-      objectReference: {fileID: 21300000, guid: 6e7eeeefbdbbbf04e940c1d5b4b4b478, type: 3}
+      objectReference: {fileID: 21300000, guid: 913d1719a9370dc4388d6809e6a57f76, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
-      objectReference: {fileID: 21300000, guid: c182acd9df66182408359bc6c9cba9dc, type: 3}
+      objectReference: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteSelected
       value: 
-      objectReference: {fileID: 21300000, guid: b3753d75de9a67c4b8950865280ca628, type: 3}
+      objectReference: {fileID: 21300000, guid: 5bf8209028cad624daf01b3150708deb, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
