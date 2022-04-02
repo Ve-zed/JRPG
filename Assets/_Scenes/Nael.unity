@@ -387,7 +387,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   imageFadeBattle: {fileID: 245670353}
-  imageFadeInBattle: {fileID: 0}
 --- !u!1 &207872704
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,7 +1090,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: _monsters.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2046994057, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: _monsters.Array.data[0]._base
