@@ -17,7 +17,7 @@ public class NFT_Buy : MonoBehaviour
             {
                 _NFT_Properties.nFTBuy = true;
                 _GameController.mHR -= _NFT_Properties.nFTPrice;
-                nFTSelected
+                //nFTSelected
                 Debug.Log("Buying");
             }
             else
