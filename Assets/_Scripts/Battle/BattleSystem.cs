@@ -517,12 +517,12 @@ public class BattleSystem : MonoBehaviour
                 if (sourceUnit.Monster.HP > 0)
                 {
                     if (PrecisionBar.Instance.barreSplit == 1)
-                        sourceUnit.Monster.HP -= 3;
+                        sourceUnit.Monster.HP -= 35; //valeur a mettre pour les gd
 
                     else if (PrecisionBar.Instance.barreSplit == 2)
-                        sourceUnit.Monster.HP -= 4;
+                        sourceUnit.Monster.HP -= 50; //valeur a mettre pour les gd
                     else if (PrecisionBar.Instance.barreSplit == 3)
-                        sourceUnit.Monster.HP -= 5;
+                        sourceUnit.Monster.HP -= 65; //valeur a mettre pour les gd
                     sourceUnit.Monster.HpChanged = true;
                     StartCoroutine(sourceUnit.Hud.UpdateHP());
                 }
@@ -744,6 +744,7 @@ public class BattleSystem : MonoBehaviour
         }
         canSelected = true;
         powerUsed = false;
+        
         if (sourceUnit.IsPlayerUnit)
             yield return EnnemiTurn();
     }
@@ -880,6 +881,7 @@ public class BattleSystem : MonoBehaviour
         }
         else if (move >= 4 && !_playerSelectedUnit.isPowerUsed)
         {
+            _precision.ResetFillAmount();
             powerUsed = true;
             EnnemiSelection();
             _playerSelectedUnit.isPowerUsed = true;
