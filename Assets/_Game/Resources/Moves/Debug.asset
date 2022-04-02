@@ -16,7 +16,7 @@ MonoBehaviour:
   _sound: snd_debug
   _description: 
   _type: 1
-  _power: 17
+  _power: 25
   _accuary: 100
   _pp: 20
   _category: 0

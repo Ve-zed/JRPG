@@ -4280,7 +4280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7558085245690966269, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 7558085245690966269, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_LocalScale.y
@@ -4360,7 +4360,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7558085246059221963, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 7558085246059221963, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_LocalScale.y
@@ -4440,7 +4440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7558085246604259651, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 7558085246604259651, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_LocalScale.y
@@ -4624,7 +4624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7558085247186149442, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -14
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 7558085247186149442, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4640,7 +4640,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7558085247186149443, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_Spacing.y
-      value: 42.65
+      value: 41.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558085247186149443, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
+      propertyPath: m_CellSize.x
+      value: 389.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558085247186149443, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
+      propertyPath: m_CellSize.y
+      value: 78.8
       objectReference: {fileID: 0}
     - target: {fileID: 7558085247186149445, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_Name
@@ -4708,7 +4716,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7558085247420065033, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 1.32
       objectReference: {fileID: 0}
     - target: {fileID: 7558085247420065033, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_LocalScale.y
