@@ -1,14 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class MainMenu : MonoBehaviour
 {
+    public Image imageFade;
     public GameObject accueil;
     public GameObject parameter;
     public GameObject controls;
     public GameObject credits;
+
+    public List<Interface> buttons;
 
     private void Awake()
     {
@@ -22,18 +27,30 @@ public class MainMenu : MonoBehaviour
     private void Update()
     {
        
-
+        
     }
     public void OnClickPlay()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        
+        imageFade.DOFade(1, 0.8f).OnComplete(FadePlayComplete);
+        for (int i = 1; i < buttons.Count; i++)
+        {
+            buttons[i].Hide(0.1f);
+        }
         AudioManager.Instance.audioSourceMusic.Stop();
         StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_music_exploration"));
         StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_ambiance_exploration"));
 
     }
-    public void OnClickParameter()
+
+    void FadePlayComplete()
     {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+    }
+
+    public void OnClickParameter()
+    {   
         accueil.SetActive(false);
         parameter.SetActive(true);
     }

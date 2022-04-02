@@ -3,11 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using DG.Tweening;
 public class DialogManager : MonoBehaviour
 {
     public GameObject dialogBoxTuto;
+    public Image imageDialogBoxTuto;
     [SerializeField] Text _dialogTextTuto;
+    [SerializeField] Text _dialogTextPressE;
     [SerializeField] GameObject PINJTuto;
     public GameObject dialogBox;
     public event Action onShowDialog;
@@ -43,6 +45,7 @@ public class DialogManager : MonoBehaviour
         dialogBoxTuto.SetActive(true);
         StartCoroutine(TypeDialogTuto(dialog.Lines[0]));
     }
+
     public void HandleUpdateTuto()
     {
         if (Input.GetKeyDown(KeyCode.E) && !_isTyping)
@@ -55,15 +58,24 @@ public class DialogManager : MonoBehaviour
             }
             else
             {
-                _currentLine = 0;
-                dialogBox.SetActive(false);
-                dialogBoxTuto.SetActive(false);
-                _onDialogueFinished?.Invoke();
+                //dialogBoxTuto.transform.DOScale(0, 0.5f);
+                imageDialogBoxTuto.DOFade(0, 0.5f);
+                _dialogTextPressE.DOFade(0, 0.5f);
+                _dialogTextTuto.DOFade(0, 0.5f).OnComplete(AfterFadeTuto);
                 PINJTuto.SetActive(false);
-                onCloseDialogTuto?.Invoke();
+
             }
         }
     }
+    public void AfterFadeTuto()
+    {
+        _currentLine = 0;
+        dialogBox.SetActive(false);
+        dialogBoxTuto.SetActive(false);
+        _onDialogueFinished?.Invoke();
+        onCloseDialogTuto?.Invoke();
+    }
+
 
     public IEnumerator ShowDialog(Dialog dialog, Action onFinished = null)
     {

@@ -229,8 +229,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1136c4858d841d44c969880d822adf92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isVirus: 1
   _name: Pierre
-  _sprite: {fileID: 21300000, guid: e4443e759a44d5547bf35debc57fb8b7, type: 3}
+  moneyAfterBattle: 0
   _ennemi: {fileID: 8429885589739097536}
   _dialog:
     _lines:
@@ -255,8 +256,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _monsters:
-  - _base: {fileID: 11400000, guid: 46720ed31e26ee24dbf7a1ec2974c1b3, type: 2}
+  - _base: {fileID: 0}
     _level: 4
+    Exp: 0
 --- !u!1 &8429885590372178703
 GameObject:
   m_ObjectHideFlags: 0
