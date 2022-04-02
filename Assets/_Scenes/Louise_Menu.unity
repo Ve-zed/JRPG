@@ -1977,10 +1977,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cfc06e102e04a44dbeb776a4adb8d9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageFade: {fileID: 0}
   accueil: {fileID: 833874378}
   parameter: {fileID: 1346523365}
   controls: {fileID: 1633438122}
   credits: {fileID: 206918366}
+  buttons: []
 --- !u!4 &1475659735
 Transform:
   m_ObjectHideFlags: 0
@@ -3371,7 +3373,7 @@ PrefabInstance:
     - target: {fileID: 7558085245690966267, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9f513c99bf2fb6c448169099e00d54c3, type: 3}
+      objectReference: {fileID: 21300000, guid: d49c3c9749b72574193af5b88e511518, type: 3}
     - target: {fileID: 7558085245690966267, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -3436,6 +3438,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7558085246059221961, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558085246059221961, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d49c3c9749b72574193af5b88e511518, type: 3}
     - target: {fileID: 7558085246059221963, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3488,6 +3498,14 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7558085246604259649, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558085246604259649, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d49c3c9749b72574193af5b88e511518, type: 3}
     - target: {fileID: 7558085246604259651, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -3656,5 +3674,13 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7558085247420065079, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7558085247420065079, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d49c3c9749b72574193af5b88e511518, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63f9cffd4f70bb44b8490a5517eac612, type: 3}
