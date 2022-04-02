@@ -7,6 +7,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 329077290307650162, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: m_fontSize
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 329077290307650162, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 1029487430722039986, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: _unlock
+      value: 
+      objectReference: {fileID: 21300000, guid: 6eafafd59383cb14a97d734d57da81c4, type: 3}
+    - target: {fileID: 1133582707289751449, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 6eafafd59383cb14a97d734d57da81c4, type: 3}
+    - target: {fileID: 1798453525402274128, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 38.23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798453525402274128, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 26.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798453525402274128, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 4555617219829240168, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: m_text
       value: Small
@@ -129,7 +157,7 @@ PrefabInstance:
       objectReference: {fileID: 8725077266455086647}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTPrice
-      value: 304
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTTextDesc
@@ -163,6 +191,18 @@ PrefabInstance:
       propertyPath: _nFTSpriteSelected
       value: 
       objectReference: {fileID: 21300000, guid: 15047dd1e24795746821892f6c12e3ad, type: 3}
+    - target: {fileID: 5548876921021464139, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 62.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548876921021464139, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 19.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5548876921021464139, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 8.7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
 --- !u!114 &8725077266455086647 stripped

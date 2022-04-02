@@ -426,9 +426,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -615,6 +623,10 @@ PrefabInstance:
       propertyPath: nFTID
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1995830574973336100, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: lVRequired
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
       propertyPath: _NFT_Buy
       value: 
@@ -627,6 +639,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
 --- !u!224 &60605652 stripped
@@ -957,6 +973,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 67128329}
   m_CullTransparentMesh: 1
+--- !u!1 &73897485 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 1381626360}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &81521372
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,7 +2510,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogBoxTuto: {fileID: 0}
+  imageDialogBoxTuto: {fileID: 0}
   _dialogTextTuto: {fileID: 0}
+  _dialogTextPressE: {fileID: 0}
   PINJTuto: {fileID: 0}
   dialogBox: {fileID: 1049210000}
   _dialogText: {fileID: 435575500}
@@ -2720,6 +2743,7 @@ MonoBehaviour:
   tree_Player: {fileID: 1664814502}
   tree_Partner_1: {fileID: 381863291}
   tree_Partner_2: {fileID: 1055709351}
+  btnPlayer: {fileID: 0}
   commandes: {fileID: 0}
   son: {fileID: 0}
   _NFT_Update_Player: {fileID: 597241853}
@@ -2727,6 +2751,11 @@ MonoBehaviour:
   _NFT_Update_Partner_2: {fileID: 1245559838}
   _btnUpdate1: {fileID: 0}
   _btnUpdate2: {fileID: 0}
+  _MonsterParty: {fileID: 0}
+  _Monster:
+    _base: {fileID: 0}
+    _level: 0
+    Exp: 0
 --- !u!1 &207872704
 GameObject:
   m_ObjectHideFlags: 0
@@ -2812,6 +2841,11 @@ CanvasRenderer:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2012013343805310504, guid: d1961541861d48d4daa62073eced8584, type: 3}
   m_PrefabInstance: {fileID: 1054461200}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &210541514 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1995830574973336099, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+  m_PrefabInstance: {fileID: 60605651}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &214108820
 PrefabInstance:
@@ -2920,9 +2954,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1245559839}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -3495,6 +3537,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265735908}
   m_CullTransparentMesh: 1
+--- !u!1 &268408934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1995830574973336099, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+  m_PrefabInstance: {fileID: 2633005910802502926}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &268460105
 GameObject:
   m_ObjectHideFlags: 0
@@ -3752,6 +3799,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1981527397}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
 --- !u!224 &272973804 stripped
@@ -3866,9 +3917,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -4401,6 +4460,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 329535114}
   m_CullTransparentMesh: 1
+--- !u!1 &329626086 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1995830574973336099, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+  m_PrefabInstance: {fileID: 1557637305}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &332876445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4500,6 +4564,10 @@ PrefabInstance:
       propertyPath: nFTID
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1995830574973336100, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: lVRequired
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
       propertyPath: _NFT_Buy
       value: 
@@ -4512,6 +4580,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1981527397}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
 --- !u!1 &341510204
@@ -4692,6 +4764,10 @@ PrefabInstance:
       propertyPath: nFTID
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1995830574973336100, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: lVRequired
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
       propertyPath: _NFT_Buy
       value: 
@@ -4704,6 +4780,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1245559839}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
 --- !u!1001 &364859103
@@ -4813,9 +4893,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1981527397}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -4926,12 +5014,25 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1981527397}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+--- !u!1 &371648756 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 1398473050}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &377129255
 GameObject:
   m_ObjectHideFlags: 0
@@ -5508,6 +5609,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 435575498}
   m_CullTransparentMesh: 1
+--- !u!1 &436269656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 1096941752}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &441902052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 1562550921}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &456969620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5519,6 +5630,7 @@ GameObject:
   - component: {fileID: 456969621}
   - component: {fileID: 456969623}
   - component: {fileID: 456969622}
+  - component: {fileID: 456969624}
   m_Layer: 5
   m_Name: Text_LevelPartner_2
   m_TagString: Untagged
@@ -5642,6 +5754,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 456969620}
   m_CullTransparentMesh: 1
+--- !u!114 &456969624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456969620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa274a6e103c9bd43adb7fcee096bab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Btn_DataCenter: {fileID: 1245559839}
+  _textLevel: {fileID: 456969622}
+--- !u!1 &457545224 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 1435382339}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &472076285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5749,9 +5880,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -5855,6 +5994,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Btn_TreeNFTComp_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1995830574973336100, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: lVRequired
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
       propertyPath: _NFT_Buy
       value: 
@@ -5867,6 +6010,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1245559839}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
 --- !u!1 &475469428
@@ -6589,9 +6736,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1245559839}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -7098,6 +7253,7 @@ MonoBehaviour:
   tree_Player: {fileID: 1664814502}
   tree_Partner_1: {fileID: 381863291}
   tree_Partner_2: {fileID: 1055709351}
+  btnPlayer: {fileID: 0}
   commandes: {fileID: 0}
   son: {fileID: 0}
   _NFT_Update_Player: {fileID: 597241853}
@@ -7105,6 +7261,11 @@ MonoBehaviour:
   _NFT_Update_Partner_2: {fileID: 1245559838}
   _btnUpdate1: {fileID: 1108249647}
   _btnUpdate2: {fileID: 0}
+  _MonsterParty: {fileID: 0}
+  _Monster:
+    _base: {fileID: 0}
+    _level: 0
+    Exp: 0
 --- !u!114 &534768224
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8028,6 +8189,8 @@ MonoBehaviour:
   _NFT_Buy: {fileID: 1654425957}
   _NFT_Sell: {fileID: 581085879}
   NFT: {fileID: 516159639}
+  _Btn_DataCenter: {fileID: 597241854}
+  _NFT_Image: {fileID: 1897672242}
 --- !u!114 &597241854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8046,13 +8209,19 @@ MonoBehaviour:
   tree_Player: {fileID: 1664814502}
   tree_Partner_1: {fileID: 381863291}
   tree_Partner_2: {fileID: 1055709351}
+  btnPlayer: {fileID: 597241848}
   commandes: {fileID: 0}
   son: {fileID: 0}
   _NFT_Update_Player: {fileID: 597241853}
   _NFT_Update_Partner_1: {fileID: 1981527396}
   _NFT_Update_Partner_2: {fileID: 1245559838}
-  _btnUpdate1: {fileID: 0}
+  _btnUpdate1: {fileID: 597241855}
   _btnUpdate2: {fileID: 0}
+  _MonsterParty: {fileID: 1294185978}
+  _Monster:
+    _base: {fileID: 0}
+    _level: 0
+    Exp: 0
 --- !u!114 &597241855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8305,6 +8474,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 617542688}
   m_CullTransparentMesh: 1
+--- !u!114 &620005121 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1029487430722039986, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+  m_PrefabInstance: {fileID: 272973803}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c41c5a749ecb4f42ae4443b7c62134c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &625503739 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8725077266455086641, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -8819,9 +8999,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -9034,6 +9222,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1245559839}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
 --- !u!1 &680742811
@@ -9147,6 +9339,17 @@ MonoBehaviour:
   _ppText: {fileID: 1242851008}
   _typeText: {fileID: 1381241347}
   _battleSystem: {fileID: 0}
+--- !u!114 &683527534 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1029487430722039986, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+  m_PrefabInstance: {fileID: 1901675238}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c41c5a749ecb4f42ae4443b7c62134c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &685257875
 GameObject:
   m_ObjectHideFlags: 0
@@ -9403,6 +9606,11 @@ MonoBehaviour:
   originalMaterial: {fileID: 0}
   outLineMaterial: {fileID: 0}
   originalColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &701652902 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 665751016}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &714894503
 GameObject:
   m_ObjectHideFlags: 0
@@ -9572,7 +9780,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1349804339}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9762,6 +9970,7 @@ GameObject:
   - component: {fileID: 724531159}
   - component: {fileID: 724531161}
   - component: {fileID: 724531160}
+  - component: {fileID: 724531162}
   m_Layer: 5
   m_Name: Text_LevelPlayer
   m_TagString: Untagged
@@ -9885,6 +10094,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 724531158}
   m_CullTransparentMesh: 1
+--- !u!114 &724531162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 724531158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa274a6e103c9bd43adb7fcee096bab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Btn_DataCenter: {fileID: 597241854}
+  _textLevel: {fileID: 724531160}
+--- !u!1 &731270943 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1995830574973336099, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+  m_PrefabInstance: {fileID: 1639839916}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &731712929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 1819253579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &738117678
 GameObject:
   m_ObjectHideFlags: 0
@@ -10167,7 +10400,7 @@ RectTransform:
   - {fileID: 801363137}
   - {fileID: 1654425953}
   m_Father: {fileID: 1349804339}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -10738,6 +10971,10 @@ PrefabInstance:
       propertyPath: nFTID
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1995830574973336100, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: lVRequired
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
       propertyPath: _NFT_Buy
       value: 
@@ -10750,6 +10987,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1245559839}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
 --- !u!1001 &849520211
@@ -10859,9 +11100,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1245559839}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -11029,7 +11278,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1349804339}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -11395,6 +11644,10 @@ PrefabInstance:
       propertyPath: nFTID
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1995830574973336100, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: lVRequired
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
       propertyPath: _NFT_Buy
       value: 
@@ -11407,6 +11660,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1981527397}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
 --- !u!1001 &879453461
@@ -12317,9 +12574,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -12739,9 +13004,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1981527397}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -13071,9 +13344,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1245559839}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -13157,6 +13438,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 962570255}
   m_CullTransparentMesh: 1
+--- !u!1 &962713211 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 40880968}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &980778627
 GameObject:
   m_ObjectHideFlags: 0
@@ -13342,6 +13628,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Btn_TreeNFTComp_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1995830574973336100, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: lVRequired
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
       propertyPath: _NFT_Buy
       value: 
@@ -13354,6 +13644,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1981527397}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
 --- !u!1 &990322216
@@ -13577,13 +13871,93 @@ RectTransform:
   - {fileID: 1454933420}
   - {fileID: 581085875}
   m_Father: {fileID: 1349804339}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 252.00009, y: -181.00012}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1006503977 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 1588480659}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1012182685
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1012182686}
+  - component: {fileID: 1012182688}
+  - component: {fileID: 1012182687}
+  m_Layer: 5
+  m_Name: I_NFT
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1012182686
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012182685}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1349804339}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -287, y: -4.89}
+  m_SizeDelta: {x: 91, y: 63.09}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1012182687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012182685}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: a6884b0664425a24c876bcb98c807453, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1012182688
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1012182685}
+  m_CullTransparentMesh: 1
 --- !u!224 &1012208147 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8725077266455086641, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -13598,6 +13972,11 @@ Transform:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8725077266455086641, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
   m_PrefabInstance: {fileID: 364859103}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1033576772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 1565060208}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1036800379 stripped
 Transform:
@@ -14015,6 +14394,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1055952222 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 5056836710356263080}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1062758128
 GameObject:
   m_ObjectHideFlags: 0
@@ -14270,6 +14654,10 @@ PrefabInstance:
       propertyPath: nFTID
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 1995830574973336100, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: lVRequired
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
       propertyPath: _NFT_Buy
       value: 
@@ -14282,6 +14670,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1245559839}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
 --- !u!1 &1074745345
@@ -14541,9 +14933,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1981527397}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -14654,9 +15054,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1245559839}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -14767,9 +15175,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1245559839}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -15047,6 +15463,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 7
@@ -15609,6 +16029,7 @@ MonoBehaviour:
   tree_Player: {fileID: 1664814502}
   tree_Partner_1: {fileID: 381863291}
   tree_Partner_2: {fileID: 1055709351}
+  btnPlayer: {fileID: 0}
   commandes: {fileID: 1833674501}
   son: {fileID: 377129255}
   _NFT_Update_Player: {fileID: 597241853}
@@ -15616,6 +16037,11 @@ MonoBehaviour:
   _NFT_Update_Partner_2: {fileID: 1245559838}
   _btnUpdate1: {fileID: 0}
   _btnUpdate2: {fileID: 0}
+  _MonsterParty: {fileID: 0}
+  _Monster:
+    _base: {fileID: 0}
+    _level: 0
+    Exp: 0
 --- !u!1 &1113864863
 GameObject:
   m_ObjectHideFlags: 0
@@ -17142,6 +17568,11 @@ MonoBehaviour:
   canSelected: 1
   canSelectedEnnemi: 0
   powerUsed: 0
+--- !u!1 &1189504851 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 472076285}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1202160348
 GameObject:
   m_ObjectHideFlags: 0
@@ -18018,6 +18449,8 @@ MonoBehaviour:
   _NFT_Buy: {fileID: 1654425957}
   _NFT_Sell: {fileID: 581085879}
   NFT: {fileID: 955257187}
+  _Btn_DataCenter: {fileID: 1245559839}
+  _NFT_Image: {fileID: 683527534}
 --- !u!114 &1245559839
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18036,6 +18469,7 @@ MonoBehaviour:
   tree_Player: {fileID: 1664814502}
   tree_Partner_1: {fileID: 381863291}
   tree_Partner_2: {fileID: 1055709351}
+  btnPlayer: {fileID: 597241848}
   commandes: {fileID: 0}
   son: {fileID: 0}
   _NFT_Update_Player: {fileID: 597241853}
@@ -18043,6 +18477,11 @@ MonoBehaviour:
   _NFT_Update_Partner_2: {fileID: 1245559838}
   _btnUpdate1: {fileID: 0}
   _btnUpdate2: {fileID: 0}
+  _MonsterParty: {fileID: 1294185978}
+  _Monster:
+    _base: {fileID: 0}
+    _level: 0
+    Exp: 0
 --- !u!114 &1245559840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18211,6 +18650,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254842469}
   m_CullTransparentMesh: 1
+--- !u!1 &1258704818 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 275185464}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1268820837
 GameObject:
   m_ObjectHideFlags: 0
@@ -18515,6 +18959,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IdManager: 0
+--- !u!1 &1287954181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8725077266455086642, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+  m_PrefabInstance: {fileID: 939494300}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1289321644
 GameObject:
   m_ObjectHideFlags: 0
@@ -19336,6 +19785,7 @@ MonoBehaviour:
   tree_Player: {fileID: 1664814502}
   tree_Partner_1: {fileID: 381863291}
   tree_Partner_2: {fileID: 1055709351}
+  btnPlayer: {fileID: 597241848}
   commandes: {fileID: 0}
   son: {fileID: 0}
   _NFT_Update_Player: {fileID: 597241853}
@@ -19343,6 +19793,11 @@ MonoBehaviour:
   _NFT_Update_Partner_2: {fileID: 1245559838}
   _btnUpdate1: {fileID: 2129361122}
   _btnUpdate2: {fileID: 597241855}
+  _MonsterParty: {fileID: 1294185978}
+  _Monster:
+    _base: {fileID: 0}
+    _level: 0
+    Exp: 0
 --- !u!1 &1342225657
 GameObject:
   m_ObjectHideFlags: 0
@@ -19455,6 +19910,7 @@ RectTransform:
   - {fileID: 232986705}
   - {fileID: 613082686}
   - {fileID: 2011464813}
+  - {fileID: 1012182686}
   - {fileID: 720647469}
   - {fileID: 858327512}
   - {fileID: 769277157}
@@ -19483,6 +19939,7 @@ MonoBehaviour:
   nFTTextName: {fileID: 720647470}
   nFTTextDesc: {fileID: 858327513}
   nFTSelected: {fileID: 2011464814}
+  nFTImage: {fileID: 1012182687}
   nFTPriceBuy: {fileID: 801363138}
   nFTPriceSell: {fileID: 1849264215}
   nFTPriceProfit: {fileID: 1454933421}
@@ -20005,9 +20462,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -20168,9 +20633,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -20291,9 +20764,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -21182,9 +21663,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1981527397}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -21287,6 +21776,10 @@ PrefabInstance:
       propertyPath: nFTID
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 1995830574973336100, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: lVRequired
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
       propertyPath: _NFT_Buy
       value: 
@@ -21299,6 +21792,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
 --- !u!224 &1557637306 stripped
@@ -21413,9 +21910,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -21531,9 +22036,21 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: nFTPrice
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -21649,9 +22166,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -21960,6 +22485,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1981527397}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 7
@@ -22340,6 +22869,10 @@ PrefabInstance:
       propertyPath: nFTID
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1995830574973336100, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: lVRequired
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
       propertyPath: _NFT_Buy
       value: 
@@ -22352,6 +22885,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
 --- !u!224 &1639839917 stripped
@@ -22824,6 +23361,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1664814503}
+  - component: {fileID: 1664814504}
   m_Layer: 5
   m_Name: TreePlayer
   m_TagString: Untagged
@@ -22871,6 +23409,39 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 84}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1664814504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664814502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a2a7a44379d8ea44b3180aaac65786a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NFT:
+  - {fileID: 516159639}
+  - {fileID: 268408934}
+  - {fileID: 731270943}
+  - {fileID: 210541514}
+  - {fileID: 329626086}
+  - {fileID: 1055952222}
+  - {fileID: 436269656}
+  - {fileID: 1258704818}
+  - {fileID: 371648756}
+  - {fileID: 1006503977}
+  - {fileID: 1189504851}
+  - {fileID: 701652902}
+  - {fileID: 1287954181}
+  - {fileID: 73897485}
+  - {fileID: 731712929}
+  - {fileID: 1033576772}
+  - {fileID: 457545224}
+  - {fileID: 441902052}
+  - {fileID: 962713211}
+  _NFT_Properties: {fileID: 0}
 --- !u!1 &1668104412
 GameObject:
   m_ObjectHideFlags: 0
@@ -29948,6 +30519,7 @@ MonoBehaviour:
   tree_Player: {fileID: 1664814502}
   tree_Partner_1: {fileID: 381863291}
   tree_Partner_2: {fileID: 1055709351}
+  btnPlayer: {fileID: 0}
   commandes: {fileID: 1833674501}
   son: {fileID: 377129255}
   _NFT_Update_Player: {fileID: 597241853}
@@ -29955,6 +30527,11 @@ MonoBehaviour:
   _NFT_Update_Partner_2: {fileID: 1245559838}
   _btnUpdate1: {fileID: 0}
   _btnUpdate2: {fileID: 0}
+  _MonsterParty: {fileID: 0}
+  _Monster:
+    _base: {fileID: 0}
+    _level: 0
+    Exp: 0
 --- !u!4 &1740734372 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1374298476643591619, guid: b929ecd34c713e84d8718f260899fa05, type: 3}
@@ -30067,6 +30644,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1981527397}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
 --- !u!114 &1757647077 stripped
@@ -30278,6 +30859,7 @@ GameObject:
   - component: {fileID: 1788018591}
   - component: {fileID: 1788018593}
   - component: {fileID: 1788018592}
+  - component: {fileID: 1788018594}
   m_Layer: 5
   m_Name: Text_LevelPartner_1
   m_TagString: Untagged
@@ -30401,6 +30983,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1788018590}
   m_CullTransparentMesh: 1
+--- !u!114 &1788018594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788018590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa274a6e103c9bd43adb7fcee096bab9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _Btn_DataCenter: {fileID: 1981527397}
+  _textLevel: {fileID: 1788018592}
 --- !u!1 &1789473775
 GameObject:
   m_ObjectHideFlags: 0
@@ -30575,6 +31171,10 @@ PrefabInstance:
       propertyPath: nFTID
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1995830574973336100, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: lVRequired
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
       propertyPath: _NFT_Buy
       value: 
@@ -30587,6 +31187,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1981527397}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
 --- !u!1 &1817064311
@@ -30854,9 +31458,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -32067,6 +32679,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1876939541}
   m_CullTransparentMesh: 1
+--- !u!114 &1897672242 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1029487430722039986, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+  m_PrefabInstance: {fileID: 4555617220567918121}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c41c5a749ecb4f42ae4443b7c62134c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1901675238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32174,6 +32797,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1245559839}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
 --- !u!1 &1909155851
@@ -32897,6 +33524,8 @@ MonoBehaviour:
   _NFT_Buy: {fileID: 1654425957}
   _NFT_Sell: {fileID: 581085879}
   NFT: {fileID: 1317520198}
+  _Btn_DataCenter: {fileID: 1981527397}
+  _NFT_Image: {fileID: 620005121}
 --- !u!114 &1981527397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32915,6 +33544,7 @@ MonoBehaviour:
   tree_Player: {fileID: 1664814502}
   tree_Partner_1: {fileID: 381863291}
   tree_Partner_2: {fileID: 1055709351}
+  btnPlayer: {fileID: 597241848}
   commandes: {fileID: 0}
   son: {fileID: 0}
   _NFT_Update_Player: {fileID: 597241853}
@@ -32922,6 +33552,11 @@ MonoBehaviour:
   _NFT_Update_Partner_2: {fileID: 1245559838}
   _btnUpdate1: {fileID: 0}
   _btnUpdate2: {fileID: 0}
+  _MonsterParty: {fileID: 1294185978}
+  _Monster:
+    _base: {fileID: 0}
+    _level: 0
+    Exp: 0
 --- !u!114 &1981527398
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33403,8 +34038,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -285, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -287, y: -4.07}
+  m_SizeDelta: {x: 145, y: 138}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2011464814
 MonoBehaviour:
@@ -33426,8 +34061,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: cb2ae3af0de2ab844b1210943c4c367f, type: 3}
+  m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -34435,6 +35070,10 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1245559839}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 7
@@ -34548,9 +35187,17 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 1981527397}
     - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
       propertyPath: nFTID
       value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8725077266455086645, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: lVRequired
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
@@ -34719,6 +35366,7 @@ MonoBehaviour:
   tree_Player: {fileID: 1664814502}
   tree_Partner_1: {fileID: 381863291}
   tree_Partner_2: {fileID: 1055709351}
+  btnPlayer: {fileID: 597241848}
   commandes: {fileID: 0}
   son: {fileID: 0}
   _NFT_Update_Player: {fileID: 597241853}
@@ -34726,6 +35374,11 @@ MonoBehaviour:
   _NFT_Update_Partner_2: {fileID: 1245559838}
   _btnUpdate1: {fileID: 597241855}
   _btnUpdate2: {fileID: 0}
+  _MonsterParty: {fileID: 1294185978}
+  _Monster:
+    _base: {fileID: 0}
+    _level: 0
+    Exp: 0
 --- !u!114 &2129361122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34901,6 +35554,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Btn_TreeNFTComp_1
       objectReference: {fileID: 0}
+    - target: {fileID: 1995830574973336100, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: lVRequired
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
       propertyPath: _NFT_Buy
       value: 
@@ -34913,6 +35570,38 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 1995830574973336101, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
+    - target: {fileID: 4359259174386331851, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 60.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359259174386331851, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 42.08
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359259174386331851, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4359259174386331851, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -18.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605386549665384400, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 81.11
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605386549665384400, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 25.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605386549665384400, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 13.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68d396af3201c814da803ee91ecf232a, type: 3}
 --- !u!1001 &2710294634368591042
@@ -35119,6 +35808,18 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 4555617221541888958, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
+    - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: nFTPrice
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
+      propertyPath: lVRequired
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4555617221541888959, guid: 0c341dc4dee15414dbc51d6da44e00dd, type: 3}
       propertyPath: nFTSpriteUnlock
       value: 
@@ -35232,5 +35933,9 @@ PrefabInstance:
       propertyPath: _NFT_Trading
       value: 
       objectReference: {fileID: 1349804340}
+    - target: {fileID: 8725077266455086644, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}
+      propertyPath: _Btn_DataCenter
+      value: 
+      objectReference: {fileID: 597241854}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18e3efb669b881042b75bea12f41e4d9, type: 3}

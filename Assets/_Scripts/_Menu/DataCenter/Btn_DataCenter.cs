@@ -10,6 +10,7 @@ public class Btn_DataCenter : MonoBehaviour
     [SerializeField] GameObject tree_Player;
     [SerializeField] GameObject tree_Partner_1;
     [SerializeField] GameObject tree_Partner_2;
+    [SerializeField] GameObject btnPlayer;
     [SerializeField] GameObject commandes;
     [SerializeField] GameObject son;
     [SerializeField] NFT_Update _NFT_Update_Player;
@@ -17,15 +18,16 @@ public class Btn_DataCenter : MonoBehaviour
     [SerializeField] NFT_Update _NFT_Update_Partner_2;
     [SerializeField] Btn_MenuProperties _btnUpdate1;
     [SerializeField] Btn_MenuProperties _btnUpdate2;
-    private Monster _Hero;
+    [SerializeField] MonsterParty _MonsterParty;
+    public Monster _Monster;
 
     public void OnClickDataCenter()
     {
         dataCenter.SetActive(true);
         _btnUpdate1.OnClickBtn();
         _btnUpdate2.OnClickBtn();
-        OnClickTreeNFT();
-        OnClickTreePlayer();
+        btnPlayer.GetComponent<Btn_DataCenter>().OnClickTreeNFT();
+        btnPlayer.GetComponent<Btn_DataCenter>().OnClickTreePlayer();
     }
     public void OnClickBack ()
     {
@@ -36,7 +38,7 @@ public class Btn_DataCenter : MonoBehaviour
         treeNFT.SetActive(true);
         options.SetActive(false);
         _btnUpdate1.OnClickBtn();
-        OnClickTreePlayer();
+        btnPlayer.GetComponent<Btn_DataCenter>().OnClickTreePlayer();
     }
     public void OnClickOptions()
     {
@@ -49,14 +51,15 @@ public class Btn_DataCenter : MonoBehaviour
         tree_Player.SetActive(true);
         tree_Partner_1.SetActive(false);
         tree_Partner_2.SetActive(false);
+        _Monster = _MonsterParty.Monsters[0];
         _NFT_Update_Player.OnClickNFT();
-        //_Hero = ;
     }
     public void OnClickTreePartner1()
     {
         tree_Player.SetActive(false);
         tree_Partner_1.SetActive(true);
         tree_Partner_2.SetActive(false);
+        _Monster = _MonsterParty.Monsters[1];
         _NFT_Update_Partner_1.OnClickNFT();
     }
     public void OnClickTreePartner2()
@@ -64,6 +67,7 @@ public class Btn_DataCenter : MonoBehaviour
         tree_Player.SetActive(false);
         tree_Partner_1.SetActive(false);
         tree_Partner_2.SetActive(true);
+        _Monster = _MonsterParty.Monsters[2];
         _NFT_Update_Partner_2.OnClickNFT();
     }
     public void OnClickCommande()

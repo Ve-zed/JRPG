@@ -16,4 +16,5 @@ public class NFT_Properties : MonoBehaviour
     public TextMeshProUGUI nFTTextDesc;
     public bool nFTBuy;
     public int nFTPrice;
+    public bool nFTUnlock = true;
 }

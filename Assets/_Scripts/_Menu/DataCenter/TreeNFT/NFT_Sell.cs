@@ -10,14 +10,17 @@ public class NFT_Sell : MonoBehaviour
 
     public void OnClickSell()
     {
-        _NFT_Properties = nFTSelected.GetComponent<NFT_Properties>();
-        if (_NFT_Properties.nFTBuy == true)
+        if (nFTSelected != null)
         {
-            _NFT_Properties.nFTBuy = false;
-            _GameController.mHR += _NFT_Properties.nFTPrice;
-            Debug.Log("Selling");
+            _NFT_Properties = nFTSelected.GetComponent<NFT_Properties>();
+            if (_NFT_Properties.nFTBuy == true)
+            {
+                _NFT_Properties.nFTBuy = false;
+                _GameController.mHR += _NFT_Properties.nFTPrice;
+                Debug.Log("Selling");
+            }
+            else
+                Debug.Log("Non activé.");
         }
-        else
-            Debug.Log("Non activé.");
     }
 }
