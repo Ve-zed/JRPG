@@ -56,6 +56,9 @@ public class EnnemiController : MonoBehaviour, Interactable
         _battleLost = true;
         _fov.SetActive(false);
         collider2D.enabled = true;
+        if (isVirus) {
+            this.gameObject.SetActive(false);
+        }
     }
 
     public IEnumerator TriggerEnnemiBattle(PlayerController player)
