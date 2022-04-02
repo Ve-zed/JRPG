@@ -16,7 +16,7 @@ MonoBehaviour:
   _sound: snd_vol_de_vie
   _description: 
   _type: 0
-  _power: 400
+  _power: 375
   _accuary: 100
   _pp: 50
   _category: 1
