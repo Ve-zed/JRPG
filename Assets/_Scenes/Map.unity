@@ -80283,7 +80283,7 @@ MonoBehaviour:
   _playerController: {fileID: 1294185974}
   _battleSystem: {fileID: 1183157651}
   _worldCamera: {fileID: 519420031}
-  money: 0
+  mHR: 0
 --- !u!4 &197559270
 Transform:
   m_ObjectHideFlags: 0
@@ -136480,7 +136480,7 @@ SpriteRenderer:
   m_SortingLayerID: -1975638207
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3785784146384260830, guid: 3caf22b256d513f4ba3686319b830db0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b7476f04addb9424d979d6bd1fae5ba8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -136499,8 +136499,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294185973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.29, y: -0.02, z: 0}
-  m_LocalScale: {x: 7, y: 7, z: 1}
+  m_LocalPosition: {x: -3.52, y: 0.09, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children:
   - {fileID: 519420032}
   m_Father: {fileID: 0}
@@ -136585,7 +136585,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.19}
+    oldSize: {x: 3.4, y: 7.2}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -138406,6 +138406,14 @@ PrefabInstance:
       propertyPath: _dialogManager
       value: 
       objectReference: {fileID: 197559271}
+    - target: {fileID: 4472211314815570438, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4472211314815570438, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.22
+      objectReference: {fileID: 0}
     - target: {fileID: 5398835434992662849, guid: 4dc99ea27135b8c418fd0a73299f8c89, type: 3}
       propertyPath: _monsters.Array.size
       value: 1
@@ -138554,6 +138562,14 @@ PrefabInstance:
       propertyPath: _dialogManager
       value: 
       objectReference: {fileID: 197559271}
+    - target: {fileID: 8429885589739097550, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8429885589739097550, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.22
+      objectReference: {fileID: 0}
     - target: {fileID: 8429885590372178689, guid: 4d563b902aa08eb4596899ea1d04dbf5, type: 3}
       propertyPath: m_Size.y
       value: 0.58
