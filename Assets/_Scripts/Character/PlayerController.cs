@@ -29,9 +29,6 @@ public class PlayerController : MonoBehaviour
             _input.x = Input.GetAxisRaw("Horizontal");
             _input.y = Input.GetAxisRaw("Vertical");
 
-            if (_input.x != 0)
-                _input.y = 0;
-
             if (_input != Vector2.zero)
             {
                 animator.SetFloat("moveX", _input.x);

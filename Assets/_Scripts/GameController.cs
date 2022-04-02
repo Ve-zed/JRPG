@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-using DG.Tweening;
 
 public enum GameState { FreeRoam, Battle, Dialog, CutScene, Tuto }
 
@@ -32,7 +30,7 @@ public class GameController : MonoBehaviour
         _playerController.onEnterEnnemisView += (Collider2D ennemiCollider) =>
         {
             var ennemi = ennemiCollider.GetComponentInParent<EnnemiController>();
-            if (ennemi != null)
+            if(ennemi != null)
             {
                 _state = GameState.CutScene;
                 StartCoroutine(ennemi.TriggerEnnemiBattle(_playerController));
@@ -66,8 +64,6 @@ public class GameController : MonoBehaviour
     }
     public void StartEnnemiBattle(EnnemiController ennemi)
     {
-        //FadeBattle.Instance.imageFadeInBattle.DOFade(0, 2.5f);
-
         _state = GameState.Battle;
         _battleSystem.gameObject.SetActive(true);
         _worldCamera.gameObject.SetActive(false);
@@ -75,15 +71,15 @@ public class GameController : MonoBehaviour
         _ennemi = ennemi;
         var playerParty = _playerController.GetComponent<MonsterParty>();
         var ennemiParty = ennemi.GetComponent<MonsterParty>();
-
+        
 
         _battleSystem.StartEnnemiBattle(playerParty, ennemiParty);
 
     }
-
+    
     private void EndBattle(bool won)
     {
-        if (_ennemi != null && won == true)
+        if(_ennemi != null && won == true)
         {
             _ennemi.BattleLost();
             _ennemi = null;

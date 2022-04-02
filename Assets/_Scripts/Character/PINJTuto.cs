@@ -17,7 +17,7 @@ public class PINJTuto : MonoBehaviour, Interactable
     {
         StartCoroutine(DialogManager.Instance.ShowDialogTuto(_dialog));
 
-        
+        Debug.Log("tuto");
     }
 
 

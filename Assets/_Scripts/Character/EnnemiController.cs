@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using DG.Tweening;
 
 public class EnnemiController : MonoBehaviour, Interactable
 {
@@ -43,14 +42,9 @@ public class EnnemiController : MonoBehaviour, Interactable
         yield return new WaitForSeconds(0f);
         _dialogManager.dialogBox.SetActive(false);
         GameController.Instance.StartEnnemiBattle(this);
-        //FadeBattle.Instance.imageFadeBattle.DOFade(1, 0.5f).OnComplete(BattleStart);
-
     }
-    void BattleStart()
-    {
+    
 
-    }
-   
     public void BattleLost()
     {
         _battleLost = true;
