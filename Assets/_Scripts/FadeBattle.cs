@@ -13,6 +13,5 @@ public class FadeBattle : MonoBehaviour
     }
 
     public Image imageFadeBattle;
-    public Image imageFadeInBattle;
 
 }

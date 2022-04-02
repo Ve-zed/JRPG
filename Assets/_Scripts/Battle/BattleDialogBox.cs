@@ -51,14 +51,14 @@ public class BattleDialogBox : MonoBehaviour
             if (i < moves.Count && _battleSystem._playerSelectedUnit.isPowerUsed)
             {
                 _moveTexts[i].text = moves[i].Base.Name;
-                _moveTexts[4].text = "-";
+                _moveTexts[4].text = "•";
             }
             else if (i < moves.Count)
             {
                 _moveTexts[i].text = moves[i].Base.Name;
             }
             else
-                _moveTexts[i].text = "-";
+                _moveTexts[i].text = "•";
         }
     }
 

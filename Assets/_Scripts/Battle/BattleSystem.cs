@@ -149,13 +149,13 @@ public class BattleSystem : MonoBehaviour
 
             _gameController.mHR += _ennemi.moneyAfterBattle;
             AudioManager.Instance.PlaySFXSound("snd_victory");
+            FadeBattle.Instance.imageFadeBattle.DOFade(0, 1);
 
         }
         //FadeBattle.Instance.imageFadeInBattle.DOFade(1, 0.5f);
         AudioManager.Instance.audioSourceMusic.Stop();
         StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_music_exploration"));
         StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_ambiance_exploration"));
-        //FadeBattle.Instance.imageFadeBattle.DOFade(0, 0.5f);
         onBattleOver(won);
     }
 
@@ -242,6 +242,7 @@ public class BattleSystem : MonoBehaviour
     }
     IEnumerator EnnemiTurn()
     {
+        Debug.Log("enemi");
         int playerCount = 0;
         bool enemiTurn = false;
         for (int i = 0; i < _playerUnits.Count; i++)
@@ -255,6 +256,7 @@ public class BattleSystem : MonoBehaviour
         }
         if (playerCount >= 3 - _playerUnitsDead.Count && !_isEnnemiTurn && enemiTurn)
         {
+            Debug.Log("turn enemi");
             _isEnnemiTurn = true;
             yield return new WaitForSeconds(2f);
             StartCoroutine(EnemyMove());
@@ -544,8 +546,8 @@ public class BattleSystem : MonoBehaviour
                         _playerSelectedUnit.WinXP(_playerUnits[y], targetUnits[i]);
                     }
 
-
-                    _playerUnitsDead.Add(_playerSelectedUnit);
+                    if (targetUnits[i].isPlayerUnit)
+                        _playerUnitsDead.Add(_playerSelectedUnit);
 
                     targetUnits[i].PlayFaintAnimation();
                     var _hudTarget = targetUnits[i].GetComponentInChildren<BattleHud>(true);

@@ -41,13 +41,13 @@ public class EnnemiController : MonoBehaviour, Interactable
     IEnumerator StartBattle()
     {
         yield return new WaitForSeconds(0f);
-        _dialogManager.dialogBox.SetActive(false);
-        GameController.Instance.StartEnnemiBattle(this);
-        //FadeBattle.Instance.imageFadeBattle.DOFade(1, 0.5f).OnComplete(BattleStart);
+        FadeBattle.Instance.imageFadeBattle.DOFade(1, 1).OnComplete(BattleStart);
 
     }
     void BattleStart()
     {
+        _dialogManager.dialogBox.SetActive(false);
+        GameController.Instance.StartEnnemiBattle(this);
 
     }
    

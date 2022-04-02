@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
                 targetPos.y += _input.y;
                 if (IsWalkable(targetPos))
                 {
-            //AudioManager.Instance.PlaySFXSound("snd_interface");
                     StartCoroutine(Move(targetPos, OnMoveOver));
                 }
             }
