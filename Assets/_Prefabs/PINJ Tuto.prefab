@@ -98,10 +98,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _dialog:
     _lines:
-    - ICI LE TUTO
-    - "Si tu veux survivre dans se monde... Bah \xE9vite de te battre ou alors soit
-      plus fort que t'es adversaire mon con... Sinon tu te feras d\xE9truire comme
-      une merde et... rien ne se passera '-'"
+    - "Bienvenue dans BattleVers, David. Le syst\xE8me a d\xE9tect\xE9 que cela fait
+      longtemps que vous n\u2019avez pas jou\xE9, je vais donc proc\xE9der \xE0 un
+      rappel des r\xE8gles du jeu."
+    - "BattleVers est un jeu multijoueur dans lequel vous devez vous battre contre
+      d\u2019autres adversaires pour gagner des points."
+    - "Le premier joueur \xE0 atteindre les 1 milliards de points aura l\u2019honneur
+      de rencontrer le myst\xE9rieux cr\xE9ateur de ce jeu : \r\nZarc Muckerberg.\r"
+    - "Rappel des r\xE8gles : \r\n \r\n\u2022 Il est interdit d\u2019obliger des
+      joueurs \xE0 combattre.\r\n\r\n\u2022 Il est interdit d\u2019utiliser des outils
+      ext\xE9rieurs au syst\xE8me.\r\n\r\n\u2022 Veuillez rester courtois envers
+      les autres joueurs.\r\n\r\n\u2022 Le jeu ne sanctionne pas les l\xE2ches qui
+      se battent en groupe contre des joueurs seuls.\r\n"
+    - "Le non respect de ces r\xE8gles entra\xEEnera la perte instantan\xE9e de tous
+      vos points."
+    - "Je vous souhaite une agr\xE9able partie !"
 --- !u!61 &248153910521925095
 BoxCollider2D:
   m_ObjectHideFlags: 0

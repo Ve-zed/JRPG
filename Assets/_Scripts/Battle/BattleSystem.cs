@@ -146,12 +146,16 @@ public class BattleSystem : MonoBehaviour
         _playerParty.Monsters.ForEach(p => p.OnBattleOver());
         if (won)
         {
+
             _gameController.mHR += _ennemi.moneyAfterBattle;
             AudioManager.Instance.PlaySFXSound("snd_victory");
+
         }
+        //FadeBattle.Instance.imageFadeInBattle.DOFade(1, 0.5f);
         AudioManager.Instance.audioSourceMusic.Stop();
         StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_music_exploration"));
         StartCoroutine(AudioManager.Instance.IEPlayMusicSound("snd_ambiance_exploration"));
+        //FadeBattle.Instance.imageFadeBattle.DOFade(0, 0.5f);
         onBattleOver(won);
     }
 
@@ -744,7 +748,7 @@ public class BattleSystem : MonoBehaviour
         }
         canSelected = true;
         powerUsed = false;
-        
+
         if (sourceUnit.IsPlayerUnit)
             yield return EnnemiTurn();
     }
