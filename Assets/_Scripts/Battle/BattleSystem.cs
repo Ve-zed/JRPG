@@ -147,7 +147,7 @@ public class BattleSystem : MonoBehaviour
         if (won)
         {
 
-            _gameController.mHR += _ennemi.moneyAfterBattle;
+            //_gameController.mHR += _ennemi.moneyAfterBattle;
             AudioManager.Instance.PlaySFXSound("snd_victory");
             FadeBattle.Instance.imageFadeBattle.DOFade(0, 1);
 
